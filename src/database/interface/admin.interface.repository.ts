@@ -7,4 +7,5 @@ export interface AdminRepositoryInterface extends BaseRepositoryInterface<Admin>
   findWithGroupRole(id: string): Promise<Admin | null>;
   findByGroupRoleId(groupRoleId: string): Promise<Admin[]>;
   updateLastLogin(id: string, ipAddress?: string): Promise<Admin | null>;
+  getRolesByUserId(userId: string): Promise<any>;
 }

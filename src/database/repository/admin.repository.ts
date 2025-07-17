@@ -46,4 +46,30 @@ export class AdminRepository extends BaseRepositoryAbstract<Admin> implements Ad
 
     return await this.findOneById(id);
   }
+
+  async getRolesByUserId(userId: string): Promise<any> {
+    const queryBuilder = this.repository
+      .createQueryBuilder('admin')
+      .leftJoinAndSelect('admin.groupRole', 'groupRole')
+      .leftJoinAndSelect('groupRole.groupRolePermissions', 'groupRolePermissions')
+      .leftJoinAndSelect('groupRolePermissions.sysPermissionAction', 'sysPermissionAction')
+      .leftJoinAndSelect('sysPermissionAction.sysPermission', 'sysPermission')
+      .leftJoinAndSelect('sysPermissionAction.action', 'action')
+      .select([
+        'admin',
+        'groupRole.name',
+        'groupRole.description',
+        'groupRolePermissions.groupRoleId',
+        'groupRolePermissions.sysPermissionActionId',
+        'sysPermissionAction.sysPermissionId',
+        'sysPermissionAction.actionId',
+        'sysPermission.name',
+        'sysPermission.description',
+        'action.name',
+        'action.description',
+      ])
+      .where('admin.id = :userId', { userId });
+    const admin = await queryBuilder.getOne();
+    return admin;
+  }
 }
