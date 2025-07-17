@@ -10,31 +10,4 @@ export class GroupRolePermissionRepository extends BaseRepositoryAbstract<GroupR
   constructor(@InjectRepository(GroupRolePermission) private readonly groupRolePermissionRepository: Repository<GroupRolePermission>) {
     super(groupRolePermissionRepository);
   }
-
-  async findByGroupRoleAndPermission(groupRoleId: string, sysPermissionActionId: string): Promise<GroupRolePermission | null> {
-    return await this.repository.findOne({
-      where: { groupRoleId, sysPermissionActionId },
-    });
-  }
-
-  async findByGroupRoleId(groupRoleId: string): Promise<GroupRolePermission[]> {
-    return await this.repository.find({
-      where: { groupRoleId },
-      relations: ['sysPermissionAction', 'sysPermissionAction.sysPermission', 'sysPermissionAction.action'],
-    });
-  }
-
-  async findByPermissionActionId(sysPermissionActionId: string): Promise<GroupRolePermission[]> {
-    return await this.repository.find({
-      where: { sysPermissionActionId },
-      relations: ['groupRole'],
-    });
-  }
-
-  async findWithDetails(id: string): Promise<GroupRolePermission | null> {
-    return await this.repository.findOne({
-      where: { id },
-      relations: ['groupRole', 'sysPermissionAction', 'sysPermissionAction.sysPermission', 'sysPermissionAction.action'],
-    });
-  }
 }

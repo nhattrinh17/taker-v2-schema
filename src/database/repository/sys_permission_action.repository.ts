@@ -10,31 +10,4 @@ export class SysPermissionActionRepository extends BaseRepositoryAbstract<SysPer
   constructor(@InjectRepository(SysPermissionAction) private readonly sysPermissionActionRepository: Repository<SysPermissionAction>) {
     super(sysPermissionActionRepository);
   }
-
-  async findByPermissionAndAction(sysPermissionId: string, actionId: string): Promise<SysPermissionAction | null> {
-    return await this.repository.findOne({
-      where: { sysPermissionId, actionId },
-    });
-  }
-
-  async findByPermissionId(sysPermissionId: string): Promise<SysPermissionAction[]> {
-    return await this.repository.find({
-      where: { sysPermissionId },
-      relations: ['action'],
-    });
-  }
-
-  async findByActionId(actionId: string): Promise<SysPermissionAction[]> {
-    return await this.repository.find({
-      where: { actionId },
-      relations: ['sysPermission'],
-    });
-  }
-
-  async findWithDetails(id: string): Promise<SysPermissionAction | null> {
-    return await this.repository.findOne({
-      where: { id },
-      relations: ['sysPermission', 'action'],
-    });
-  }
 }

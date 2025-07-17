@@ -10,23 +10,4 @@ export class SysPermissionRepository extends BaseRepositoryAbstract<SysPermissio
   constructor(@InjectRepository(SysPermission) private readonly sysPermissionRepository: Repository<SysPermission>) {
     super(sysPermissionRepository);
   }
-
-  async findByName(name: string): Promise<SysPermission | null> {
-    return await this.repository.findOne({
-      where: { name },
-    });
-  }
-
-  async findByNames(names: string[]): Promise<SysPermission[]> {
-    return await this.repository.find({
-      where: names.map(name => ({ name })),
-    });
-  }
-
-  async findWithActions(id: string): Promise<SysPermission | null> {
-    return await this.repository.findOne({
-      where: { id },
-      relations: ['sysPermissionActions', 'sysPermissionActions.action'],
-    });
-  }
 }

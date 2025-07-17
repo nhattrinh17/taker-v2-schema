@@ -10,16 +10,4 @@ export class ActionRepository extends BaseRepositoryAbstract<Action> implements 
   constructor(@InjectRepository(Action) private readonly actionRepository: Repository<Action>) {
     super(actionRepository);
   }
-
-  async findByName(name: string): Promise<Action | null> {
-    return await this.repository.findOne({
-      where: { name },
-    });
-  }
-
-  async findByNames(names: string[]): Promise<Action[]> {
-    return await this.repository.find({
-      where: names.map(name => ({ name })),
-    });
-  }
 }
