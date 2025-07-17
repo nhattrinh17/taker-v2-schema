@@ -17,7 +17,8 @@ exports.IsArrayOfInstancesOf = IsArrayOfInstancesOf;
 exports.IsAfter10Minutes = IsAfter10Minutes;
 exports.IsValidTimeRange = IsValidTimeRange;
 const class_validator_1 = require("class-validator");
-const index_1 = require("../index");
+const magic_code_helper_1 = require("../helpers/magic-code.helper");
+const app_constant_1 = require("../constants/app.constant");
 const class_transformer_1 = require("class-transformer");
 const moment_1 = __importDefault(require("moment"));
 function IsPhoneInVn(validationOptions) {
@@ -30,7 +31,7 @@ function IsPhoneInVn(validationOptions) {
             options: validationOptions,
             validator: {
                 validate(value) {
-                    return (0, index_1.isValidPhone)(value);
+                    return (0, magic_code_helper_1.isValidPhone)(value);
                 },
             },
         });
@@ -46,7 +47,7 @@ function IsLatitude(validationOptions) {
             options: validationOptions,
             validator: {
                 validate(value) {
-                    return index_1.LATITUDE_PATTERN.test(value);
+                    return app_constant_1.LATITUDE_PATTERN.test(value);
                 },
             },
         });
@@ -62,7 +63,7 @@ function IsLongitude(validationOptions) {
             options: validationOptions,
             validator: {
                 validate(value) {
-                    return index_1.LONGITUDE_PATTERN.test(value);
+                    return app_constant_1.LONGITUDE_PATTERN.test(value);
                 },
             },
         });

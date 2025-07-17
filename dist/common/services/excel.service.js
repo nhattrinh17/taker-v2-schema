@@ -36,6 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExcelService = void 0;
 const constants_1 = require("../constants");
 const XLSX = __importStar(require("xlsx"));
+const { messageResponseError } = constants_1.MessageResConstant;
 class ExcelService {
     processExcelFileWithdraw(buffer) {
         const workbook = XLSX.read(buffer, { type: 'buffer' });
@@ -45,7 +46,7 @@ class ExcelService {
         const firstRow = rows[0];
         console.log('🚀 ~ ExcelService ~ processExcelFileWithdraw ~ firstRow:', firstRow);
         if (firstRow.length > 1 || firstRow[0] != 'id') {
-            throw new Error(constants_1.messageResponseError.upload.fileInvalid);
+            throw new Error(messageResponseError.upload.fileInvalid);
         }
         const data = XLSX.utils.sheet_to_json(worksheet);
         return data;

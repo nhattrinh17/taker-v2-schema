@@ -50,7 +50,7 @@ function stringifyValues(obj) {
     else if (obj instanceof Date) {
         return obj.toISOString();
     }
-    else if (obj !== null && typeof obj === 'object') {
+    else if (obj !== null && typeof obj === "object") {
         return Object.fromEntries(Object.entries(obj).map(([key, value]) => [key, stringifyValues(value)]));
     }
     else {
@@ -76,13 +76,13 @@ let FirebaseService = FirebaseService_1 = class FirebaseService {
             });
         });
     }
-    sendToAdmin({ tokens, title, body }) {
+    sendToAdmin({ tokens, title, body, }) {
         const messages = tokens.map((token) => {
             return {
                 data: {
                     title,
                     body,
-                    url: '',
+                    url: "",
                 },
                 token: token,
             };
@@ -112,15 +112,15 @@ let FirebaseService = FirebaseService_1 = class FirebaseService {
             data,
             android: {
                 notification: {
-                    sound: sound || 'XIMI.wav',
+                    sound: sound || "XIMI.wav",
                     defaultSound: false,
-                    channelId: 'xiin-call-id',
+                    channelId: "xiin-call-id",
                 },
             },
             apns: {
                 payload: {
                     aps: {
-                        sound: sound || 'XIMI.wav',
+                        sound: sound || "XIMI.wav",
                         defaultSound: false,
                     },
                 },
@@ -150,14 +150,14 @@ let FirebaseService = FirebaseService_1 = class FirebaseService {
             data,
             android: {
                 notification: {
-                    sound: sound || 'XIMI.wav',
+                    sound: sound || "XIMI.wav",
                     defaultSound: false,
                 },
             },
             apns: {
                 payload: {
                     aps: {
-                        sound: sound || 'XIMI.wav',
+                        sound: sound || "XIMI.wav",
                         defaultSound: false,
                     },
                 },
@@ -168,7 +168,7 @@ let FirebaseService = FirebaseService_1 = class FirebaseService {
                 .messaging()
                 .sendEach(messages)
                 .then((result) => {
-                this.logger.log('Send batch message to device success', JSON.stringify(result.responses));
+                this.logger.log("Send batch message to device success", JSON.stringify(result.responses));
                 const { successCount, failureCount, responses } = result;
                 this.logger.log(`Batch successfully sent ${successCount} messages, failed to send ${failureCount} messages`);
                 const successPayloads = [];
@@ -195,15 +195,15 @@ let FirebaseService = FirebaseService_1 = class FirebaseService {
             token,
             data,
             android: {
-                priority: 'high',
+                priority: "high",
             },
             apns: {
                 headers: {
-                    'apns-priority': '10',
+                    "apns-priority": "10",
                 },
                 payload: {
                     aps: {
-                        'content-available': 1,
+                        "content-available": 1,
                     },
                 },
             },

@@ -1,6 +1,6 @@
-import { INotificationPayload } from '@common/constants';
-import { Injectable, Logger } from '@nestjs/common';
-import * as admin from 'firebase-admin';
+import { INotificationPayload } from "@common/constants/app.constant";
+import { Injectable, Logger } from "@nestjs/common";
+import * as admin from "firebase-admin";
 
 export interface INotificationPayloadV2 {
   token: string;
@@ -13,7 +13,7 @@ function stringifyValues(obj) {
     return obj.map(stringifyValues);
   } else if (obj instanceof Date) {
     return obj.toISOString();
-  } else if (obj !== null && typeof obj === 'object') {
+  } else if (obj !== null && typeof obj === "object") {
     return Object.fromEntries(
       Object.entries(obj).map(([key, value]) => [key, stringifyValues(value)])
     );
@@ -41,13 +41,22 @@ export class FirebaseService {
     });
   }
 
-  sendToAdmin({ tokens, title, body }: { tokens: string[]; title: string; body: string; url?: string }) {
+  sendToAdmin({
+    tokens,
+    title,
+    body,
+  }: {
+    tokens: string[];
+    title: string;
+    body: string;
+    url?: string;
+  }) {
     const messages: admin.messaging.Message[] = tokens.map((token) => {
       return {
         data: {
           title, // Sử dụng data thay vì notification
           body,
-          url: '', // Thêm URL vào data nếu cần
+          url: "", // Thêm URL vào data nếu cần
         },
         token: token,
       };
@@ -57,18 +66,23 @@ export class FirebaseService {
         .messaging()
         .sendEach(messages)
         .then((result) => {
-          this.logger.log(`Send message to admin success with tokens=${tokens}`, result);
+          this.logger.log(
+            `Send message to admin success with tokens=${tokens}`,
+            result
+          );
           resolve({ tokens, title, body });
         })
         .catch((e) => {
-          this.logger.error(`Send message to admin error ${e.code} with tokens=${tokens}`);
+          this.logger.error(
+            `Send message to admin error ${e.code} with tokens=${tokens}`
+          );
           reject(e);
         });
     });
   }
 
   send({ token, title, body, data = {}, sound }: INotificationPayload) {
-    data = stringifyValues(data); 
+    data = stringifyValues(data);
     const message: admin.messaging.Message = {
       notification: {
         title,
@@ -78,15 +92,15 @@ export class FirebaseService {
       data,
       android: {
         notification: {
-          sound: sound || 'XIMI.wav',
+          sound: sound || "XIMI.wav",
           defaultSound: false,
-          channelId: 'xiin-call-id',
+          channelId: "xiin-call-id",
         },
       },
       apns: {
         payload: {
           aps: {
-            sound: sound || 'XIMI.wav',
+            sound: sound || "XIMI.wav",
             defaultSound: false,
           },
         },
@@ -97,49 +111,61 @@ export class FirebaseService {
         .messaging()
         .send(message)
         .then((result) => {
-          this.logger.log(`Send message to device success with token=${token}`, result);
+          this.logger.log(
+            `Send message to device success with token=${token}`,
+            result
+          );
           resolve({ token, title, body, data });
         })
         .catch((e) => {
           // TODO: Need to handle token outdated
           // https://bard.google.com/chat/cd6c73cc59d0b37b
-          this.logger.error(`Send message to device error ${e.code} with token=${token}`);
+          this.logger.error(
+            `Send message to device error ${e.code} with token=${token}`
+          );
           reject(e);
         });
     });
   }
 
   sends(payloads: INotificationPayload[]) {
-    const messages: admin.messaging.Message[] = payloads.map(({ title, token, body, data = {}, sound }) => ({
-      notification: {
-        title,
-        body,
-      },
-      token,
-      data,
-      android: {
+    const messages: admin.messaging.Message[] = payloads.map(
+      ({ title, token, body, data = {}, sound }) => ({
         notification: {
-          sound: sound || 'XIMI.wav',
-          defaultSound: false,
+          title,
+          body,
         },
-      },
-      apns: {
-        payload: {
-          aps: {
-            sound: sound || 'XIMI.wav',
+        token,
+        data,
+        android: {
+          notification: {
+            sound: sound || "XIMI.wav",
             defaultSound: false,
           },
         },
-      },
-    }));
+        apns: {
+          payload: {
+            aps: {
+              sound: sound || "XIMI.wav",
+              defaultSound: false,
+            },
+          },
+        },
+      })
+    );
     return new Promise((resolve, reject) => {
       admin
         .messaging()
         .sendEach(messages)
         .then((result) => {
-          this.logger.log('Send batch message to device success', JSON.stringify(result.responses));
+          this.logger.log(
+            "Send batch message to device success",
+            JSON.stringify(result.responses)
+          );
           const { successCount, failureCount, responses } = result;
-          this.logger.log(`Batch successfully sent ${successCount} messages, failed to send ${failureCount} messages`);
+          this.logger.log(
+            `Batch successfully sent ${successCount} messages, failed to send ${failureCount} messages`
+          );
           const successPayloads: INotificationPayload[] = [];
           const failurePayloads: INotificationPayload[] = [];
 
@@ -166,15 +192,15 @@ export class FirebaseService {
       token,
       data, // Phải là object key-value string: string
       android: {
-        priority: 'high', // bắt buộc
+        priority: "high", // bắt buộc
       },
       apns: {
         headers: {
-          'apns-priority': '10', // quan trọng với iOS
+          "apns-priority": "10", // quan trọng với iOS
         },
         payload: {
           aps: {
-            'content-available': 1, // cần để iOS nhận trong background
+            "content-available": 1, // cần để iOS nhận trong background
           },
         },
       },
@@ -185,13 +211,18 @@ export class FirebaseService {
         .messaging()
         .send(message)
         .then((result) => {
-          this.logger.log(`Send message to device success with token=${token}`, result);
+          this.logger.log(
+            `Send message to device success with token=${token}`,
+            result
+          );
           resolve({ token, data });
         })
         .catch((e) => {
           // TODO: Need to handle token outdated
           // https://bard.google.com/chat/cd6c73cc59d0b37b
-          this.logger.error(`Send message to device error ${e.code} with token=${token}`);
+          this.logger.error(
+            `Send message to device error ${e.code} with token=${token}`
+          );
           reject(e);
         });
     });

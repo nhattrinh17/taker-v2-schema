@@ -1,4 +1,4 @@
-import { INotificationPayload } from '@common/constants';
+import { INotificationPayload } from "@common/constants/app.constant";
 export interface INotificationPayloadV2 {
     token: string;
     data?: {
@@ -8,7 +8,7 @@ export interface INotificationPayloadV2 {
 export declare class FirebaseService {
     private readonly logger;
     verifyIdToken(idToken: string): Promise<unknown>;
-    sendToAdmin({ tokens, title, body }: {
+    sendToAdmin({ tokens, title, body, }: {
         tokens: string[];
         title: string;
         body: string;

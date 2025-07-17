@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import { registerDecorator, ValidationOptions, validate, ValidatorConstraintInterface, ValidatorConstraint } from 'class-validator';
-import { isValidPhone, LATITUDE_PATTERN, LONGITUDE_PATTERN } from '@common/index';
+import { isValidPhone } from '@common/helpers/magic-code.helper';
+import { LATITUDE_PATTERN, LONGITUDE_PATTERN} from '@common/constants/app.constant';
 import { plainToClass } from 'class-transformer';
 import moment from 'moment';
 

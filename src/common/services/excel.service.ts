@@ -1,5 +1,7 @@
-import { messageResponseError } from '@common/constants';
+import { MessageResConstant } from '@common/constants';
 import * as XLSX from 'xlsx';
+
+const { messageResponseError } = MessageResConstant;
 
 export class ExcelService {
   processExcelFileWithdraw(buffer: Buffer) {
