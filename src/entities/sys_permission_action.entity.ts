@@ -20,6 +20,6 @@ export class SysPermissionAction extends BaseEntity {
   @JoinColumn({ name: 'actionId' })
   action: Action;
 
-  @OneToMany(() => GroupRolePermission, (groupRolePermission) => groupRolePermission.groupRole, { cascade: true })
+  @OneToMany(() => GroupRolePermission, (groupRolePermission) => groupRolePermission.sysPermissionAction, { cascade: true })
   groupRolePermissions: GroupRolePermission[];
 }

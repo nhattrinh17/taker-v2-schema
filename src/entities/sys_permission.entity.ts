@@ -11,6 +11,6 @@ export class SysPermission extends BaseEntity {
   @Column('varchar', { length: 255, nullable: true })
   description?: string;
 
-  @OneToMany(() => SysPermissionAction, (sysPermissionAction) => sysPermissionAction.action, { onDelete: 'CASCADE', onUpdate: 'CASCADE' })
+  @OneToMany(() => SysPermissionAction, (sysPermissionAction) => sysPermissionAction.sysPermission, { onDelete: 'CASCADE', onUpdate: 'CASCADE' })
   sysPermissionActions: SysPermissionAction[];
 }
