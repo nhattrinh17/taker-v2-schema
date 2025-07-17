@@ -1,0 +1,26 @@
+{
+  "name": "@taker-v2/schema",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "nest build",
+    "migrate:generate": "typeorm migration:generate -d dist/data-source.js",
+    "migrate:run": "typeorm migration:run -d dist/data-source.js"
+  },
+  "dependencies": {
+    "@nestjs/axios": "^4.0.1",
+    "@nestjs/common": "^11.1.4",
+    "glob": "^11.0.3",
+    "path": "^0.12.7",
+    "reflect-metadata": "^0.2.0",
+    "typeorm": "^0.3.21"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.1.3"
+  }
+}
