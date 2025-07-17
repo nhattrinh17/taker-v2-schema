@@ -1,10 +1,13 @@
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { BaseRepositoryAbstract } from '../../base/base.abstract.repository';
 import { Admin } from '../../entities/admin.entity';
 import { AdminRepositoryInterface } from '../interface/admin.interface.repository';
 
+@Injectable()
 export class AdminRepository extends BaseRepositoryAbstract<Admin> implements AdminRepositoryInterface {
-  constructor(adminRepository: Repository<Admin>) {
+  constructor(@InjectRepository(Admin) private readonly adminRepository: Repository<Admin>) {
     super(adminRepository);
   }
 
@@ -48,7 +51,7 @@ export class AdminRepository extends BaseRepositoryAbstract<Admin> implements Ad
   }
 
   async getRolesByUserId(userId: string): Promise<any> {
-    const queryBuilder = this.repository
+    const queryBuilder = this.adminRepository
       .createQueryBuilder('admin')
       .leftJoinAndSelect('admin.groupRole', 'groupRole')
       .leftJoinAndSelect('groupRole.groupRolePermissions', 'groupRolePermissions')
