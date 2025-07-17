@@ -1,42 +1,57 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AdminRepository = void 0;
+const common_1 = require("@nestjs/common");
+const typeorm_1 = require("@nestjs/typeorm");
+const typeorm_2 = require("typeorm");
 const base_abstract_repository_1 = require("../../base/base.abstract.repository");
-class AdminRepository extends base_abstract_repository_1.BaseRepositoryAbstract {
+const admin_entity_1 = require("../../entities/admin.entity");
+let AdminRepository = class AdminRepository extends base_abstract_repository_1.BaseRepositoryAbstract {
     constructor(adminRepository) {
         super(adminRepository);
+        this.adminRepository = adminRepository;
     }
-    async findByUserName(userName) {
-        return await this.repository.findOne({
-            where: { userName },
-        });
+    async getRolesByUserId(userId) {
+        const queryBuilder = this.adminRepository
+            .createQueryBuilder('admin')
+            .leftJoinAndSelect('admin.groupRole', 'groupRole')
+            .leftJoinAndSelect('groupRole.groupRolePermissions', 'groupRolePermissions')
+            .leftJoinAndSelect('groupRolePermissions.sysPermissionAction', 'sysPermissionAction')
+            .leftJoinAndSelect('sysPermissionAction.sysPermission', 'sysPermission')
+            .leftJoinAndSelect('sysPermissionAction.action', 'action')
+            .select([
+            'admin',
+            'groupRole.name',
+            'groupRole.description',
+            'groupRolePermissions.groupRoleId',
+            'groupRolePermissions.sysPermissionActionId',
+            'sysPermissionAction.sysPermissionId',
+            'sysPermissionAction.actionId',
+            'sysPermission.name',
+            'sysPermission.description',
+            'action.name',
+            'action.description',
+        ])
+            .where('admin.id = :userId', { userId });
+        const admin = await queryBuilder.getOne();
+        return admin;
     }
-    async findByFcmToken(fcmToken) {
-        return await this.repository.findOne({
-            where: { fcmToken },
-        });
-    }
-    async findWithGroupRole(id) {
-        return await this.repository.findOne({
-            where: { id },
-            relations: ['groupRole'],
-        });
-    }
-    async findByGroupRoleId(groupRoleId) {
-        return await this.repository.find({
-            where: { groupRoleId },
-        });
-    }
-    async updateLastLogin(id, ipAddress) {
-        const admin = await this.findOneById(id);
-        if (!admin) {
-            return null;
-        }
-        await this.repository.update(id, {
-            lastLoginDate: new Date(),
-            ipAddress: ipAddress || admin.ipAddress,
-        });
-        return await this.findOneById(id);
-    }
-}
+};
 exports.AdminRepository = AdminRepository;
+exports.AdminRepository = AdminRepository = __decorate([
+    (0, common_1.Injectable)(),
+    __param(0, (0, typeorm_1.InjectRepository)(admin_entity_1.Admin)),
+    __metadata("design:paramtypes", [typeorm_2.Repository])
+], AdminRepository);
