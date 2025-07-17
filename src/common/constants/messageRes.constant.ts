@@ -1,0 +1,140 @@
+export const messageResponseError = {
+  auth: {
+    phoneOrPasswordWrong: 'phone_or_password_wrong',
+    phoneAlreadyExists: 'phone_already_exists',
+    otpExpired: 'otp_expired',
+    otpLimitExceeded: 'otp_limit_exceeded',
+    userNotFound: 'user_not_found',
+    otpInvalid: 'otp_invalid',
+    otpAlreadySent: 'otp_already_sent',
+    userNameAlreadyExists: 'user_name_already_exists',
+  },
+  wallet: {
+    customerNotFound: 'customer_not_found',
+    insufficientBalance: 'insufficient_balance',
+    notFound: 'wallet_not_found',
+  },
+  blog: {
+    notFound: 'blog_not_found',
+    duplicate: 'blog_duplicate',
+    missingDataRedirect: 'missing_data_redirect',
+    missingDataScreen: 'missing_data_screen',
+  },
+  blogCate: {
+    notFound: 'blog_category_not_found',
+    duplicate: 'blog_category_duplicate',
+  },
+  voucher: {
+    discountThan0: 'discount_than_0',
+    voucherNotFound: 'voucher_not_found',
+    voucherAlreadyExits: 'voucher_already_exists',
+    cannotDeleteBecauseUsed: 'cannot_delete_because_used',
+  },
+  carpoolService: {
+    duplicate: 'carpool_service_duplicate',
+    seatRequired: 'seat_required',
+    notFound: 'carpool_service_not_found',
+    canotUpdate: 'carpool_service_cannot_update',
+    provinceRequired: 'province_required',
+    provinceDuplicate: 'province_duplicate',
+  },
+  carRegistry: {
+    notFound: 'car_registry_not_found',
+    statusNotChange: 'car_registry_status_not_change',
+  },
+  admin: {
+    passSame: 'password_same',
+    notFound: 'admin_not_found',
+    passInvalid: 'password_invalid',
+    noChanges: 'no_changes',
+    lastAdminCannotDelete: 'last_admin_cannot_delete',
+  },
+  customer: {
+    notFound: 'customer_not_found',
+    actionInvalid: 'action_invalid',
+    phoneAlreadyExists: 'phone_already_exists',
+    passwordRequired: 'password_required',
+    passwordSame: 'password_same',
+    invalidPassword: 'invalid_password',
+  },
+  partner: {
+    notFound: 'partner_not_found',
+    actionInvalid: 'action_invalid',
+    phoneAlreadyExists: 'phone_already_exists',
+    passwordRequired: 'password_required',
+    passwordSame: 'password_same',
+    invalidPassword: 'invalid_password',
+    statusNotActive: 'partner_status_not_active',
+  },
+  upload: {
+    fileInvalid: 'file_invalid',
+  },
+  carpoolBooking: {
+    notFound: 'carpool_booking_not_found',
+    statusNotChange: 'carpool_booking_status_not_change',
+    statusNotValid: 'carpool_booking_status_not_valid',
+    actionInvalid: 'carpool_booking_action_invalid',
+    statusInvalid: 'carpool_booking_status_invalid',
+  },
+  transaction: {
+    notFound: 'transaction_not_found',
+    actionInvalid: 'transaction_action_invalid',
+    sourceInvalid: 'transaction_source_invalid',
+    withdrawNotAllowed: 'transaction_withdraw_not_allowed',
+    refundNotAllowed: 'transaction_refund_not_allowed',
+  },
+  delivery: {
+    notFound: 'delivery_not_found',
+    actionInvalid: 'delivery_action_invalid',
+    statusNotValid: 'delivery_status_not_valid',
+    statusNotChange: 'delivery_status_not_change',
+    statusInvalid: 'delivery_status_invalid',
+  },
+  config: {
+    notFound: 'config_not_found',
+    keyExists: 'config_key_exists',
+  },
+  permission: {
+    // Action errors
+    actionNotFound: 'action_not_found',
+    actionDuplicate: 'action_duplicate',
+    actionInUse: 'action_in_use',
+    
+    // System Action errors
+    sysPermissionNotFound: 'sys_permission_not_found',
+    sysPermissionDuplicate: 'sys_permission_duplicate',
+    sysPermissionInUse: 'sys_permission_in_use',
+    
+    // Group Role errors
+    groupRoleNotFound: 'group_role_not_found',
+    groupRoleDuplicate: 'group_role_duplicate',
+    groupRoleInUse: 'group_role_in_use',
+    
+    // System Action Action errors
+    sysPermissionActionNotFound: 'sys_permission_action_not_found',
+    sysPermissionActionDuplicate: 'sys_permission_action_duplicate',
+    
+    // Group Role Action errors
+    groupRolePermissionNotFound: 'group_role_permission_not_found',
+    groupRolePermissionDuplicate: 'group_role_permission_duplicate',
+  },
+  user: {
+    notFound: 'user_not_found',
+  },
+  carrierCodeHistory: {
+    notFound: 'carrier_code_history_not_found',
+    statusNotPending: 'carrier_code_history_status_not_pending',
+    codeMustBeAlphanumeric: 'carrier_code_history_code_must_be_alphanumeric',
+    exist: 'carrier_code_history_exist',
+  },
+  vehiclePrice: {
+    exist: 'vehicle_price_exist',
+    notFound: 'vehicle_price_not_found',
+    nameExist: 'vehicle_price_name_exist',
+  },
+  vehicleBooking: {
+    notFound: 'vehicle_booking_not_found',
+    statusNotAllowUpdate: 'vehicle_booking_status_not_allow_update',
+    statusNotAllowCancel: 'vehicle_booking_status_not_allow_cancel',
+  },
+};

@@ -1,0 +1,21 @@
+export declare enum TransactionType {
+    DEPOSIT = "DEPOSIT",
+    WITHDRAW = "WITHDRAW"
+}
+export declare enum TransactionStatus {
+    PENDING = "PENDING",
+    SUCCESS = "SUCCESS",
+    FAILED = "FAILED",
+    REFUND = "REFUND"
+}
+export declare enum TransactionLogStatus {
+    FAILED = "FAILED",
+    SUCCESS = "SUCCESS",
+    UN_KNOW = "UN_KNOW"
+}
+export declare enum TransactionSource {
+    WALLET = "WALLET",
+    CARPOOL = "CARPOOL",
+    DELIVERY = "DELIVERY",
+    VEHICLE_BOOKING = "VEHICLE_BOOKING"
+}
