@@ -34,7 +34,7 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExcelService = void 0;
-const constants_1 = require("@common/constants");
+const constants_1 = require("../constants");
 const XLSX = __importStar(require("xlsx"));
 const { messageResponseError } = constants_1.MessageResConstant;
 class ExcelService {
@@ -53,4 +53,3 @@ class ExcelService {
     }
 }
 exports.ExcelService = ExcelService;
-//# sourceMappingURL=excel.service.js.map

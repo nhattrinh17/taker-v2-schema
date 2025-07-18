@@ -21,4 +21,3 @@ function createTypeOrmConfig(dbConfig) {
 function createDataSource(config) {
     return new typeorm_1.DataSource(config);
 }
-//# sourceMappingURL=typeorm.js.map

@@ -49,4 +49,3 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], QuerySortDto.prototype, "typeSort", void 0);
-//# sourceMappingURL=index.js.map

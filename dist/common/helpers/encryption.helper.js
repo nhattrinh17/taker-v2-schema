@@ -70,4 +70,3 @@ const checkIdType = (id) => {
     }
 };
 exports.checkIdType = checkIdType;
-//# sourceMappingURL=encryption.helper.js.map

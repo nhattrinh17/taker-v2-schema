@@ -58,4 +58,3 @@ class CreateSysPermissionActionTable1752736963864 {
     }
 }
 exports.CreateSysPermissionActionTable1752736963864 = CreateSysPermissionActionTable1752736963864;
-//# sourceMappingURL=1752736963864-create-sys-permission-action-table.js.map

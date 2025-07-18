@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Pagination = exports.PaginationDto = void 0;
-const filters_1 = require("@common/filters");
+const filters_1 = require("../filters");
 const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
 const class_transformer_1 = require("class-transformer");
@@ -68,4 +68,3 @@ exports.Pagination = (0, common_1.createParamDecorator)((data, ctx) => {
     }
     return pagination;
 });
-//# sourceMappingURL=pagination.decorator.js.map

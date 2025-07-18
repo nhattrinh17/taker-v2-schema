@@ -133,4 +133,3 @@ const sortObject = (obj) => {
     }
     return sorted;
 };
-//# sourceMappingURL=payment.helper.js.map

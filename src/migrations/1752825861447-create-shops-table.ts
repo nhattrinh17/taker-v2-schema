@@ -48,7 +48,7 @@ export class CreateShopsTable1752825861447 implements MigrationInterface {
           {
             name: "operatingHours",
             type: "varchar(255)",
-            default: JSON.stringify(BASE_OPERATING_HOURS),
+            default: `'${JSON.stringify(BASE_OPERATING_HOURS)}'`,
           },
           {
             name: "isLogin",

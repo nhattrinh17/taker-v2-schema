@@ -132,4 +132,3 @@ exports.messageResponseError = {
         statusNotAllowCancel: 'vehicle_booking_status_not_allow_cancel',
     },
 };
-//# sourceMappingURL=messageRes.constant.js.map

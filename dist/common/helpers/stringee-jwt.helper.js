@@ -56,4 +56,3 @@ const generateAccessToken = () => {
     return accessToken;
 };
 exports.generateAccessToken = generateAccessToken;
-//# sourceMappingURL=stringee-jwt.helper.js.map

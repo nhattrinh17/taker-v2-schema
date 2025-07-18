@@ -12,4 +12,3 @@ var SystemNotificationRecipientEnum;
     SystemNotificationRecipientEnum["PARTNER"] = "PARTNER";
     SystemNotificationRecipientEnum["ALL"] = "ALL";
 })(SystemNotificationRecipientEnum || (exports.SystemNotificationRecipientEnum = SystemNotificationRecipientEnum = {}));
-//# sourceMappingURL=notification.enum.js.map

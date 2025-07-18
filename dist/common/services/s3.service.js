@@ -52,4 +52,3 @@ exports.S3Service = S3Service = S3Service_1 = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [])
 ], S3Service);
-//# sourceMappingURL=s3.service.js.map

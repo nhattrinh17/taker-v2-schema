@@ -30,4 +30,3 @@ exports.SysPermissionActionRepository = SysPermissionActionRepository = __decora
     __param(0, (0, typeorm_1.InjectRepository)(sys_permission_action_entity_1.SysPermissionAction)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], SysPermissionActionRepository);
-//# sourceMappingURL=sys_permission_action.repository.js.map

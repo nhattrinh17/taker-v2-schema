@@ -6,4 +6,3 @@ var SORT_TYPE;
     SORT_TYPE["DESC"] = "desc";
     SORT_TYPE["ASC"] = "acs";
 })(SORT_TYPE || (exports.SORT_TYPE = SORT_TYPE = {}));
-//# sourceMappingURL=common.type.js.map

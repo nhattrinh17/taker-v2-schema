@@ -69,4 +69,3 @@ var VehicleBookingStatusEnum;
     VehicleBookingStatusEnum["COMPLETED"] = "COMPLETED";
     VehicleBookingStatusEnum["CANCELLED"] = "CANCELLED";
 })(VehicleBookingStatusEnum || (exports.VehicleBookingStatusEnum = VehicleBookingStatusEnum = {}));
-//# sourceMappingURL=status.enum.js.map

@@ -38,4 +38,3 @@ __decorate([
 exports.GroupRolePermission = GroupRolePermission = __decorate([
     (0, typeorm_1.Entity)('group_role_permissions')
 ], GroupRolePermission);
-//# sourceMappingURL=group_role_permission.entity.js.map

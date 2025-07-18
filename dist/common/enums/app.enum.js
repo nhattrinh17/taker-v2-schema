@@ -32,4 +32,3 @@ var VehiclePriceLevelEnum;
     VehiclePriceLevelEnum[VehiclePriceLevelEnum["ECONOMY"] = 2] = "ECONOMY";
     VehiclePriceLevelEnum[VehiclePriceLevelEnum["PREMIUM"] = 3] = "PREMIUM";
 })(VehiclePriceLevelEnum || (exports.VehiclePriceLevelEnum = VehiclePriceLevelEnum = {}));
-//# sourceMappingURL=app.enum.js.map

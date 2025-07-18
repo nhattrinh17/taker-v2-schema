@@ -28,4 +28,3 @@ exports.UploadedFilesCustom = (0, common_1.createParamDecorator)(async (data, ct
     const uploadedFiles = await Promise.all(fileProcessingPromises);
     return uploadedFiles;
 });
-//# sourceMappingURL=fileUpload.decorator.js.map

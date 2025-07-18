@@ -26,4 +26,3 @@ var TransactionSource;
     TransactionSource["DELIVERY"] = "DELIVERY";
     TransactionSource["VEHICLE_BOOKING"] = "VEHICLE_BOOKING";
 })(TransactionSource || (exports.TransactionSource = TransactionSource = {}));
-//# sourceMappingURL=transaction.enum.js.map

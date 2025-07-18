@@ -20,4 +20,3 @@ __exportStar(require("./magic-code.helper"), exports);
 __exportStar(require("./payment.helper"), exports);
 __exportStar(require("./time-calculator.helper"), exports);
 __exportStar(require("./stringee-jwt.helper"), exports);
-//# sourceMappingURL=index.js.map

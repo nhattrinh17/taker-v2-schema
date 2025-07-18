@@ -19,4 +19,3 @@ exports.QUEUE_VEHICLE_BOOKING_NAME = {
     CREATE_VEHICLE_BOOKING: 'create-vehicle-booking',
     WAITING_VEHICLE_BOOKING: 'waiting-vehicle-booking',
 };
-//# sourceMappingURL=queue.constant.js.map

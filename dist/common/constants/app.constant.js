@@ -24,4 +24,3 @@ exports.BASE_OPERATING_HOURS = {
     saturday: null,
     sunday: null,
 };
-//# sourceMappingURL=app.constant.js.map

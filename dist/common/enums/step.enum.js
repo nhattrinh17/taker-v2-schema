@@ -10,4 +10,3 @@ var StepEnum;
     StepEnum["REGISTER_INFO_SUCCESS"] = "REGISTER_INFO_SUCCESS";
     StepEnum["COMPLETED"] = "COMPLETED";
 })(StepEnum || (exports.StepEnum = StepEnum = {}));
-//# sourceMappingURL=step.enum.js.map

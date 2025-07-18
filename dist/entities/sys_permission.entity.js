@@ -32,4 +32,3 @@ __decorate([
 exports.SysPermission = SysPermission = __decorate([
     (0, typeorm_1.Entity)('sys_permissions')
 ], SysPermission);
-//# sourceMappingURL=sys_permission.entity.js.map

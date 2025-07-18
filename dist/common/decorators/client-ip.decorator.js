@@ -10,4 +10,3 @@ exports.ClientIp = (0, common_1.createParamDecorator)((data, ctx) => {
     const ips = forwardedIps ? forwardedIps.split(',') : [];
     return realIp || cfConnectingIp || ips[0] || null;
 });
-//# sourceMappingURL=client-ip.decorator.js.map

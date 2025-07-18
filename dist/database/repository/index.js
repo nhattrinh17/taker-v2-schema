@@ -22,4 +22,3 @@ __exportStar(require("./group_role_permission.repository"), exports);
 __exportStar(require("./shop.repository"), exports);
 __exportStar(require("./sys_permission.repository"), exports);
 __exportStar(require("./sys_permission_action.repository"), exports);
-//# sourceMappingURL=index.js.map

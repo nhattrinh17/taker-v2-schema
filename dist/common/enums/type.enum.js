@@ -43,4 +43,3 @@ var ServiceTypeEnum;
     ServiceTypeEnum["BOOKING"] = "BOOKING";
     ServiceTypeEnum["DELIVERY"] = "DELIVERY";
 })(ServiceTypeEnum || (exports.ServiceTypeEnum = ServiceTypeEnum = {}));
-//# sourceMappingURL=type.enum.js.map

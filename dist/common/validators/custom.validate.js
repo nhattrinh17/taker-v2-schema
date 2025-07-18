@@ -17,8 +17,8 @@ exports.IsArrayOfInstancesOf = IsArrayOfInstancesOf;
 exports.IsAfter10Minutes = IsAfter10Minutes;
 exports.IsValidTimeRange = IsValidTimeRange;
 const class_validator_1 = require("class-validator");
-const magic_code_helper_1 = require("@common/helpers/magic-code.helper");
-const app_constant_1 = require("@common/constants/app.constant");
+const magic_code_helper_1 = require("../helpers/magic-code.helper");
+const app_constant_1 = require("../constants/app.constant");
 const class_transformer_1 = require("class-transformer");
 const moment_1 = __importDefault(require("moment"));
 function IsPhoneInVn(validationOptions) {
@@ -156,4 +156,3 @@ function IsValidTimeRange(validationOptions) {
         });
     };
 }
-//# sourceMappingURL=custom.validate.js.map

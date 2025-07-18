@@ -23,4 +23,3 @@ exports.LoggingInterceptor = LoggingInterceptor;
 exports.LoggingInterceptor = LoggingInterceptor = __decorate([
     (0, common_1.Injectable)()
 ], LoggingInterceptor);
-//# sourceMappingURL=logging.interceptor.js.map

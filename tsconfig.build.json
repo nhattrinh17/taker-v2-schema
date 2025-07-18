@@ -6,7 +6,13 @@
     "experimentalDecorators": true,
     "removeComments": true,
     "sourceMap": false,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "paths": {
+      "@entities/*": ["src/entities/*"],
+      "@common/*": ["src/common/*"],
+      "@modules/*": ["src/modules/*"],
+      "@database/*": ["src/database/*"]
+    }
   },
   "exclude": ["node_modules", "test", "dist", "**/*.spec.ts"]
 }

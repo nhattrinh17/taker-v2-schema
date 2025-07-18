@@ -22,4 +22,3 @@ __exportStar(require("./app.enum"), exports);
 __exportStar(require("./type.enum"), exports);
 __exportStar(require("./message.enum"), exports);
 __exportStar(require("./callHistory.enum"), exports);
-//# sourceMappingURL=index.js.map

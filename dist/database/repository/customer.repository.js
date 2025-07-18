@@ -30,4 +30,3 @@ exports.CustomerRepository = CustomerRepository = __decorate([
     __param(0, (0, typeorm_1.InjectRepository)(customer_entity_1.Customer)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], CustomerRepository);
-//# sourceMappingURL=customer.repository.js.map

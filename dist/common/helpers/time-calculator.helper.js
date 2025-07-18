@@ -27,4 +27,3 @@ function calculateTimeDifferenceV2(lat1, lon1, lat2, lon2, unit = 'K') {
     }
     return { time: timeDifference, distance: dist };
 }
-//# sourceMappingURL=time-calculator.helper.js.map

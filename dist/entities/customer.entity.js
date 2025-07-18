@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Customer = void 0;
 const typeorm_1 = require("typeorm");
 const base_entity_1 = require("./base.entity");
-const enums_1 = require("@common/enums");
+const enums_1 = require("../common/enums");
 let Customer = class Customer extends base_entity_1.BaseEntity {
 };
 exports.Customer = Customer;
@@ -111,4 +111,3 @@ __decorate([
 exports.Customer = Customer = __decorate([
     (0, typeorm_1.Entity)({ name: 'customers' })
 ], Customer);
-//# sourceMappingURL=customer.entity.js.map

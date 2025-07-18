@@ -43,4 +43,3 @@ function isValidPhone(phone) {
     var phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
     return phoneRegex.test(phone);
 }
-//# sourceMappingURL=magic-code.helper.js.map

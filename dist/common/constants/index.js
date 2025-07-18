@@ -39,4 +39,3 @@ exports.AppConstant = __importStar(require("./app.constant"));
 exports.QueueConstant = __importStar(require("./queue.constant"));
 exports.NotificationsConstant = __importStar(require("./notifications.constant"));
 exports.SocketConstant = __importStar(require("./socket.constant"));
-//# sourceMappingURL=index.js.map

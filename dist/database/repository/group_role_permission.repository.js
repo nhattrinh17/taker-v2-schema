@@ -30,4 +30,3 @@ exports.GroupRolePermissionRepository = GroupRolePermissionRepository = __decora
     __param(0, (0, typeorm_1.InjectRepository)(group_role_permission_entity_1.GroupRolePermission)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], GroupRolePermissionRepository);
-//# sourceMappingURL=group_role_permission.repository.js.map

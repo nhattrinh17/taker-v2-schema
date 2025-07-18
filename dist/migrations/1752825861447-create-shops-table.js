@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateShopsTable1752825861447 = void 0;
-const app_constant_1 = require("@common/constants/app.constant");
-const enums_1 = require("@common/enums");
+const app_constant_1 = require("../common/constants/app.constant");
+const enums_1 = require("../common/enums");
 const typeorm_1 = require("typeorm");
 class CreateShopsTable1752825861447 {
     async up(queryRunner) {
@@ -49,7 +49,7 @@ class CreateShopsTable1752825861447 {
                 {
                     name: "operatingHours",
                     type: "varchar(255)",
-                    default: JSON.stringify(app_constant_1.BASE_OPERATING_HOURS),
+                    default: `'${JSON.stringify(app_constant_1.BASE_OPERATING_HOURS)}'`,
                 },
                 {
                     name: "isLogin",
@@ -140,4 +140,3 @@ class CreateShopsTable1752825861447 {
     }
 }
 exports.CreateShopsTable1752825861447 = CreateShopsTable1752825861447;
-//# sourceMappingURL=1752825861447-create-shops-table.js.map

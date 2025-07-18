@@ -8,4 +8,3 @@ var TypeMessage;
     TypeMessage["FILE"] = "FILE";
     TypeMessage["VOICE"] = "VOICE";
 })(TypeMessage || (exports.TypeMessage = TypeMessage = {}));
-//# sourceMappingURL=message.enum.js.map

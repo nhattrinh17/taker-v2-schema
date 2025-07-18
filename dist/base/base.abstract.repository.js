@@ -89,4 +89,3 @@ class BaseRepositoryAbstract {
     }
 }
 exports.BaseRepositoryAbstract = BaseRepositoryAbstract;
-//# sourceMappingURL=base.abstract.repository.js.map

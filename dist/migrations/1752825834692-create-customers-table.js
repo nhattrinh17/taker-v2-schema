@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateCustomersTable1752825834692 = void 0;
-const enums_1 = require("@common/enums");
+const enums_1 = require("../common/enums");
 const typeorm_1 = require("typeorm");
 class CreateCustomersTable1752825834692 {
     async up(queryRunner) {
@@ -157,4 +157,3 @@ class CreateCustomersTable1752825834692 {
     }
 }
 exports.CreateCustomersTable1752825834692 = CreateCustomersTable1752825834692;
-//# sourceMappingURL=1752825834692-create-customers-table.js.map
