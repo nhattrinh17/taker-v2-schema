@@ -32,3 +32,4 @@ __decorate([
 exports.Action = Action = __decorate([
     (0, typeorm_1.Entity)('actions')
 ], Action);
+//# sourceMappingURL=action.entity.js.map

@@ -133,3 +133,4 @@ exports.NOTIFICATIONS_SCREEN = {
     ORDER: 'ORDER',
     RATING: 'RATING',
 };
+//# sourceMappingURL=notifications.constant.js.map

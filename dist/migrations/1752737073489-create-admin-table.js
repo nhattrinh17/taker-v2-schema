@@ -72,3 +72,4 @@ class CreateAdminTable1752737073489 {
     }
 }
 exports.CreateAdminTable1752737073489 = CreateAdminTable1752737073489;
+//# sourceMappingURL=1752737073489-create-admin-table.js.map

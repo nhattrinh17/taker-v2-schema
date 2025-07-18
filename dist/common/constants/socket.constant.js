@@ -37,3 +37,4 @@ exports.VEHICLE_BOOKING_UPDATE_STATUS = {
     COMPLETED: 'completed',
     DRIVER_ARRIVING: 'driver-arriving',
 };
+//# sourceMappingURL=socket.constant.js.map

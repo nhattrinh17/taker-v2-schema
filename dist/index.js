@@ -41,3 +41,5 @@ exports.TypeOrmConfig = __importStar(require("./config/typeorm"));
 exports.Utils = __importStar(require("./utils"));
 exports.Interface = __importStar(require("./database/interface"));
 exports.Repository = __importStar(require("./database/repository"));
+console.log('\x1b[1m\x1b[33m🚀 ~ Load base resource successfully!\x1b[0m');
+//# sourceMappingURL=index.js.map

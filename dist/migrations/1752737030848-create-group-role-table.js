@@ -46,3 +46,4 @@ class CreateGroupRoleTable1752737030848 {
     }
 }
 exports.CreateGroupRoleTable1752737030848 = CreateGroupRoleTable1752737030848;
+//# sourceMappingURL=1752737030848-create-group-role-table.js.map

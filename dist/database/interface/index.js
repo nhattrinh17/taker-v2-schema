@@ -20,3 +20,4 @@ __exportStar(require("./group_role.interface.repository"), exports);
 __exportStar(require("./group_role_permission.interface.repository"), exports);
 __exportStar(require("./sys_permission.interface.repository"), exports);
 __exportStar(require("./sys_permission_action.interface.repository"), exports);
+//# sourceMappingURL=index.js.map

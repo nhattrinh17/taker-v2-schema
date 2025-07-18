@@ -227,3 +227,4 @@ exports.FirebaseService = FirebaseService;
 exports.FirebaseService = FirebaseService = FirebaseService_1 = __decorate([
     (0, common_1.Injectable)()
 ], FirebaseService);
+//# sourceMappingURL=firebase.service.js.map

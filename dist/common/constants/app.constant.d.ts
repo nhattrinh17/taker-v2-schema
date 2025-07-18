@@ -7,7 +7,7 @@ export declare const AppType: {
     partners: string;
     admins: string;
 };
-export type IPeriod = 'week' | 'month' | 'today' | 'custom';
+export type IPeriod = "week" | "month" | "today" | "custom";
 export declare const LATITUDE_PATTERN: RegExp;
 export declare const LONGITUDE_PATTERN: RegExp;
 export interface IReturnUrl {
@@ -41,3 +41,17 @@ export declare const SCREEN_PARTNER: {
     DELIVERY: string;
     VEHICLE_BOOKING: string;
 };
+export interface DayOperatingHours {
+    open: string;
+    close: string;
+}
+export interface OperatingHours {
+    monday?: DayOperatingHours | null;
+    tuesday?: DayOperatingHours | null;
+    wednesday?: DayOperatingHours | null;
+    thursday?: DayOperatingHours | null;
+    friday?: DayOperatingHours | null;
+    saturday?: DayOperatingHours | null;
+    sunday?: DayOperatingHours | null;
+}
+export declare const BASE_OPERATING_HOURS: OperatingHours;

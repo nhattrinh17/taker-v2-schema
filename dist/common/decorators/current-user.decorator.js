@@ -7,3 +7,4 @@ exports.CurrentUser = (0, common_1.createParamDecorator)((data, ctx) => {
     const { user } = req;
     return user;
 });
+//# sourceMappingURL=current-user.decorator.js.map

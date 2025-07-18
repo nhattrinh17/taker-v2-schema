@@ -4,16 +4,17 @@ export interface IUser {
 }
 
 export const AppType = {
-  customers: 'customers',
-  partners: 'partners',
-  admins: 'admins',
+  customers: "customers",
+  partners: "partners",
+  admins: "admins",
 };
 
-export type IPeriod = 'week' | 'month' | 'today' | 'custom';
+export type IPeriod = "week" | "month" | "today" | "custom";
 
-
-export const LATITUDE_PATTERN = /^(\+|-)?(?:90(?:(?:\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,6})?))$/;
-export const LONGITUDE_PATTERN = /^(\+|-)?(?:180(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,6})?))$/;
+export const LATITUDE_PATTERN =
+  /^(\+|-)?(?:90(?:(?:\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,6})?))$/;
+export const LONGITUDE_PATTERN =
+  /^(\+|-)?(?:180(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,6})?))$/;
 
 export interface IReturnUrl {
   vnp_Amount: string;
@@ -39,11 +40,36 @@ export interface INotificationPayload {
   sound?: string;
 }
 
-export const SOCKET_PREFIX = 'SOCKET:';
+export const SOCKET_PREFIX = "SOCKET:";
 
 export const SCREEN_PARTNER = {
-  CALL: 'CALL',
-  CARPOOL_BOOKING: 'CARPOOL_BOOKING',
-  DELIVERY: 'DELIVERY',
-  VEHICLE_BOOKING: 'VEHICLE_BOOKING',
+  CALL: "CALL",
+  CARPOOL_BOOKING: "CARPOOL_BOOKING",
+  DELIVERY: "DELIVERY",
+  VEHICLE_BOOKING: "VEHICLE_BOOKING",
+};
+
+export interface DayOperatingHours {
+  open: string;  // 'HH:mm'
+  close: string; // 'HH:mm'
+}
+
+export interface OperatingHours {
+  monday?: DayOperatingHours | null;
+  tuesday?: DayOperatingHours | null;
+  wednesday?: DayOperatingHours | null;
+  thursday?: DayOperatingHours | null;
+  friday?: DayOperatingHours | null;
+  saturday?: DayOperatingHours | null;
+  sunday?: DayOperatingHours | null;
+}
+
+export const BASE_OPERATING_HOURS: OperatingHours = {
+  monday: null,
+  tuesday: null,
+  wednesday: null,
+  thursday: null,
+  friday: null,
+  saturday: null,
+  sunday: null,
 };
