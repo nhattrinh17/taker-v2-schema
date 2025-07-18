@@ -17,3 +17,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./current-user.decorator"), exports);
 __exportStar(require("./client-ip.decorator"), exports);
 __exportStar(require("./pagination.decorator"), exports);
+__exportStar(require("./fileUpload.decorator"), exports);
