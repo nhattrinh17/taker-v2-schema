@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { BaseRepositoryAbstract } from '../../base/base.abstract.repository';
 import { SysPermissionAction } from '../../entities/sys_permission_action.entity';
-import { SysPermissionActionRepositoryInterface } from '../interface/sys_permission_action.interface.repository';
+import { SysPermissionActionRepositoryInterface } from '../interface/sys_permission_action.interface';
 
 @Injectable()
 export class SysPermissionActionRepository extends BaseRepositoryAbstract<SysPermissionAction> implements SysPermissionActionRepositoryInterface {

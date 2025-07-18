@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { BaseRepositoryAbstract } from '../../base/base.abstract.repository';
 import { GroupRole } from '../../entities/group_role.entity';
-import { GroupRoleRepositoryInterface } from '../interface/group_role.interface.repository';
+import { GroupRoleRepositoryInterface } from '../interface/group_role.interface';
 
 @Injectable()
 export class GroupRoleRepository extends BaseRepositoryAbstract<GroupRole> implements GroupRoleRepositoryInterface {

@@ -1,3 +1,3 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//# sourceMappingURL=admin.interface.repository.js.map
+//# sourceMappingURL=group_role_permission.interface.js.map

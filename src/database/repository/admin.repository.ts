@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { BaseRepositoryAbstract } from '../../base/base.abstract.repository';
 import { Admin } from '../../entities/admin.entity';
-import { AdminRepositoryInterface } from '../interface/admin.interface.repository';
+import { AdminRepositoryInterface } from '../interface/admin.interface';
 
 @Injectable()
 export class AdminRepository extends BaseRepositoryAbstract<Admin> implements AdminRepositoryInterface {

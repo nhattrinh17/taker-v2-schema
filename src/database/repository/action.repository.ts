@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { BaseRepositoryAbstract } from '../../base/base.abstract.repository';
 import { Action } from '../../entities/action.entity';
-import { ActionRepositoryInterface } from '../interface/action.interface.repository';
+import { ActionRepositoryInterface } from '../interface/action.interface';
 
 @Injectable()
 export class ActionRepository extends BaseRepositoryAbstract<Action> implements ActionRepositoryInterface {
