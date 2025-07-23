@@ -23,6 +23,36 @@ let CustomerRepository = class CustomerRepository extends base_abstract_reposito
         super(customerRepository);
         this.customerRepository = customerRepository;
     }
+    async findAllCustomers(condition, pagination) {
+        const { search, status, step } = condition;
+        const { page, offset, limit, sort, typeSort } = pagination;
+        const queryBuilder = this.repository
+            .createQueryBuilder("customer")
+            .skip(offset)
+            .take(limit);
+        if (search) {
+            queryBuilder.where("customer.fullName ILIKE :search OR customer.email ILIKE :search OR customer.phone ILIKE :search", {
+                search: `%${search}%`,
+            });
+        }
+        if (status) {
+            queryBuilder.andWhere("customer.status = :status", { status });
+        }
+        if (step) {
+            queryBuilder.andWhere("customer.step = :step", { step });
+        }
+        if (sort) {
+            queryBuilder.orderBy(`customer.${sort || 'createdAt'}`, typeSort || "DESC");
+        }
+        const [data, total] = await queryBuilder.getManyAndCount();
+        return {
+            data,
+            pagination: {
+                ...pagination,
+                total,
+            },
+        };
+    }
 };
 exports.CustomerRepository = CustomerRepository;
 exports.CustomerRepository = CustomerRepository = __decorate([
