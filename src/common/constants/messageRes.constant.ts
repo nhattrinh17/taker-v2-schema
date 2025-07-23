@@ -8,6 +8,11 @@ export const messageResponseError = {
     otpInvalid: 'otp_invalid',
     otpAlreadySent: 'otp_already_sent',
     userNameAlreadyExists: 'user_name_already_exists',
+    refreshTokenInvalid: 'refresh_token_invalid',
+    refreshTokenExpired: 'refresh_token_expired',
+    phoneAlreadyExistsOrNotMatch: 'phone_already_exists_or_not_match',
+    stepInvalid: 'step_invalid',
+    passwordInvalid: 'password_invalid',
   },
   wallet: {
     customerNotFound: 'customer_not_found',
@@ -65,6 +70,8 @@ export const messageResponseError = {
     passwordSame: 'password_same',
     invalidPassword: 'invalid_password',
     statusNotActive: 'partner_status_not_active',
+    invalidLocation: 'invalid_location',
+    invalidOperatingHours: 'invalid_operating_hours',
   },
   upload: {
     fileInvalid: 'file_invalid',

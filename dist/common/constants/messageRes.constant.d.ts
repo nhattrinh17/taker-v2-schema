@@ -8,6 +8,11 @@ export declare const messageResponseError: {
         otpInvalid: string;
         otpAlreadySent: string;
         userNameAlreadyExists: string;
+        refreshTokenInvalid: string;
+        refreshTokenExpired: string;
+        phoneAlreadyExistsOrNotMatch: string;
+        stepInvalid: string;
+        passwordInvalid: string;
     };
     wallet: {
         customerNotFound: string;
@@ -65,6 +70,8 @@ export declare const messageResponseError: {
         passwordSame: string;
         invalidPassword: string;
         statusNotActive: string;
+        invalidLocation: string;
+        invalidOperatingHours: string;
     };
     upload: {
         fileInvalid: string;

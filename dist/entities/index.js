@@ -19,6 +19,6 @@ __exportStar(require("./admin.entity"), exports);
 __exportStar(require("./customer.entity"), exports);
 __exportStar(require("./group_role.entity"), exports);
 __exportStar(require("./group_role_permission.entity"), exports);
-__exportStar(require("./shop.entity"), exports);
+__exportStar(require("./partner.entity"), exports);
 __exportStar(require("./sys_permission.entity"), exports);
 __exportStar(require("./sys_permission_action.entity"), exports);

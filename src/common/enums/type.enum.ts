@@ -39,3 +39,8 @@ export enum ServiceTypeEnum {
   BOOKING = 'BOOKING',
   DELIVERY = 'DELIVERY',
 }
+
+export enum OtpRequestType {
+  EXISTED = 'existed',
+  NOT_EXISTED = 'not-existed',
+}

@@ -1,16 +1,33 @@
+import { BASE_OPERATING_HOURS } from "@common/constants/app.constant";
 import { StepEnum, UserStatusEnum } from "@common/enums";
-import { MigrationInterface, QueryRunner, Table, TableIndex } from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class CreateCustomersTable1752825834692 implements MigrationInterface {
+export class CreatePartnersTable1752825861447 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "customers",
+        name: "partners",
         columns: [
           {
             name: "id",
             type: "varchar(36)",
             isPrimary: true,
+          },
+          {
+            name: "name",
+            type: "varchar",
+            isNullable: false,
+          },
+          {
+            name: "fcmToken",
+            type: "varchar",
+            isNullable: true,
+          },
+          {
+            name: "email",
+            type: "varchar",
+            isUnique: true,
+            isNullable: false,
           },
           {
             name: "phone",
@@ -24,30 +41,24 @@ export class CreateCustomersTable1752825834692 implements MigrationInterface {
             isNullable: true,
           },
           {
-            name: "fullName",
+            name: "address",
             type: "varchar",
             isNullable: true,
           },
           {
-            name: "fcmToken",
-            type: "varchar",
+            name: "location",
+            type: "text",
             isNullable: true,
           },
           {
-            name: "email",
-            type: "varchar",
-            isUnique: true,
+            name: 'latLongToCell',
+            type: "varchar(255)",
             isNullable: true,
           },
           {
-            name: "referralCode",
-            type: "varchar",
-            isNullable: true,
-          },
-          {
-            name: "lastLoginDate",
-            type: "datetime",
-            isNullable: true,
+            name: "operatingHours",
+            type: "varchar(255)",
+            default: `'${JSON.stringify(BASE_OPERATING_HOURS)}'`,
           },
           {
             name: "isLogin",
@@ -76,16 +87,6 @@ export class CreateCustomersTable1752825834692 implements MigrationInterface {
           },
           {
             name: "avatar",
-            type: "varchar",
-            isNullable: true,
-          },
-          {
-            name: "dateOfBirth",
-            type: "datetime",
-            isNullable: true,
-          },
-          {
-            name: "address",
             type: "varchar",
             isNullable: true,
           },
@@ -137,35 +138,20 @@ export class CreateCustomersTable1752825834692 implements MigrationInterface {
           },
           {
             name: "createdAt",
-            type: "datetime(6)",
-            default: "CURRENT_TIMESTAMP(6)",
+            type: "datetime",
+            default: "CURRENT_TIMESTAMP",
           },
           {
             name: "updatedAt",
-            type: "datetime(6)",
-            default: "CURRENT_TIMESTAMP(6)",
-            onUpdate: "CURRENT_TIMESTAMP(6)",
+            type: "datetime",
+            default: "CURRENT_TIMESTAMP",
           },
         ],
-      }),
-      true
-    );
-
-    await queryRunner.createIndex(
-      "customers",
-      new TableIndex({
-        name: "IDX_CUSTOMER_ReferralCode",
-        columnNames: ["referralCode"],
       })
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    const table = await queryRunner.getTable("customers");
-    const index = table.indices.find(
-      (index) => index.columnNames.indexOf("referralCode") !== -1
-    );
-    await queryRunner.dropIndex("customers", index);
-    await queryRunner.dropTable("customers");
+    await queryRunner.dropTable("partners", true, true, true);
   }
 }

@@ -49,22 +49,22 @@ export const SCREEN_PARTNER = {
   VEHICLE_BOOKING: "VEHICLE_BOOKING",
 };
 
-export interface DayOperatingHours {
+export interface IDayOperatingHours {
   open: string;  // 'HH:mm'
   close: string; // 'HH:mm'
 }
 
-export interface OperatingHours {
-  monday?: DayOperatingHours | null;
-  tuesday?: DayOperatingHours | null;
-  wednesday?: DayOperatingHours | null;
-  thursday?: DayOperatingHours | null;
-  friday?: DayOperatingHours | null;
-  saturday?: DayOperatingHours | null;
-  sunday?: DayOperatingHours | null;
+export interface IOperatingHours {
+  monday?: IDayOperatingHours | null;
+  tuesday?: IDayOperatingHours | null;
+  wednesday?: IDayOperatingHours | null;
+  thursday?: IDayOperatingHours | null;
+  friday?: IDayOperatingHours | null;
+  saturday?: IDayOperatingHours | null;
+  sunday?: IDayOperatingHours | null;
 }
 
-export const BASE_OPERATING_HOURS: OperatingHours = {
+export const BASE_OPERATING_HOURS: IOperatingHours = {
   monday: null,
   tuesday: null,
   wednesday: null,
@@ -73,3 +73,12 @@ export const BASE_OPERATING_HOURS: OperatingHours = {
   saturday: null,
   sunday: null,
 };
+
+export interface IOtp {
+  otp: string;
+  expiredAt: number;
+  otpExpiredAt: number;
+  count: number;
+}
+
+export const RESOLUTION = 9;

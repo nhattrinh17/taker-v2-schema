@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BASE_OPERATING_HOURS = exports.SCREEN_PARTNER = exports.SOCKET_PREFIX = exports.LONGITUDE_PATTERN = exports.LATITUDE_PATTERN = exports.AppType = void 0;
+exports.RESOLUTION = exports.BASE_OPERATING_HOURS = exports.SCREEN_PARTNER = exports.SOCKET_PREFIX = exports.LONGITUDE_PATTERN = exports.LATITUDE_PATTERN = exports.AppType = void 0;
 exports.AppType = {
     customers: "customers",
     partners: "partners",
@@ -24,3 +24,4 @@ exports.BASE_OPERATING_HOURS = {
     saturday: null,
     sunday: null,
 };
+exports.RESOLUTION = 9;

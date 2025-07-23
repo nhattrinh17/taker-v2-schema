@@ -19,6 +19,6 @@ __exportStar(require("./admin.interface"), exports);
 __exportStar(require("./customer.interface"), exports);
 __exportStar(require("./group_role.interface"), exports);
 __exportStar(require("./group_role_permission.interface"), exports);
-__exportStar(require("./shop.interface"), exports);
+__exportStar(require("./partner.interface"), exports);
 __exportStar(require("./sys_permission.interface"), exports);
 __exportStar(require("./sys_permission_action.interface"), exports);

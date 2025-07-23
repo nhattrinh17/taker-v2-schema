@@ -1,21 +1,21 @@
-import { BaseEntity } from "./base.entity";
-import { StepEnum, UserStatusEnum } from "../common/enums";
-export declare class Customer extends BaseEntity {
-    phone: string;
-    password: string;
-    fullName: string;
-    fcmToken: string;
+import { BaseEntity } from './base.entity';
+import { StepEnum, UserStatusEnum } from '../common/enums';
+export declare class Partner extends BaseEntity {
+    name: string;
     email: string;
-    referralCode: string;
-    lastLoginDate: Date;
+    phone: string;
+    fcmToken: string;
+    password: string;
+    address: string;
+    location: string;
+    latLongToCell: string;
+    operatingHours: string;
     isLogin: boolean;
     isVerified: boolean;
     bankName: string;
     bankAccountNumber: string;
     bankAccountName: string;
     avatar: string;
-    dateOfBirth: Date;
-    address: string;
     status: UserStatusEnum;
     step: StepEnum;
     appleId: string;

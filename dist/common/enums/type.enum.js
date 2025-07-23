@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ServiceTypeEnum = exports.SearchHistoryTypeEnum = exports.CashbackTransactionTypeEnum = exports.PayerTypeEnum = exports.CarpoolServiceTypeEnum = exports.VehicleTypeEnum = exports.VoucherTypeEnum = exports.VoucherTypeDiscountEnum = void 0;
+exports.OtpRequestType = exports.ServiceTypeEnum = exports.SearchHistoryTypeEnum = exports.CashbackTransactionTypeEnum = exports.PayerTypeEnum = exports.CarpoolServiceTypeEnum = exports.VehicleTypeEnum = exports.VoucherTypeEnum = exports.VoucherTypeDiscountEnum = void 0;
 var VoucherTypeDiscountEnum;
 (function (VoucherTypeDiscountEnum) {
     VoucherTypeDiscountEnum["FIXED"] = "FIXED";
@@ -43,3 +43,8 @@ var ServiceTypeEnum;
     ServiceTypeEnum["BOOKING"] = "BOOKING";
     ServiceTypeEnum["DELIVERY"] = "DELIVERY";
 })(ServiceTypeEnum || (exports.ServiceTypeEnum = ServiceTypeEnum = {}));
+var OtpRequestType;
+(function (OtpRequestType) {
+    OtpRequestType["EXISTED"] = "existed";
+    OtpRequestType["NOT_EXISTED"] = "not-existed";
+})(OtpRequestType || (exports.OtpRequestType = OtpRequestType = {}));

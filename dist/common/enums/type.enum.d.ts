@@ -32,3 +32,7 @@ export declare enum ServiceTypeEnum {
     BOOKING = "BOOKING",
     DELIVERY = "DELIVERY"
 }
+export declare enum OtpRequestType {
+    EXISTED = "existed",
+    NOT_EXISTED = "not-existed"
+}

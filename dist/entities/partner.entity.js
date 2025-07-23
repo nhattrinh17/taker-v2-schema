@@ -9,109 +9,113 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Customer = void 0;
+exports.Partner = void 0;
 const typeorm_1 = require("typeorm");
 const base_entity_1 = require("./base.entity");
 const enums_1 = require("../common/enums");
-let Customer = class Customer extends base_entity_1.BaseEntity {
+const app_constant_1 = require("../common/constants/app.constant");
+let Partner = class Partner extends base_entity_1.BaseEntity {
 };
-exports.Customer = Customer;
+exports.Partner = Partner;
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Partner.prototype, "name", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ unique: true }),
+    __metadata("design:type", String)
+], Partner.prototype, "email", void 0);
 __decorate([
     (0, typeorm_1.Column)({ unique: true, nullable: true }),
     __metadata("design:type", String)
-], Customer.prototype, "phone", void 0);
+], Partner.prototype, "phone", void 0);
 __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
-], Customer.prototype, "password", void 0);
+], Partner.prototype, "fcmToken", void 0);
 __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
-], Customer.prototype, "fullName", void 0);
+], Partner.prototype, "password", void 0);
 __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
-], Customer.prototype, "fcmToken", void 0);
+], Partner.prototype, "address", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ unique: true, nullable: true }),
+    (0, typeorm_1.Column)({ type: 'text', nullable: true }),
     __metadata("design:type", String)
-], Customer.prototype, "email", void 0);
+], Partner.prototype, "location", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
+    (0, typeorm_1.Column)({ length: 255, nullable: true }),
     __metadata("design:type", String)
-], Customer.prototype, "referralCode", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", Date)
-], Customer.prototype, "lastLoginDate", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ default: false }),
-    __metadata("design:type", Boolean)
-], Customer.prototype, "isLogin", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ default: false }),
-    __metadata("design:type", Boolean)
-], Customer.prototype, "isVerified", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", String)
-], Customer.prototype, "bankName", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", String)
-], Customer.prototype, "bankAccountNumber", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", String)
-], Customer.prototype, "bankAccountName", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", String)
-], Customer.prototype, "avatar", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", Date)
-], Customer.prototype, "dateOfBirth", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", String)
-], Customer.prototype, "address", void 0);
+], Partner.prototype, "latLongToCell", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: "enum",
+        length: 255,
+        default: JSON.stringify(app_constant_1.BASE_OPERATING_HOURS)
+    }),
+    __metadata("design:type", String)
+], Partner.prototype, "operatingHours", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ default: false }),
+    __metadata("design:type", Boolean)
+], Partner.prototype, "isLogin", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ default: false }),
+    __metadata("design:type", Boolean)
+], Partner.prototype, "isVerified", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], Partner.prototype, "bankName", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], Partner.prototype, "bankAccountNumber", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], Partner.prototype, "bankAccountName", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], Partner.prototype, "avatar", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        type: 'enum',
         enum: enums_1.UserStatusEnum,
         default: enums_1.UserStatusEnum.PENDING,
     }),
     __metadata("design:type", String)
-], Customer.prototype, "status", void 0);
+], Partner.prototype, "status", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: "enum",
+        type: 'enum',
         enum: enums_1.StepEnum,
         default: enums_1.StepEnum.REGISTER_INFO,
     }),
     __metadata("design:type", String)
-], Customer.prototype, "step", void 0);
+], Partner.prototype, "step", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255, nullable: true }),
     __metadata("design:type", String)
-], Customer.prototype, "appleId", void 0);
+], Partner.prototype, "appleId", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255, nullable: true }),
     __metadata("design:type", String)
-], Customer.prototype, "appleName", void 0);
+], Partner.prototype, "appleName", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255, nullable: true }),
     __metadata("design:type", String)
-], Customer.prototype, "googleId", void 0);
+], Partner.prototype, "googleId", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 255, nullable: true }),
     __metadata("design:type", String)
-], Customer.prototype, "googleName", void 0);
+], Partner.prototype, "googleName", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 512, nullable: true }),
     __metadata("design:type", String)
-], Customer.prototype, "refreshToken", void 0);
-exports.Customer = Customer = __decorate([
-    (0, typeorm_1.Entity)({ name: "customers" })
-], Customer);
+], Partner.prototype, "refreshToken", void 0);
+exports.Partner = Partner = __decorate([
+    (0, typeorm_1.Entity)({ name: 'partners' })
+], Partner);

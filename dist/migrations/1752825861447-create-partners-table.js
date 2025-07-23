@@ -1,17 +1,34 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateCustomersTable1752825834692 = void 0;
+exports.CreatePartnersTable1752825861447 = void 0;
+const app_constant_1 = require("../common/constants/app.constant");
 const enums_1 = require("../common/enums");
 const typeorm_1 = require("typeorm");
-class CreateCustomersTable1752825834692 {
+class CreatePartnersTable1752825861447 {
     async up(queryRunner) {
         await queryRunner.createTable(new typeorm_1.Table({
-            name: "customers",
+            name: "partners",
             columns: [
                 {
                     name: "id",
                     type: "varchar(36)",
                     isPrimary: true,
+                },
+                {
+                    name: "name",
+                    type: "varchar",
+                    isNullable: false,
+                },
+                {
+                    name: "fcmToken",
+                    type: "varchar",
+                    isNullable: true,
+                },
+                {
+                    name: "email",
+                    type: "varchar",
+                    isUnique: true,
+                    isNullable: false,
                 },
                 {
                     name: "phone",
@@ -25,30 +42,24 @@ class CreateCustomersTable1752825834692 {
                     isNullable: true,
                 },
                 {
-                    name: "fullName",
+                    name: "address",
                     type: "varchar",
                     isNullable: true,
                 },
                 {
-                    name: "fcmToken",
-                    type: "varchar",
+                    name: "location",
+                    type: "text",
                     isNullable: true,
                 },
                 {
-                    name: "email",
-                    type: "varchar",
-                    isUnique: true,
+                    name: 'latLongToCell',
+                    type: "varchar(255)",
                     isNullable: true,
                 },
                 {
-                    name: "referralCode",
-                    type: "varchar",
-                    isNullable: true,
-                },
-                {
-                    name: "lastLoginDate",
-                    type: "datetime",
-                    isNullable: true,
+                    name: "operatingHours",
+                    type: "varchar(255)",
+                    default: `'${JSON.stringify(app_constant_1.BASE_OPERATING_HOURS)}'`,
                 },
                 {
                     name: "isLogin",
@@ -77,16 +88,6 @@ class CreateCustomersTable1752825834692 {
                 },
                 {
                     name: "avatar",
-                    type: "varchar",
-                    isNullable: true,
-                },
-                {
-                    name: "dateOfBirth",
-                    type: "datetime",
-                    isNullable: true,
-                },
-                {
-                    name: "address",
                     type: "varchar",
                     isNullable: true,
                 },
@@ -138,27 +139,19 @@ class CreateCustomersTable1752825834692 {
                 },
                 {
                     name: "createdAt",
-                    type: "datetime(6)",
-                    default: "CURRENT_TIMESTAMP(6)",
+                    type: "datetime",
+                    default: "CURRENT_TIMESTAMP",
                 },
                 {
                     name: "updatedAt",
-                    type: "datetime(6)",
-                    default: "CURRENT_TIMESTAMP(6)",
-                    onUpdate: "CURRENT_TIMESTAMP(6)",
+                    type: "datetime",
+                    default: "CURRENT_TIMESTAMP",
                 },
             ],
-        }), true);
-        await queryRunner.createIndex("customers", new typeorm_1.TableIndex({
-            name: "IDX_CUSTOMER_ReferralCode",
-            columnNames: ["referralCode"],
         }));
     }
     async down(queryRunner) {
-        const table = await queryRunner.getTable("customers");
-        const index = table.indices.find((index) => index.columnNames.indexOf("referralCode") !== -1);
-        await queryRunner.dropIndex("customers", index);
-        await queryRunner.dropTable("customers");
+        await queryRunner.dropTable("partners", true, true, true);
     }
 }
-exports.CreateCustomersTable1752825834692 = CreateCustomersTable1752825834692;
+exports.CreatePartnersTable1752825861447 = CreatePartnersTable1752825861447;

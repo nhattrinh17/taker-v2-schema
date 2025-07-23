@@ -1,29 +1,39 @@
-import { Column, Entity } from "typeorm";
-import { BaseEntity } from "./base.entity";
-import { StepEnum, UserStatusEnum } from "@common/enums";
+import { Column, Entity } from 'typeorm';
+import { BaseEntity } from './base.entity';
+import { StepEnum, UserStatusEnum } from '@common/enums';
+import { BASE_OPERATING_HOURS } from '@common/constants/app.constant';
 
-@Entity({ name: "customers" })
-export class Customer extends BaseEntity {
+@Entity({ name: 'partners' })
+export class Partner extends BaseEntity {
+  @Column()
+  name: string;
+
+  @Column({ unique: true })
+  email: string;
+
   @Column({ unique: true, nullable: true })
   phone: string;
+
+  @Column({ nullable: true })
+  fcmToken: string;
 
   @Column({ nullable: true })
   password: string;
 
   @Column({ nullable: true })
-  fullName: string;
+  address: string;
 
-  @Column({ nullable: true })
-  fcmToken: string;
+  @Column({ type: 'text', nullable: true })
+  location: string;
 
-  @Column({ unique: true, nullable: true })
-  email: string;
+  @Column({ length: 255, nullable: true })
+  latLongToCell: string;
 
-  @Column({ nullable: true })
-  referralCode: string;
-
-  @Column({ nullable: true })
-  lastLoginDate: Date;
+  @Column({ 
+    length: 255,
+    default: JSON.stringify(BASE_OPERATING_HOURS)
+  })
+  operatingHours: string;
 
   @Column({ default: false })
   isLogin: boolean;
@@ -43,21 +53,15 @@ export class Customer extends BaseEntity {
   @Column({ nullable: true })
   avatar: string;
 
-  @Column({ nullable: true })
-  dateOfBirth: Date;
-
-  @Column({ nullable: true })
-  address: string;
-
   @Column({
-    type: "enum",
+    type: 'enum',
     enum: UserStatusEnum,
     default: UserStatusEnum.PENDING,
   })
   status: UserStatusEnum;
 
   @Column({
-    type: "enum",
+    type: 'enum',
     enum: StepEnum,
     default: StepEnum.REGISTER_INFO,
   })
