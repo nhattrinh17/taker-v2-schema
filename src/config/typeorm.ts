@@ -18,6 +18,10 @@ export function createTypeOrmConfig(dbConfig: {
     synchronize: false,
     migrationsRun: dbConfig.migrationsRun,
     logging: dbConfig.logging ?? false,
+    extra: {
+      connectTimeout: 10000, // 10s mặc định
+    },
+
   };
 }
 
