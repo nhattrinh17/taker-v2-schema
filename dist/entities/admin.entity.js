@@ -29,6 +29,10 @@ __decorate([
     __metadata("design:type", String)
 ], Admin.prototype, "fcmToken", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ length: 512, nullable: true }),
+    __metadata("design:type", String)
+], Admin.prototype, "refreshToken", void 0);
+__decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Date)
 ], Admin.prototype, "lastLoginDate", void 0);

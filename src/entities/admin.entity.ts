@@ -13,6 +13,9 @@ export class Admin extends BaseEntity {
   @Column()
   fcmToken: string;
 
+  @Column({ length: 512, nullable: true })
+  refreshToken: string;
+
   @Column({ nullable: true })
   lastLoginDate: Date;
 

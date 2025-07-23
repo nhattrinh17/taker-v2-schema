@@ -12,6 +12,7 @@ export interface BaseRepositoryInterface<T> {
         projection?: (keyof T)[];
         sort?: string;
         typeSort?: 'DESC' | 'ASC';
+        relations?: string[];
     }): Promise<FindAllResponse<T>>;
     findOneAndUpdate(condition: object | any[], dto: QueryDeepPartialEntity<T>): Promise<T | null>;
     findByIdAndUpdate(id: string, dto: QueryDeepPartialEntity<T>): Promise<T | null>;

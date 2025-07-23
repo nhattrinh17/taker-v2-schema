@@ -38,6 +38,7 @@ export abstract class BaseRepositoryAbstract<T> implements BaseRepositoryInterfa
       page: number;
       offset: number;
       limit: number;
+      relations?: string[]
     },
   ): Promise<FindAllResponse<T>> {
     const [items, count] = await this.repository.findAndCount({
@@ -46,6 +47,7 @@ export abstract class BaseRepositoryAbstract<T> implements BaseRepositoryInterfa
       order: { [options?.sort || 'createdAt']: options?.typeSort || 'DESC' } as any,
       skip: options?.offset,
       take: options?.limit,
+      relations: options?.relations,
     });
 
     return {

@@ -31,6 +31,7 @@ class BaseRepositoryAbstract {
             order: { [options?.sort || 'createdAt']: options?.typeSort || 'DESC' },
             skip: options?.offset,
             take: options?.limit,
+            relations: options?.relations,
         });
         return {
             pagination: {

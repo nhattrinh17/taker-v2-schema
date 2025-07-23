@@ -53,6 +53,9 @@ export declare const messageResponseError: {
         passInvalid: string;
         noChanges: string;
         lastAdminCannotDelete: string;
+        userNameOrPasswordWrong: string;
+        userNameAlreadyExists: string;
+        actionInvalid: string;
     };
     customer: {
         notFound: string;

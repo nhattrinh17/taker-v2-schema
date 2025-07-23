@@ -4,6 +4,7 @@ export declare class Admin extends BaseEntity {
     userName: string;
     password: string;
     fcmToken: string;
+    refreshToken: string;
     lastLoginDate: Date;
     ipAddress: string;
     groupRoleId: string;

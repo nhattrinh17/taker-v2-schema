@@ -15,6 +15,7 @@ export declare abstract class BaseRepositoryAbstract<T> implements BaseRepositor
         page: number;
         offset: number;
         limit: number;
+        relations?: string[];
     }): Promise<FindAllResponse<T>>;
     findOneAndUpdate(condition: object, dto: QueryDeepPartialEntity<T>): Promise<T | null>;
     findByIdAndUpdate(id: string, dto: QueryDeepPartialEntity<T>): Promise<T | null>;

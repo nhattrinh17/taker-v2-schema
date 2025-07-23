@@ -56,6 +56,9 @@ exports.messageResponseError = {
         passInvalid: 'password_invalid',
         noChanges: 'no_changes',
         lastAdminCannotDelete: 'last_admin_cannot_delete',
+        userNameOrPasswordWrong: 'user_name_or_password_wrong',
+        userNameAlreadyExists: 'user_name_already_exists',
+        actionInvalid: 'action_invalid',
     },
     customer: {
         notFound: 'customer_not_found',

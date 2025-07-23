@@ -23,6 +23,50 @@ let GroupRolePermissionRepository = class GroupRolePermissionRepository extends 
         super(groupRolePermissionRepository);
         this.groupRolePermissionRepository = groupRolePermissionRepository;
     }
+    async findAllCustom({ search, groupRoleId, sysPermissionActionId }, pagination) {
+        const queryBuilder = this.groupRolePermissionRepository
+            .createQueryBuilder('groupRolePermission')
+            .leftJoinAndSelect('groupRolePermission.groupRole', 'groupRole')
+            .leftJoinAndSelect('groupRolePermission.sysPermissionAction', 'sysPermissionAction')
+            .leftJoinAndSelect('sysPermissionAction.sysPermission', 'sysPermission')
+            .leftJoinAndSelect('sysPermissionAction.action', 'action')
+            .select([
+            'groupRolePermission',
+            'groupRole.id',
+            'groupRole.name',
+            'groupRole.description',
+            'sysPermissionAction.id',
+            'sysPermissionAction.sysPermissionId',
+            'sysPermissionAction.actionId',
+            'sysPermission.name',
+            'sysPermission.description',
+            'action.name',
+            'action.description',
+        ]);
+        if (search) {
+            queryBuilder.where('groupRole.name LIKE :search OR sysPermission.name LIKE :search OR action.name LIKE :search', {
+                search: `%${search}%`,
+            });
+        }
+        if (groupRoleId) {
+            queryBuilder.andWhere('groupRolePermission.groupRoleId = :groupRoleId', { groupRoleId });
+        }
+        if (sysPermissionActionId) {
+            queryBuilder.andWhere('groupRolePermission.sysPermissionActionId = :sysPermissionActionId', { sysPermissionActionId });
+        }
+        queryBuilder.take(pagination.limit).skip(pagination.offset);
+        if (pagination.sort) {
+            queryBuilder.orderBy(pagination.sort, pagination.typeSort || 'ASC');
+        }
+        const [data, total] = await queryBuilder.getManyAndCount();
+        return {
+            data,
+            pagination: {
+                total,
+                ...pagination,
+            },
+        };
+    }
 };
 exports.GroupRolePermissionRepository = GroupRolePermissionRepository;
 exports.GroupRolePermissionRepository = GroupRolePermissionRepository = __decorate([
