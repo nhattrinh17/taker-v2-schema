@@ -26,7 +26,7 @@ let CustomerRepository = class CustomerRepository extends base_abstract_reposito
     async findAllCustomers(condition, pagination) {
         const { search, status, step } = condition;
         const { page, offset, limit, sort, typeSort } = pagination;
-        const queryBuilder = this.repository
+        const queryBuilder = this.customerRepository
             .createQueryBuilder("customer")
             .skip(offset)
             .take(limit);

@@ -23,6 +23,36 @@ let PartnerRepository = class PartnerRepository extends base_abstract_repository
         super(partnerRepository);
         this.partnerRepository = partnerRepository;
     }
+    async findAllPartners(condition, pagination) {
+        const { search, status, step } = condition;
+        const { page, offset, limit, sort, typeSort } = pagination;
+        const queryBuilder = this.partnerRepository
+            .createQueryBuilder("partner")
+            .skip(offset)
+            .take(limit);
+        if (search) {
+            queryBuilder.where("partner.name ILIKE :search OR partner.email ILIKE :search OR partner.phone ILIKE :search", {
+                search: `%${search}%`,
+            });
+        }
+        if (status) {
+            queryBuilder.andWhere("partner.status = :status", { status });
+        }
+        if (step) {
+            queryBuilder.andWhere("partner.step = :step", { step });
+        }
+        if (sort) {
+            queryBuilder.orderBy(`partner.${sort || "createdAt"}`, typeSort || "DESC");
+        }
+        const [data, total] = await queryBuilder.getManyAndCount();
+        return {
+            data,
+            pagination: {
+                ...pagination,
+                total,
+            },
+        };
+    }
 };
 exports.PartnerRepository = PartnerRepository;
 exports.PartnerRepository = PartnerRepository = __decorate([
