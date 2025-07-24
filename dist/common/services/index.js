@@ -21,3 +21,4 @@ __exportStar(require("./s3.service"), exports);
 __exportStar(require("./firebase.service"), exports);
 __exportStar(require("./excel.service"), exports);
 __exportStar(require("./zalo.service"), exports);
+__exportStar(require("./fb.service"), exports);

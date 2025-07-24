@@ -13,6 +13,8 @@ export const messageResponseError = {
     phoneAlreadyExistsOrNotMatch: 'phone_already_exists_or_not_match',
     stepInvalid: 'step_invalid',
     passwordInvalid: 'password_invalid',
+    referralCodeNotFound: 'referral_code_not_found',
+    actionInvalid: 'action_invalid',
   },
   wallet: {
     customerNotFound: 'customer_not_found',

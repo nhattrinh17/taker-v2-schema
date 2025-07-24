@@ -1,4 +1,5 @@
 export * from './action.interface';
+export * from './address.interface';
 export * from './admin.interface';
 export * from './customer.interface';
 export * from './group_role.interface';

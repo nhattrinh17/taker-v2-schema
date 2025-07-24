@@ -1,15 +1,12 @@
 import { BaseEntity } from './base.entity';
 import { StepEnum, UserStatusEnum } from '../common/enums';
+import { Address } from './address.entity';
 export declare class Partner extends BaseEntity {
     name: string;
     email: string;
     phone: string;
     fcmToken: string;
     password: string;
-    address: string;
-    location: string;
-    latLongToCell: string;
-    operatingHours: string;
     isLogin: boolean;
     isVerified: boolean;
     bankName: string;
@@ -23,4 +20,7 @@ export declare class Partner extends BaseEntity {
     googleId: string;
     googleName: string;
     refreshToken: string;
+    facebookId: string;
+    facebookName: string;
+    addresses: Address[];
 }

@@ -1,4 +1,5 @@
 export * from './action.repository';
+export * from './address.repository';
 export * from './admin.repository';
 export * from './customer.repository';
 export * from './group_role.repository';

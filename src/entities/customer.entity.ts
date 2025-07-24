@@ -1,6 +1,7 @@
-import { Column, Entity } from "typeorm";
+import { Column, Entity, OneToMany } from "typeorm";
 import { BaseEntity } from "./base.entity";
 import { StepEnum, UserStatusEnum } from "@common/enums";
+import { Address } from "./address.entity";
 
 @Entity({ name: "customers" })
 export class Customer extends BaseEntity {
@@ -46,9 +47,6 @@ export class Customer extends BaseEntity {
   @Column({ nullable: true })
   dateOfBirth: Date;
 
-  @Column({ nullable: true })
-  address: string;
-
   @Column({
     type: "enum",
     enum: UserStatusEnum,
@@ -77,4 +75,14 @@ export class Customer extends BaseEntity {
 
   @Column({ length: 512, nullable: true })
   refreshToken: string;
+
+  @Column({ length: 255, nullable: true })
+  facebookId: string;
+
+  @Column({ length: 255, nullable: true })
+  facebookName: string;
+
+  // Relations
+  @OneToMany(() => Address, (address) => address.customer)
+  addresses: Address[];
 }

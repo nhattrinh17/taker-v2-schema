@@ -1,7 +1,8 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, OneToMany } from 'typeorm';
 import { BaseEntity } from './base.entity';
 import { StepEnum, UserStatusEnum } from '@common/enums';
 import { BASE_OPERATING_HOURS } from '@common/constants/app.constant';
+import { Address } from './address.entity';
 
 @Entity({ name: 'partners' })
 export class Partner extends BaseEntity {
@@ -19,21 +20,6 @@ export class Partner extends BaseEntity {
 
   @Column({ nullable: true })
   password: string;
-
-  @Column({ nullable: true })
-  address: string;
-
-  @Column({ type: 'text', nullable: true })
-  location: string;
-
-  @Column({ length: 255, nullable: true })
-  latLongToCell: string;
-
-  @Column({ 
-    length: 255,
-    default: JSON.stringify(BASE_OPERATING_HOURS)
-  })
-  operatingHours: string;
 
   @Column({ default: false })
   isLogin: boolean;
@@ -81,4 +67,14 @@ export class Partner extends BaseEntity {
 
   @Column({ length: 512, nullable: true })
   refreshToken: string;
+
+  @Column({ length: 255, nullable: true })
+  facebookId: string;
+
+  @Column({ length: 255, nullable: true })
+  facebookName: string;
+
+  // Relations
+  @OneToMany(() => Address, (address) => address.partner)
+  addresses: Address[];
 }

@@ -13,6 +13,7 @@ exports.Customer = void 0;
 const typeorm_1 = require("typeorm");
 const base_entity_1 = require("./base.entity");
 const enums_1 = require("../common/enums");
+const address_entity_1 = require("./address.entity");
 let Customer = class Customer extends base_entity_1.BaseEntity {
 };
 exports.Customer = Customer;
@@ -73,10 +74,6 @@ __decorate([
     __metadata("design:type", Date)
 ], Customer.prototype, "dateOfBirth", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", String)
-], Customer.prototype, "address", void 0);
-__decorate([
     (0, typeorm_1.Column)({
         type: "enum",
         enum: enums_1.UserStatusEnum,
@@ -112,6 +109,18 @@ __decorate([
     (0, typeorm_1.Column)({ length: 512, nullable: true }),
     __metadata("design:type", String)
 ], Customer.prototype, "refreshToken", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ length: 255, nullable: true }),
+    __metadata("design:type", String)
+], Customer.prototype, "facebookId", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ length: 255, nullable: true }),
+    __metadata("design:type", String)
+], Customer.prototype, "facebookName", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => address_entity_1.Address, (address) => address.customer),
+    __metadata("design:type", Array)
+], Customer.prototype, "addresses", void 0);
 exports.Customer = Customer = __decorate([
     (0, typeorm_1.Entity)({ name: "customers" })
 ], Customer);

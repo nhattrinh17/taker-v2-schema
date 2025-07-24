@@ -13,7 +13,7 @@ exports.Partner = void 0;
 const typeorm_1 = require("typeorm");
 const base_entity_1 = require("./base.entity");
 const enums_1 = require("../common/enums");
-const app_constant_1 = require("../common/constants/app.constant");
+const address_entity_1 = require("./address.entity");
 let Partner = class Partner extends base_entity_1.BaseEntity {
 };
 exports.Partner = Partner;
@@ -37,25 +37,6 @@ __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
 ], Partner.prototype, "password", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", String)
-], Partner.prototype, "address", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ type: 'text', nullable: true }),
-    __metadata("design:type", String)
-], Partner.prototype, "location", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ length: 255, nullable: true }),
-    __metadata("design:type", String)
-], Partner.prototype, "latLongToCell", void 0);
-__decorate([
-    (0, typeorm_1.Column)({
-        length: 255,
-        default: JSON.stringify(app_constant_1.BASE_OPERATING_HOURS)
-    }),
-    __metadata("design:type", String)
-], Partner.prototype, "operatingHours", void 0);
 __decorate([
     (0, typeorm_1.Column)({ default: false }),
     __metadata("design:type", Boolean)
@@ -116,6 +97,18 @@ __decorate([
     (0, typeorm_1.Column)({ length: 512, nullable: true }),
     __metadata("design:type", String)
 ], Partner.prototype, "refreshToken", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ length: 255, nullable: true }),
+    __metadata("design:type", String)
+], Partner.prototype, "facebookId", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ length: 255, nullable: true }),
+    __metadata("design:type", String)
+], Partner.prototype, "facebookName", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => address_entity_1.Address, (address) => address.partner),
+    __metadata("design:type", Array)
+], Partner.prototype, "addresses", void 0);
 exports.Partner = Partner = __decorate([
     (0, typeorm_1.Entity)({ name: 'partners' })
 ], Partner);
