@@ -106,6 +106,10 @@ __decorate([
     __metadata("design:type", String)
 ], Partner.prototype, "facebookName", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], Partner.prototype, "referralCode", void 0);
+__decorate([
     (0, typeorm_1.OneToMany)(() => address_entity_1.Address, (address) => address.partner),
     __metadata("design:type", Array)
 ], Partner.prototype, "addresses", void 0);

@@ -74,6 +74,9 @@ export class Partner extends BaseEntity {
   @Column({ length: 255, nullable: true })
   facebookName: string;
 
+  @Column({ nullable: true })
+  referralCode: string;
+
   // Relations
   @OneToMany(() => Address, (address) => address.partner)
   addresses: Address[];

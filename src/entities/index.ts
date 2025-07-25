@@ -7,3 +7,7 @@ export * from './group_role_permission.entity';
 export * from './partner.entity';
 export * from './sys_permission.entity';
 export * from './sys_permission_action.entity';
+export * from './blog.entity';
+export * from './blog_category.entity';
+export * from './notification.entity';
+export * from './system_notification.entity';

@@ -15,7 +15,7 @@ export class Address extends BaseEntity {
   @Column()
   address: string;
 
-  @Column({ type: 'text', nullable: true, comment: 'JSON string containing location details' })
+  @Column({ type: 'text', nullable: true, comment: 'location details' })
   location: string;
 
   @Column({ length: 255, nullable: true, comment: 'Latitude and longitude cell identifier' })

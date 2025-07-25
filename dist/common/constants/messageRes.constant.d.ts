@@ -140,4 +140,14 @@ export declare const messageResponseError: {
         statusNotAllowUpdate: string;
         statusNotAllowCancel: string;
     };
+    address: {
+        notFound: string;
+        actionInvalid: string;
+        defaultAddressExists: string;
+        pickupAddressExists: string;
+        returnAddressExists: string;
+    };
+    notification: {
+        notFound: string;
+    };
 };

@@ -23,3 +23,7 @@ __exportStar(require("./group_role_permission.entity"), exports);
 __exportStar(require("./partner.entity"), exports);
 __exportStar(require("./sys_permission.entity"), exports);
 __exportStar(require("./sys_permission_action.entity"), exports);
+__exportStar(require("./blog.entity"), exports);
+__exportStar(require("./blog_category.entity"), exports);
+__exportStar(require("./notification.entity"), exports);
+__exportStar(require("./system_notification.entity"), exports);

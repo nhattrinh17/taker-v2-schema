@@ -22,5 +22,6 @@ export declare class Partner extends BaseEntity {
     refreshToken: string;
     facebookId: string;
     facebookName: string;
+    referralCode: string;
     addresses: Address[];
 }

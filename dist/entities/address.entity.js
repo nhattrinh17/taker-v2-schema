@@ -30,7 +30,7 @@ __decorate([
     __metadata("design:type", String)
 ], Address.prototype, "address", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'text', nullable: true, comment: 'JSON string containing location details' }),
+    (0, typeorm_1.Column)({ type: 'text', nullable: true, comment: 'location details' }),
     __metadata("design:type", String)
 ], Address.prototype, "location", void 0);
 __decorate([
