@@ -18,7 +18,4 @@ export enum TransactionLogStatus {
 
 export enum TransactionSource {
   WALLET = 'WALLET',
-  CARPOOL = 'CARPOOL',
-  DELIVERY = 'DELIVERY',
-  VEHICLE_BOOKING = 'VEHICLE_BOOKING',
 }

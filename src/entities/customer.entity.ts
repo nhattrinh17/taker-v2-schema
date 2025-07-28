@@ -1,7 +1,8 @@
-import { Column, Entity, OneToMany } from "typeorm";
+import { Column, Entity, OneToMany, OneToOne } from "typeorm";
 import { BaseEntity } from "./base.entity";
 import { StepEnum, UserStatusEnum } from "@common/enums";
 import { Address } from "./address.entity";
+import { Wallet } from "./wallet.entity";
 
 @Entity({ name: "customers" })
 export class Customer extends BaseEntity {
@@ -85,4 +86,7 @@ export class Customer extends BaseEntity {
   // Relations
   @OneToMany(() => Address, (address) => address.customer)
   addresses: Address[];
+
+  @OneToOne(() => Wallet, (wallet) => wallet.customer, { nullable: true })
+  wallet: Wallet;
 }
