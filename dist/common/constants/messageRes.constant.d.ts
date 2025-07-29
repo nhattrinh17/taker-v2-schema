@@ -20,6 +20,10 @@ export declare const messageResponseError: {
         customerNotFound: string;
         insufficientBalance: string;
         notFound: string;
+        accessCodeInvalid: string;
+        accessCodeExpired: string;
+        partnerNotFound: string;
+        actionInvalid: string;
     };
     blog: {
         notFound: string;
@@ -94,6 +98,7 @@ export declare const messageResponseError: {
         sourceInvalid: string;
         withdrawNotAllowed: string;
         refundNotAllowed: string;
+        evidenceAlreadyExists: string;
     };
     delivery: {
         notFound: string;

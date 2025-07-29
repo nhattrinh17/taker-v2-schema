@@ -34,6 +34,8 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkIdType = exports.generateTripId = exports.orderId = exports.validPassword = exports.generateHashedPassword = void 0;
+exports.compressUuid = compressUuid;
+exports.generateOrderId = generateOrderId;
 const bcrypt = __importStar(require("bcrypt"));
 const nanoid_1 = require("nanoid");
 const generateHashedPassword = (password) => {
@@ -70,3 +72,17 @@ const checkIdType = (id) => {
     }
 };
 exports.checkIdType = checkIdType;
+function compressUuid(uuid, length = 6) {
+    const hex = uuid.replace(/-/g, '');
+    const bigInt = BigInt('0x' + hex);
+    return bigInt.toString(36).slice(0, length);
+}
+function generateOrderId(uuid) {
+    const now = new Date();
+    const pad = (n, l = 2) => n.toString().padStart(l, '0');
+    const datePart = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}`;
+    const timePart = `${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}${pad(now.getMilliseconds(), 3)}`;
+    const shortUuid = compressUuid(uuid, 6);
+    const randomPart = Math.floor(1000 + Math.random() * 9000);
+    return `${datePart}-${timePart}-${shortUuid}-${randomPart}`;
+}

@@ -5,9 +5,6 @@ export declare const QUEUE_NAMES: {
 };
 export declare const QUEUE_PAYMENT_NAME: {
     PAYMENT_WALLET_MB: string;
-    PAYMENT_CARPOOL_MB: string;
-    PAYMENT_DELIVERY_MB: string;
-    PAYMENT_VEHICLE_BOOKING_MB: string;
 };
 export declare const SYSTEM_NOTIFICATION_QUEUE_NAME: {
     SEND_NOTIFICATION: string;

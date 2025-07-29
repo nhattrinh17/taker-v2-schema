@@ -14,6 +14,7 @@ const typeorm_1 = require("typeorm");
 const base_entity_1 = require("./base.entity");
 const enums_1 = require("../common/enums");
 const address_entity_1 = require("./address.entity");
+const wallet_entity_1 = require("./wallet.entity");
 let Partner = class Partner extends base_entity_1.BaseEntity {
 };
 exports.Partner = Partner;
@@ -113,6 +114,10 @@ __decorate([
     (0, typeorm_1.OneToMany)(() => address_entity_1.Address, (address) => address.partner),
     __metadata("design:type", Array)
 ], Partner.prototype, "addresses", void 0);
+__decorate([
+    (0, typeorm_1.OneToOne)(() => wallet_entity_1.Wallet, (wallet) => wallet.partner, { nullable: true }),
+    __metadata("design:type", wallet_entity_1.Wallet)
+], Partner.prototype, "wallet", void 0);
 exports.Partner = Partner = __decorate([
     (0, typeorm_1.Entity)({ name: 'partners' })
 ], Partner);

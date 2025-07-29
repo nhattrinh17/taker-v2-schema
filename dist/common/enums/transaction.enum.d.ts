@@ -14,8 +14,5 @@ export declare enum TransactionLogStatus {
     UN_KNOW = "UN_KNOW"
 }
 export declare enum TransactionSource {
-    WALLET = "WALLET",
-    CARPOOL = "CARPOOL",
-    DELIVERY = "DELIVERY",
-    VEHICLE_BOOKING = "VEHICLE_BOOKING"
+    WALLET = "WALLET"
 }

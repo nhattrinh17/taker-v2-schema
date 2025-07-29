@@ -33,9 +33,10 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SocketConstant = exports.NotificationsConstant = exports.QueueConstant = exports.AppConstant = exports.MessageResConstant = void 0;
+exports.ErrorResMbConstant = exports.SocketConstant = exports.NotificationsConstant = exports.QueueConstant = exports.AppConstant = exports.MessageResConstant = void 0;
 exports.MessageResConstant = __importStar(require("./messageRes.constant"));
 exports.AppConstant = __importStar(require("./app.constant"));
 exports.QueueConstant = __importStar(require("./queue.constant"));
 exports.NotificationsConstant = __importStar(require("./notifications.constant"));
 exports.SocketConstant = __importStar(require("./socket.constant"));
+exports.ErrorResMbConstant = __importStar(require("./errorResMb.constant"));

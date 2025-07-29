@@ -35,3 +35,23 @@ export const checkIdType = (id: string) => {
     return 'unknown';
   }
 };
+
+export function compressUuid(uuid: string, length = 6): string {
+  const hex = uuid.replace(/-/g, '');
+  const bigInt = BigInt('0x' + hex);
+  return bigInt.toString(36).slice(0, length);
+}
+
+export function generateOrderId(uuid: string): string {
+  const now = new Date();
+  const pad = (n: number, l = 2) => n.toString().padStart(l, '0');
+
+  const datePart = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}`;
+  const timePart = `${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}${pad(now.getMilliseconds(), 3)}`;
+
+  const shortUuid = compressUuid(uuid, 6); // rút gọn UUID thành string ngắn
+
+  const randomPart = Math.floor(1000 + Math.random() * 9000); // số ngẫu nhiên 4 chữ số
+
+  return `${datePart}-${timePart}-${shortUuid}-${randomPart}`;
+}

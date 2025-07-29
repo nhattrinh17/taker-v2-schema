@@ -16,3 +16,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./transform.interceptor"), exports);
 __exportStar(require("./logging.interceptor"), exports);
+__exportStar(require("./transform-mb.interceptor"), exports);

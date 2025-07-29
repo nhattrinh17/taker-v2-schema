@@ -6,9 +6,6 @@ export const QUEUE_NAMES = {
 
 export const QUEUE_PAYMENT_NAME = {
   PAYMENT_WALLET_MB: 'payment_wallet_mb',
-  PAYMENT_CARPOOL_MB: 'payment_carpool_mb',
-  PAYMENT_DELIVERY_MB: 'payment_delivery_mb',
-  PAYMENT_VEHICLE_BOOKING_MB: 'payment_vehicle_booking_mb',
 };
 
 export const SYSTEM_NOTIFICATION_QUEUE_NAME = {

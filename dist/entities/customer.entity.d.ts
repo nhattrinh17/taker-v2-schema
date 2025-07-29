@@ -1,6 +1,7 @@
 import { BaseEntity } from "./base.entity";
 import { StepEnum, UserStatusEnum } from "../common/enums";
 import { Address } from "./address.entity";
+import { Wallet } from "./wallet.entity";
 export declare class Customer extends BaseEntity {
     phone: string;
     password: string;
@@ -26,4 +27,5 @@ export declare class Customer extends BaseEntity {
     facebookId: string;
     facebookName: string;
     addresses: Address[];
+    wallet: Wallet;
 }

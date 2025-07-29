@@ -20,6 +20,10 @@ export const messageResponseError = {
     customerNotFound: "customer_not_found",
     insufficientBalance: "insufficient_balance",
     notFound: "wallet_not_found",
+    accessCodeInvalid: "access_code_invalid",
+    accessCodeExpired: "access_code_expired",
+    partnerNotFound: "partner_not_found",
+    actionInvalid: "wallet_action_invalid",
   },
   blog: {
     notFound: "blog_not_found",
@@ -94,6 +98,7 @@ export const messageResponseError = {
     sourceInvalid: "transaction_source_invalid",
     withdrawNotAllowed: "transaction_withdraw_not_allowed",
     refundNotAllowed: "transaction_refund_not_allowed",
+    evidenceAlreadyExists: "evidence_already_exists",
   },
   delivery: {
     notFound: "delivery_not_found",
