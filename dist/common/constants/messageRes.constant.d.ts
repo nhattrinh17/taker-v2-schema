@@ -40,18 +40,13 @@ export declare const messageResponseError: {
         voucherNotFound: string;
         voucherAlreadyExits: string;
         cannotDeleteBecauseUsed: string;
-    };
-    carpoolService: {
-        duplicate: string;
-        seatRequired: string;
-        notFound: string;
-        canotUpdate: string;
-        provinceRequired: string;
-        provinceDuplicate: string;
-    };
-    carRegistry: {
-        notFound: string;
-        statusNotChange: string;
+        voucherExpired: string;
+        voucherOutOfStock: string;
+        voucherAlreadyUsed: string;
+        voucherTypeInvalid: string;
+        voucherPaymentMethodInvalid: string;
+        voucherNotStarted: string;
+        voucherMinimumOrderNotReached: string;
     };
     admin: {
         passSame: string;
@@ -81,6 +76,7 @@ export declare const messageResponseError: {
         statusNotActive: string;
         invalidLocation: string;
         invalidOperatingHours: string;
+        typeChangeNotAllowed: string;
     };
     upload: {
         fileInvalid: string;
@@ -99,13 +95,6 @@ export declare const messageResponseError: {
         withdrawNotAllowed: string;
         refundNotAllowed: string;
         evidenceAlreadyExists: string;
-    };
-    delivery: {
-        notFound: string;
-        actionInvalid: string;
-        statusNotValid: string;
-        statusNotChange: string;
-        statusInvalid: string;
     };
     config: {
         notFound: string;
@@ -129,22 +118,6 @@ export declare const messageResponseError: {
     user: {
         notFound: string;
     };
-    carrierCodeHistory: {
-        notFound: string;
-        statusNotPending: string;
-        codeMustBeAlphanumeric: string;
-        exist: string;
-    };
-    vehiclePrice: {
-        exist: string;
-        notFound: string;
-        nameExist: string;
-    };
-    vehicleBooking: {
-        notFound: string;
-        statusNotAllowUpdate: string;
-        statusNotAllowCancel: string;
-    };
     address: {
         notFound: string;
         actionInvalid: string;
@@ -154,5 +127,10 @@ export declare const messageResponseError: {
     };
     notification: {
         notFound: string;
+    };
+    shoeService: {
+        customerIdNotAllowed: string;
+        notFound: string;
+        duplicateName: string;
     };
 };

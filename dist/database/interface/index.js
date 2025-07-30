@@ -27,3 +27,4 @@ __exportStar(require("./partner.interface"), exports);
 __exportStar(require("./sys_permission.interface"), exports);
 __exportStar(require("./sys_permission_action.interface"), exports);
 __exportStar(require("./system_notification.interface"), exports);
+__exportStar(require("./voucher.interface"), exports);

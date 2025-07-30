@@ -53,6 +53,12 @@ let CustomerRepository = class CustomerRepository extends base_abstract_reposito
             },
         };
     }
+    getIdAllCustomer(filter) {
+        return this.customerRepository.find({
+            select: ['id'],
+            where: filter,
+        });
+    }
 };
 exports.CustomerRepository = CustomerRepository;
 exports.CustomerRepository = CustomerRepository = __decorate([

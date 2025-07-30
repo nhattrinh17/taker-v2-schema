@@ -1,11 +1,12 @@
-import { Column, Entity, OneToMany, OneToOne } from 'typeorm';
-import { BaseEntity } from './base.entity';
-import { StepEnum, UserStatusEnum } from '@common/enums';
-import { BASE_OPERATING_HOURS } from '@common/constants/app.constant';
-import { Address } from './address.entity';
-import { Wallet } from './wallet.entity';
+import { Column, Entity, OneToMany, OneToOne } from "typeorm";
+import { BaseEntity } from "./base.entity";
+import { PartnerTypeEnum, StepEnum, UserStatusEnum } from "@common/enums";
+import { BASE_OPERATING_HOURS } from "@common/constants/app.constant";
+import { Address } from "./address.entity";
+import { Wallet } from "./wallet.entity";
+import { ShoeService } from "./shoe_service.entity";
 
-@Entity({ name: 'partners' })
+@Entity({ name: "partners" })
 export class Partner extends BaseEntity {
   @Column()
   name: string;
@@ -31,6 +32,9 @@ export class Partner extends BaseEntity {
   @Column({ nullable: true })
   bankName: string;
 
+  @Column({ length: 255, default: JSON.stringify(BASE_OPERATING_HOURS) })
+  operatingHours: string;
+
   @Column({ nullable: true })
   bankAccountNumber: string;
 
@@ -41,14 +45,14 @@ export class Partner extends BaseEntity {
   avatar: string;
 
   @Column({
-    type: 'enum',
+    type: "enum",
     enum: UserStatusEnum,
     default: UserStatusEnum.PENDING,
   })
   status: UserStatusEnum;
 
   @Column({
-    type: 'enum',
+    type: "enum",
     enum: StepEnum,
     default: StepEnum.REGISTER_INFO,
   })
@@ -77,6 +81,9 @@ export class Partner extends BaseEntity {
 
   @Column({ nullable: true })
   referralCode: string;
+
+  @Column({ enum: PartnerTypeEnum, nullable: true })
+  type: PartnerTypeEnum;
 
   // Relations
   @OneToMany(() => Address, (address) => address.partner)

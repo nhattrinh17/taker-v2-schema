@@ -11,3 +11,4 @@ export * from './partner.interface';
 export * from './sys_permission.interface';
 export * from './sys_permission_action.interface';
 export * from './system_notification.interface';
+export * from './voucher.interface';

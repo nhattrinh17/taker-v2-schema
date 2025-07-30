@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OtpRequestType = exports.ServiceTypeEnum = exports.SearchHistoryTypeEnum = exports.CashbackTransactionTypeEnum = exports.PayerTypeEnum = exports.CarpoolServiceTypeEnum = exports.VehicleTypeEnum = exports.VoucherTypeEnum = exports.VoucherTypeDiscountEnum = void 0;
+exports.PartnerTypeEnum = exports.OtpRequestType = exports.ServiceTypeEnum = exports.SearchHistoryTypeEnum = exports.CashbackTransactionTypeEnum = exports.PayerTypeEnum = exports.CarpoolServiceTypeEnum = exports.VehicleTypeEnum = exports.VoucherTypeEnum = exports.VoucherTypeDiscountEnum = void 0;
 var VoucherTypeDiscountEnum;
 (function (VoucherTypeDiscountEnum) {
     VoucherTypeDiscountEnum["FIXED"] = "FIXED";
@@ -8,10 +8,7 @@ var VoucherTypeDiscountEnum;
 })(VoucherTypeDiscountEnum || (exports.VoucherTypeDiscountEnum = VoucherTypeDiscountEnum = {}));
 var VoucherTypeEnum;
 (function (VoucherTypeEnum) {
-    VoucherTypeEnum["CARPOOL"] = "CARPOOL";
-    VoucherTypeEnum["DELIVERY"] = "DELIVERY";
-    VoucherTypeEnum["BIKE_BOOKING"] = "BIKE_BOOKING";
-    VoucherTypeEnum["CAR_BOOKING"] = "CAR_BOOKING";
+    VoucherTypeEnum["SHOE_CLEANING"] = "SHOE_CLEANING";
 })(VoucherTypeEnum || (exports.VoucherTypeEnum = VoucherTypeEnum = {}));
 var VehicleTypeEnum;
 (function (VehicleTypeEnum) {
@@ -48,3 +45,7 @@ var OtpRequestType;
     OtpRequestType["EXISTED"] = "existed";
     OtpRequestType["NOT_EXISTED"] = "not-existed";
 })(OtpRequestType || (exports.OtpRequestType = OtpRequestType = {}));
+var PartnerTypeEnum;
+(function (PartnerTypeEnum) {
+    PartnerTypeEnum["SHOE_CLEANING"] = "SHOE_CLEANING";
+})(PartnerTypeEnum || (exports.PartnerTypeEnum = PartnerTypeEnum = {}));

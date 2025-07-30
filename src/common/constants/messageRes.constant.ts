@@ -40,18 +40,13 @@ export const messageResponseError = {
     voucherNotFound: "voucher_not_found",
     voucherAlreadyExits: "voucher_already_exists",
     cannotDeleteBecauseUsed: "cannot_delete_because_used",
-  },
-  carpoolService: {
-    duplicate: "carpool_service_duplicate",
-    seatRequired: "seat_required",
-    notFound: "carpool_service_not_found",
-    canotUpdate: "carpool_service_cannot_update",
-    provinceRequired: "province_required",
-    provinceDuplicate: "province_duplicate",
-  },
-  carRegistry: {
-    notFound: "car_registry_not_found",
-    statusNotChange: "car_registry_status_not_change",
+    voucherExpired: "voucher_expired",
+    voucherOutOfStock: "voucher_out_of_stock",
+    voucherAlreadyUsed: "voucher_already_used",
+    voucherTypeInvalid: "voucher_type_invalid",
+    voucherPaymentMethodInvalid: "voucher_payment_method_invalid",
+    voucherNotStarted: "voucher_not_started",
+    voucherMinimumOrderNotReached: "voucher_minimum_order_not_reached",
   },
   admin: {
     passSame: "password_same",
@@ -81,6 +76,7 @@ export const messageResponseError = {
     statusNotActive: "partner_status_not_active",
     invalidLocation: "invalid_location",
     invalidOperatingHours: "invalid_operating_hours",
+    typeChangeNotAllowed: "partner_type_change_not_allowed",
   },
   upload: {
     fileInvalid: "file_invalid",
@@ -99,13 +95,6 @@ export const messageResponseError = {
     withdrawNotAllowed: "transaction_withdraw_not_allowed",
     refundNotAllowed: "transaction_refund_not_allowed",
     evidenceAlreadyExists: "evidence_already_exists",
-  },
-  delivery: {
-    notFound: "delivery_not_found",
-    actionInvalid: "delivery_action_invalid",
-    statusNotValid: "delivery_status_not_valid",
-    statusNotChange: "delivery_status_not_change",
-    statusInvalid: "delivery_status_invalid",
   },
   config: {
     notFound: "config_not_found",
@@ -138,22 +127,6 @@ export const messageResponseError = {
   user: {
     notFound: "user_not_found",
   },
-  carrierCodeHistory: {
-    notFound: "carrier_code_history_not_found",
-    statusNotPending: "carrier_code_history_status_not_pending",
-    codeMustBeAlphanumeric: "carrier_code_history_code_must_be_alphanumeric",
-    exist: "carrier_code_history_exist",
-  },
-  vehiclePrice: {
-    exist: "vehicle_price_exist",
-    notFound: "vehicle_price_not_found",
-    nameExist: "vehicle_price_name_exist",
-  },
-  vehicleBooking: {
-    notFound: "vehicle_booking_not_found",
-    statusNotAllowUpdate: "vehicle_booking_status_not_allow_update",
-    statusNotAllowCancel: "vehicle_booking_status_not_allow_cancel",
-  },
   address: {
     notFound: "address_not_found",
     actionInvalid: "address_action_invalid",
@@ -164,4 +137,9 @@ export const messageResponseError = {
   notification: {
     notFound: "notification_not_found",
   },
+  shoeService: {
+    customerIdNotAllowed: "customer_id_not_allowed",
+    notFound: "shoe_service_not_found",
+    duplicateName: "shoe_service_duplicate_name",
+  }
 };

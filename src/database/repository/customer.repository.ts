@@ -63,4 +63,11 @@ export class CustomerRepository
       },
     };
   }
+
+  getIdAllCustomer(filter?: object): Promise<Customer[]> {
+    return this.customerRepository.find({
+      select: ['id'],
+      where: filter,
+    });
+  }
 }

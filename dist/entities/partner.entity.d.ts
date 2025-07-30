@@ -1,7 +1,7 @@
-import { BaseEntity } from './base.entity';
-import { StepEnum, UserStatusEnum } from '../common/enums';
-import { Address } from './address.entity';
-import { Wallet } from './wallet.entity';
+import { BaseEntity } from "./base.entity";
+import { PartnerTypeEnum, StepEnum, UserStatusEnum } from "@common/enums";
+import { Address } from "./address.entity";
+import { Wallet } from "./wallet.entity";
 export declare class Partner extends BaseEntity {
     name: string;
     email: string;
@@ -11,6 +11,7 @@ export declare class Partner extends BaseEntity {
     isLogin: boolean;
     isVerified: boolean;
     bankName: string;
+    operatingHours: string;
     bankAccountNumber: string;
     bankAccountName: string;
     avatar: string;
@@ -24,6 +25,7 @@ export declare class Partner extends BaseEntity {
     facebookId: string;
     facebookName: string;
     referralCode: string;
+    type: PartnerTypeEnum;
     addresses: Address[];
     wallet: Wallet;
 }

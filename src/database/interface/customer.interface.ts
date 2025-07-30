@@ -13,4 +13,5 @@ export interface CustomerRepositoryInterface
     },
     pagination: PaginationDto
   );
+  getIdAllCustomer(filter?: object): Promise<Customer[]>;
 }

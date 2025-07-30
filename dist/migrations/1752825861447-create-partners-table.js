@@ -104,6 +104,12 @@ class CreatePartnersTable1752825861447 {
                     default: `'${enums_1.StepEnum.REGISTER_INFO}'`,
                 },
                 {
+                    name: 'type',
+                    type: 'enum',
+                    enum: [...Object.values(enums_1.PartnerTypeEnum)],
+                    isNullable: true,
+                },
+                {
                     name: "appleId",
                     type: "varchar",
                     length: "255",

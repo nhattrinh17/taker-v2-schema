@@ -1,4 +1,4 @@
-import { TransactionSource, TransactionStatus, TransactionType } from '../common/enums';
+import { TransactionSource, TransactionStatus, TransactionType } from '@common/enums';
 import { TransactionLog } from './transaction_log.entity';
 import { BaseEntity } from './base.entity';
 import { Wallet } from './wallet.entity';

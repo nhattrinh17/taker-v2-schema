@@ -3,10 +3,7 @@ export declare enum VoucherTypeDiscountEnum {
     PERCENT = "PERCENT"
 }
 export declare enum VoucherTypeEnum {
-    CARPOOL = "CARPOOL",
-    DELIVERY = "DELIVERY",
-    BIKE_BOOKING = "BIKE_BOOKING",
-    CAR_BOOKING = "CAR_BOOKING"
+    SHOE_CLEANING = "SHOE_CLEANING"
 }
 export declare enum VehicleTypeEnum {
     CAR = "CAR",
@@ -35,4 +32,7 @@ export declare enum ServiceTypeEnum {
 export declare enum OtpRequestType {
     EXISTED = "existed",
     NOT_EXISTED = "not-existed"
+}
+export declare enum PartnerTypeEnum {
+    SHOE_CLEANING = "SHOE_CLEANING"
 }

@@ -2,8 +2,8 @@ import { Repository } from "typeorm";
 import { BaseRepositoryAbstract } from "../../base/base.abstract.repository";
 import { Customer } from "../../entities/customer.entity";
 import { CustomerRepositoryInterface } from "../interface/customer.interface";
-import { StepEnum, UserStatusEnum } from "../../common/enums";
-import { PaginationDto } from "../../common/decorators";
+import { StepEnum, UserStatusEnum } from "@common/enums";
+import { PaginationDto } from "@common/decorators";
 export declare class CustomerRepository extends BaseRepositoryAbstract<Customer> implements CustomerRepositoryInterface {
     private readonly customerRepository;
     constructor(customerRepository: Repository<Customer>);
@@ -22,4 +22,5 @@ export declare class CustomerRepository extends BaseRepositoryAbstract<Customer>
             typeSort?: "ASC" | "DESC";
         };
     }>;
+    getIdAllCustomer(filter?: object): Promise<Customer[]>;
 }

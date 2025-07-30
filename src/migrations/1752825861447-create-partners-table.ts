@@ -1,5 +1,5 @@
 import { BASE_OPERATING_HOURS } from "@common/constants/app.constant";
-import { StepEnum, UserStatusEnum } from "@common/enums";
+import { PartnerTypeEnum, StepEnum, UserStatusEnum } from "@common/enums";
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreatePartnersTable1752825861447 implements MigrationInterface {
@@ -101,6 +101,12 @@ export class CreatePartnersTable1752825861447 implements MigrationInterface {
             type: "enum",
             enum: [...Object.values(StepEnum)],
             default: `'${StepEnum.REGISTER_INFO}'`,
+          },
+          {
+            name: 'type',
+            type: 'enum',
+            enum: [...Object.values(PartnerTypeEnum)],
+            isNullable: true,
           },
           {
             name: "appleId",

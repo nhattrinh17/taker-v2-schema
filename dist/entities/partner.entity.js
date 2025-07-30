@@ -13,6 +13,7 @@ exports.Partner = void 0;
 const typeorm_1 = require("typeorm");
 const base_entity_1 = require("./base.entity");
 const enums_1 = require("../common/enums");
+const app_constant_1 = require("../common/constants/app.constant");
 const address_entity_1 = require("./address.entity");
 const wallet_entity_1 = require("./wallet.entity");
 let Partner = class Partner extends base_entity_1.BaseEntity {
@@ -51,6 +52,10 @@ __decorate([
     __metadata("design:type", String)
 ], Partner.prototype, "bankName", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ length: 255, default: JSON.stringify(app_constant_1.BASE_OPERATING_HOURS) }),
+    __metadata("design:type", String)
+], Partner.prototype, "operatingHours", void 0);
+__decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
 ], Partner.prototype, "bankAccountNumber", void 0);
@@ -64,7 +69,7 @@ __decorate([
 ], Partner.prototype, "avatar", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'enum',
+        type: "enum",
         enum: enums_1.UserStatusEnum,
         default: enums_1.UserStatusEnum.PENDING,
     }),
@@ -72,7 +77,7 @@ __decorate([
 ], Partner.prototype, "status", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'enum',
+        type: "enum",
         enum: enums_1.StepEnum,
         default: enums_1.StepEnum.REGISTER_INFO,
     }),
@@ -111,6 +116,10 @@ __decorate([
     __metadata("design:type", String)
 ], Partner.prototype, "referralCode", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ enum: enums_1.PartnerTypeEnum, nullable: true }),
+    __metadata("design:type", String)
+], Partner.prototype, "type", void 0);
+__decorate([
     (0, typeorm_1.OneToMany)(() => address_entity_1.Address, (address) => address.partner),
     __metadata("design:type", Array)
 ], Partner.prototype, "addresses", void 0);
@@ -119,5 +128,5 @@ __decorate([
     __metadata("design:type", wallet_entity_1.Wallet)
 ], Partner.prototype, "wallet", void 0);
 exports.Partner = Partner = __decorate([
-    (0, typeorm_1.Entity)({ name: 'partners' })
+    (0, typeorm_1.Entity)({ name: "partners" })
 ], Partner);

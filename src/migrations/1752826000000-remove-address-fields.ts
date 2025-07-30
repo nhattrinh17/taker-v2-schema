@@ -10,7 +10,6 @@ export class RemoveAddressFields1752826000000 implements MigrationInterface {
     await queryRunner.dropColumn("partners", "address");
     await queryRunner.dropColumn("partners", "location");
     await queryRunner.dropColumn("partners", "latLongToCell");
-    await queryRunner.dropColumn("partners", "operatingHours");
 
     await queryRunner.addColumn(
       "partners",
@@ -58,16 +57,6 @@ export class RemoveAddressFields1752826000000 implements MigrationInterface {
         name: "latLongToCell",
         type: "varchar(255)",
         isNullable: true,
-      })
-    );
-
-    await queryRunner.addColumn(
-      "partners",
-      new TableColumn({
-        name: "operatingHours",
-        type: "varchar(255)",
-        isNullable: true,
-        default: `'${JSON.stringify(BASE_OPERATING_HOURS)}'`,
       })
     );
 
