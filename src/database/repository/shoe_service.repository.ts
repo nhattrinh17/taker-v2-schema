@@ -24,27 +24,12 @@ export class ShoeServiceRepository
   ): Promise<any> {
     const queryBuilder = this.shoeServiceRepository
       .createQueryBuilder("shoeService")
-      .leftJoinAndSelect("shoeService.customer", "customer");
-
-    if (query.customerId) {
-      queryBuilder.andWhere("shoeService.customerId = :customerId", {
-        customerId: query.customerId,
-      });
-    }
 
     if (query.search) {
       queryBuilder.andWhere(
         "shoeService.name ILIKE :search OR shoeService.description ILIKE :search OR shoeService.price ILIKE :search",
         { search: `%${query.search}%` }
       );
-    }
-
-    if (query.isPublic === true) {
-      // Dịch vụ công khai: không gắn với ai cả
-      queryBuilder.andWhere("shoeService.customerId IS NULL");
-    } else if (query.isPublic === false) {
-      // Dịch vụ không công khai: thuộc về ai đó (có chủ sở hữu)
-      queryBuilder.andWhere("shoeService.customerId IS NOT NULL");
     }
 
     queryBuilder

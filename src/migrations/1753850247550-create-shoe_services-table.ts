@@ -25,16 +25,12 @@ export class CreateShoeServicesTable1753850247550
           {
             name: "price",
             type: "int",
+            isNullable: true, // nullable nếu không có giá
           },
           {
             name: "description",
             type: "text",
             isNullable: true,
-          },
-          {
-            name: "customerId",
-            type: "varchar(36)",
-            isNullable: true, // nullable nếu dùng cho cả public & private
           },
           {
             name: "deletedAt",
@@ -55,24 +51,9 @@ export class CreateShoeServicesTable1753850247550
         ],
       })
     );
-
-    await queryRunner.createForeignKey(
-      "shoe_services",
-      new TableForeignKey({
-        name: "FK_ShoeServices_Partner",
-        columnNames: ["customerId"],
-        referencedColumnNames: ["id"],
-        referencedTableName: "customers",
-        onDelete: "CASCADE", // nếu customer bị xóa thì set customerId thành null
-      })
-    );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey(
-      "shoe_services",
-      "FK_ShoeServices_Partner"
-    );
     await queryRunner.dropTable("shoe_services");
   }
 }
