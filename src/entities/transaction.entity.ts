@@ -1,8 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, OneToMany, ManyToOne, JoinColumn, BeforeInsert } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, OneToMany, ManyToOne, JoinColumn, BeforeInsert, OneToOne } from 'typeorm';
 import { TransactionSource, TransactionStatus, TransactionType } from '@common/enums';
 import { TransactionLog } from './transaction_log.entity';
 import { BaseEntity } from './base.entity';
 import { Wallet } from './wallet.entity';
+import { ShoeBooking } from './shoe_booking.entity';
 
 @Entity('transactions')
 export class Transaction extends BaseEntity {
@@ -63,6 +64,9 @@ export class Transaction extends BaseEntity {
 
   @OneToMany(() => TransactionLog, (transactionLog) => transactionLog.transaction)
   logs: TransactionLog[];
+
+  @OneToOne(() => ShoeBooking, (shoeBooking) => shoeBooking.transaction, { nullable: true })
+  shoeBooking: ShoeBooking;
 
   @BeforeInsert()
   async generateOrderId() {

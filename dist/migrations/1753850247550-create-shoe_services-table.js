@@ -19,15 +19,11 @@ class CreateShoeServicesTable1753850247550 {
                 {
                     name: "price",
                     type: "int",
+                    isNullable: true,
                 },
                 {
                     name: "description",
                     type: "text",
-                    isNullable: true,
-                },
-                {
-                    name: "customerId",
-                    type: "varchar(36)",
                     isNullable: true,
                 },
                 {
@@ -48,16 +44,8 @@ class CreateShoeServicesTable1753850247550 {
                 },
             ],
         }));
-        await queryRunner.createForeignKey("shoe_services", new typeorm_1.TableForeignKey({
-            name: "FK_ShoeServices_Partner",
-            columnNames: ["customerId"],
-            referencedColumnNames: ["id"],
-            referencedTableName: "customers",
-            onDelete: "CASCADE",
-        }));
     }
     async down(queryRunner) {
-        await queryRunner.dropForeignKey("shoe_services", "FK_ShoeServices_Partner");
         await queryRunner.dropTable("shoe_services");
     }
 }

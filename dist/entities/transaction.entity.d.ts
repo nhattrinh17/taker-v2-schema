@@ -2,6 +2,7 @@ import { TransactionSource, TransactionStatus, TransactionType } from '@common/e
 import { TransactionLog } from './transaction_log.entity';
 import { BaseEntity } from './base.entity';
 import { Wallet } from './wallet.entity';
+import { ShoeBooking } from './shoe_booking.entity';
 export declare class Transaction extends BaseEntity {
     wallet: Wallet;
     walletId: string;
@@ -18,5 +19,6 @@ export declare class Transaction extends BaseEntity {
     isManual: boolean;
     evidence: string;
     logs: TransactionLog[];
+    shoeBooking: ShoeBooking;
     generateOrderId(): Promise<void>;
 }

@@ -8,6 +8,8 @@ export * from './group_role.repository';
 export * from './group_role_permission.repository';
 export * from './notification.repository';
 export * from './partner.repository';
+export * from './shoe_booking.repository';
+export * from './shoe_service.repository';
 export * from './sys_permission.repository';
 export * from './sys_permission_action.repository';
 export * from './system_notification.repository';

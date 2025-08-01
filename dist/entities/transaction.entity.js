@@ -15,6 +15,7 @@ const enums_1 = require("../common/enums");
 const transaction_log_entity_1 = require("./transaction_log.entity");
 const base_entity_1 = require("./base.entity");
 const wallet_entity_1 = require("./wallet.entity");
+const shoe_booking_entity_1 = require("./shoe_booking.entity");
 let Transaction = class Transaction extends base_entity_1.BaseEntity {
     async generateOrderId() {
         this.transactionDate = new Date();
@@ -94,6 +95,10 @@ __decorate([
     (0, typeorm_1.OneToMany)(() => transaction_log_entity_1.TransactionLog, (transactionLog) => transactionLog.transaction),
     __metadata("design:type", Array)
 ], Transaction.prototype, "logs", void 0);
+__decorate([
+    (0, typeorm_1.OneToOne)(() => shoe_booking_entity_1.ShoeBooking, (shoeBooking) => shoeBooking.transaction, { nullable: true }),
+    __metadata("design:type", shoe_booking_entity_1.ShoeBooking)
+], Transaction.prototype, "shoeBooking", void 0);
 __decorate([
     (0, typeorm_1.BeforeInsert)(),
     __metadata("design:type", Function),

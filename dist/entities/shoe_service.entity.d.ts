@@ -1,9 +1,8 @@
 import { BaseEntity } from "./base.entity";
-import { Customer } from "./customer.entity";
+import { ShoeBooking } from "./shoe_booking.entity";
 export declare class ShoeService extends BaseEntity {
-    customerId: string;
-    customer: Customer;
     name: string;
-    price: number;
+    price?: number;
     description: string;
+    shoeBookings: ShoeBooking[];
 }

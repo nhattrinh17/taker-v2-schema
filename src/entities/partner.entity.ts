@@ -5,6 +5,7 @@ import { BASE_OPERATING_HOURS } from "@common/constants/app.constant";
 import { Address } from "./address.entity";
 import { Wallet } from "./wallet.entity";
 import { ShoeService } from "./shoe_service.entity";
+import { ShoeBooking } from "./shoe_booking.entity";
 
 @Entity({ name: "partners" })
 export class Partner extends BaseEntity {
@@ -91,4 +92,7 @@ export class Partner extends BaseEntity {
 
   @OneToOne(() => Wallet, (wallet) => wallet.partner, { nullable: true })
   wallet: Wallet;
+
+  @OneToMany(() => ShoeBooking, (shoeBooking) => shoeBooking.partner)
+  shoeBookings: ShoeBooking[];
 }

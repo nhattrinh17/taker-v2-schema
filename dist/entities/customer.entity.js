@@ -15,8 +15,8 @@ const base_entity_1 = require("./base.entity");
 const enums_1 = require("../common/enums");
 const address_entity_1 = require("./address.entity");
 const wallet_entity_1 = require("./wallet.entity");
-const shoe_service_entity_1 = require("./shoe_service.entity");
 const customer_voucher_entity_1 = require("./customer_voucher.entity");
+const shoe_booking_entity_1 = require("./shoe_booking.entity");
 let Customer = class Customer extends base_entity_1.BaseEntity {
 };
 exports.Customer = Customer;
@@ -129,9 +129,9 @@ __decorate([
     __metadata("design:type", wallet_entity_1.Wallet)
 ], Customer.prototype, "wallet", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => shoe_service_entity_1.ShoeService, (shoeService) => shoeService.customer),
+    (0, typeorm_1.OneToMany)(() => shoe_booking_entity_1.ShoeBooking, (shoeBooking) => shoeBooking.customer),
     __metadata("design:type", Array)
-], Customer.prototype, "shoeServices", void 0);
+], Customer.prototype, "shoeBookings", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => customer_voucher_entity_1.CustomerVoucher, (customerVoucher) => customerVoucher.customer),
     __metadata("design:type", Array)

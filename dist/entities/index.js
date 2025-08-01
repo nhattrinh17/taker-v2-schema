@@ -28,5 +28,6 @@ __exportStar(require("./blog_category.entity"), exports);
 __exportStar(require("./notification.entity"), exports);
 __exportStar(require("./system_notification.entity"), exports);
 __exportStar(require("./shoe_service.entity"), exports);
+__exportStar(require("./shoe_booking.entity"), exports);
 __exportStar(require("./voucher.entity"), exports);
 __exportStar(require("./customer_voucher.entity"), exports);

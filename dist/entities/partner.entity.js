@@ -16,6 +16,7 @@ const enums_1 = require("../common/enums");
 const app_constant_1 = require("../common/constants/app.constant");
 const address_entity_1 = require("./address.entity");
 const wallet_entity_1 = require("./wallet.entity");
+const shoe_booking_entity_1 = require("./shoe_booking.entity");
 let Partner = class Partner extends base_entity_1.BaseEntity {
 };
 exports.Partner = Partner;
@@ -127,6 +128,10 @@ __decorate([
     (0, typeorm_1.OneToOne)(() => wallet_entity_1.Wallet, (wallet) => wallet.partner, { nullable: true }),
     __metadata("design:type", wallet_entity_1.Wallet)
 ], Partner.prototype, "wallet", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => shoe_booking_entity_1.ShoeBooking, (shoeBooking) => shoeBooking.partner),
+    __metadata("design:type", Array)
+], Partner.prototype, "shoeBookings", void 0);
 exports.Partner = Partner = __decorate([
     (0, typeorm_1.Entity)({ name: "partners" })
 ], Partner);

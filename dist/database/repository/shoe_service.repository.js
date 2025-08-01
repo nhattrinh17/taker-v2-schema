@@ -25,21 +25,9 @@ let ShoeServiceRepository = class ShoeServiceRepository extends base_abstract_re
     }
     async getAllShoeServices(query, pagination) {
         const queryBuilder = this.shoeServiceRepository
-            .createQueryBuilder("shoeService")
-            .leftJoinAndSelect("shoeService.customer", "customer");
-        if (query.customerId) {
-            queryBuilder.andWhere("shoeService.customerId = :customerId", {
-                customerId: query.customerId,
-            });
-        }
+            .createQueryBuilder("shoeService");
         if (query.search) {
             queryBuilder.andWhere("shoeService.name ILIKE :search OR shoeService.description ILIKE :search OR shoeService.price ILIKE :search", { search: `%${query.search}%` });
-        }
-        if (query.isPublic === true) {
-            queryBuilder.andWhere("shoeService.customerId IS NULL");
-        }
-        else if (query.isPublic === false) {
-            queryBuilder.andWhere("shoeService.customerId IS NOT NULL");
         }
         queryBuilder
             .skip(pagination.offset)

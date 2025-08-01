@@ -12,5 +12,6 @@ export * from './blog_category.entity';
 export * from './notification.entity';
 export * from './system_notification.entity';
 export * from './shoe_service.entity';
+export * from './shoe_booking.entity';
 export * from './voucher.entity';
 export * from './customer_voucher.entity';

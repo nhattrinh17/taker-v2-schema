@@ -1,7 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOne } from 'typeorm';
 import { Customer } from './customer.entity';
 import { Voucher } from './voucher.entity';
 import { BaseEntity } from './base.entity';
+import { ShoeBooking } from './shoe_booking.entity';
 
 @Entity('customer_vouchers')
 export class CustomerVoucher extends BaseEntity {
@@ -25,4 +26,7 @@ export class CustomerVoucher extends BaseEntity {
   })
   @JoinColumn({ name: 'voucherId' })
   voucher: Voucher;
+
+  @OneToOne(() => ShoeBooking, (shoeBooking) => shoeBooking.customerVoucher)
+  shoeBooking: ShoeBooking;
 }

@@ -24,6 +24,8 @@ __exportStar(require("./group_role.repository"), exports);
 __exportStar(require("./group_role_permission.repository"), exports);
 __exportStar(require("./notification.repository"), exports);
 __exportStar(require("./partner.repository"), exports);
+__exportStar(require("./shoe_booking.repository"), exports);
+__exportStar(require("./shoe_service.repository"), exports);
 __exportStar(require("./sys_permission.repository"), exports);
 __exportStar(require("./sys_permission_action.repository"), exports);
 __exportStar(require("./system_notification.repository"), exports);

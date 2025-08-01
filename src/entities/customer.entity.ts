@@ -5,6 +5,7 @@ import { Address } from "./address.entity";
 import { Wallet } from "./wallet.entity";
 import { ShoeService } from "./shoe_service.entity";
 import { CustomerVoucher } from "./customer_voucher.entity";
+import { ShoeBooking } from "./shoe_booking.entity";
 
 @Entity({ name: "customers" })
 export class Customer extends BaseEntity {
@@ -92,8 +93,8 @@ export class Customer extends BaseEntity {
   @OneToOne(() => Wallet, (wallet) => wallet.customer, { nullable: true })
   wallet: Wallet;
 
-  @OneToMany(() => ShoeService, (shoeService) => shoeService.customer)
-  shoeServices: ShoeService[];
+  @OneToMany(() => ShoeBooking, (shoeBooking) => shoeBooking.customer)
+  shoeBookings: ShoeBooking[];
 
   @OneToMany(() => CustomerVoucher, (customerVoucher) => customerVoucher.customer)
   customerVouchers: CustomerVoucher[];

@@ -14,6 +14,7 @@ const typeorm_1 = require("typeorm");
 const customer_entity_1 = require("./customer.entity");
 const voucher_entity_1 = require("./voucher.entity");
 const base_entity_1 = require("./base.entity");
+const shoe_booking_entity_1 = require("./shoe_booking.entity");
 let CustomerVoucher = class CustomerVoucher extends base_entity_1.BaseEntity {
 };
 exports.CustomerVoucher = CustomerVoucher;
@@ -43,6 +44,10 @@ __decorate([
     (0, typeorm_1.JoinColumn)({ name: 'voucherId' }),
     __metadata("design:type", voucher_entity_1.Voucher)
 ], CustomerVoucher.prototype, "voucher", void 0);
+__decorate([
+    (0, typeorm_1.OneToOne)(() => shoe_booking_entity_1.ShoeBooking, (shoeBooking) => shoeBooking.customerVoucher),
+    __metadata("design:type", shoe_booking_entity_1.ShoeBooking)
+], CustomerVoucher.prototype, "shoeBooking", void 0);
 exports.CustomerVoucher = CustomerVoucher = __decorate([
     (0, typeorm_1.Entity)('customer_vouchers')
 ], CustomerVoucher);

@@ -2,6 +2,7 @@ import { BaseEntity } from "./base.entity";
 import { PartnerTypeEnum, StepEnum, UserStatusEnum } from "@common/enums";
 import { Address } from "./address.entity";
 import { Wallet } from "./wallet.entity";
+import { ShoeBooking } from "./shoe_booking.entity";
 export declare class Partner extends BaseEntity {
     name: string;
     email: string;
@@ -28,4 +29,5 @@ export declare class Partner extends BaseEntity {
     type: PartnerTypeEnum;
     addresses: Address[];
     wallet: Wallet;
+    shoeBookings: ShoeBooking[];
 }

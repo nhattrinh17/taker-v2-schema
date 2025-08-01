@@ -1,0 +1,34 @@
+import { BaseEntity } from "./base.entity";
+import { ShoeBookingStatusEnum } from "@common/enums";
+import { ShoeService } from "./shoe_service.entity";
+import { Customer } from "./customer.entity";
+import { Partner } from "./partner.entity";
+import { Transaction } from "./transaction.entity";
+import { CustomerVoucher } from "./customer_voucher.entity";
+export declare class ShoeBooking extends BaseEntity {
+    shoeServiceId?: string;
+    customerId?: string;
+    partnerId?: string;
+    transactionId?: string;
+    customerVoucherId?: string;
+    shoeServiceDes?: string;
+    bookingDate: Date;
+    status: ShoeBookingStatusEnum;
+    pickupAddress: string;
+    deliveryAddress: string;
+    returnAddress: string;
+    pickupLocation?: string;
+    deliveryLocation?: string;
+    returnLocation?: string;
+    totalPrice?: number;
+    finalPrice?: number;
+    partnerRevenue: number;
+    note?: string;
+    imageUrls?: string;
+    orderId: string;
+    shoeService?: ShoeService;
+    customer?: Customer;
+    partner?: Partner;
+    transaction?: Transaction;
+    customerVoucher?: CustomerVoucher;
+}
