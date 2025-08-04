@@ -48,9 +48,8 @@ export class CreateTransactionsTable1753692413403
           },
           {
             name: "transactionSource",
-            type: "enum",
-            enum: Object.values(TransactionSource),
-            default: `'${TransactionSource.WALLET}'`,
+            type: "varchar(255)",
+            isNullable: true,
           },
           {
             name: "status",

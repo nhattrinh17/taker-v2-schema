@@ -24,6 +24,7 @@ export declare const messageResponseError: {
         accessCodeExpired: string;
         partnerNotFound: string;
         actionInvalid: string;
+        notEnoughBalance: string;
     };
     blog: {
         notFound: string;
@@ -81,13 +82,6 @@ export declare const messageResponseError: {
     upload: {
         fileInvalid: string;
     };
-    carpoolBooking: {
-        notFound: string;
-        statusNotChange: string;
-        statusNotValid: string;
-        actionInvalid: string;
-        statusInvalid: string;
-    };
     transaction: {
         notFound: string;
         actionInvalid: string;
@@ -132,5 +126,18 @@ export declare const messageResponseError: {
         customerIdNotAllowed: string;
         notFound: string;
         duplicateName: string;
+    };
+    shoeBooking: {
+        notFound: string;
+        actionInvalid: string;
+        bookingDateTooClose: string;
+        pickupAddressRequired: string;
+        deliveryAddressRequired: string;
+        returnAddressRequired: string;
+        shoeServiceNotFound: string;
+        imageUrlsInvalid: string;
+        originalPriceAndShoeServiceDesRequired: string;
+        accessCodeNotAllowed: string;
+        notPendingPayment: string;
     };
 };

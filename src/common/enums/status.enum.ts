@@ -36,7 +36,7 @@ export enum ShoeBookingStatusEnum {
 }
 
 
-export enum CarRegistryStatusEnum {
+export enum VehicleRegistryStatusEnum {
   PENDING = 'PENDING',
   ACTIVE = 'ACTIVE',
   REJECTED = 'REJECTED',

@@ -1,4 +1,4 @@
-import { SystemNotificationRecipientEnum } from '@common/enums';
+import { SystemNotificationRecipientEnum } from '../common/enums';
 import { BaseEntity } from './base.entity';
 import { Notification } from './index';
 export declare class SystemNotification extends BaseEntity {

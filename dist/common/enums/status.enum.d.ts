@@ -25,7 +25,7 @@ export declare enum ShoeBookingStatusEnum {
     COMPLETED = "COMPLETED",
     CANCELLED = "CANCELLED"
 }
-export declare enum CarRegistryStatusEnum {
+export declare enum VehicleRegistryStatusEnum {
     PENDING = "PENDING",
     ACTIVE = "ACTIVE",
     REJECTED = "REJECTED"

@@ -24,6 +24,7 @@ export const messageResponseError = {
     accessCodeExpired: "access_code_expired",
     partnerNotFound: "partner_not_found",
     actionInvalid: "wallet_action_invalid",
+    notEnoughBalance: "not_enough_balance",
   },
   blog: {
     notFound: "blog_not_found",
@@ -81,13 +82,6 @@ export const messageResponseError = {
   upload: {
     fileInvalid: "file_invalid",
   },
-  carpoolBooking: {
-    notFound: "carpool_booking_not_found",
-    statusNotChange: "carpool_booking_status_not_change",
-    statusNotValid: "carpool_booking_status_not_valid",
-    actionInvalid: "carpool_booking_action_invalid",
-    statusInvalid: "carpool_booking_status_invalid",
-  },
   transaction: {
     notFound: "transaction_not_found",
     actionInvalid: "transaction_action_invalid",
@@ -141,5 +135,18 @@ export const messageResponseError = {
     customerIdNotAllowed: "customer_id_not_allowed",
     notFound: "shoe_service_not_found",
     duplicateName: "shoe_service_duplicate_name",
-  }
+  },
+  shoeBooking: {
+    notFound: "shoe_booking_not_found",
+    actionInvalid: "shoe_booking_action_invalid",
+    bookingDateTooClose: "booking_date_too_close",
+    pickupAddressRequired: "pickup_address_required",
+    deliveryAddressRequired: "delivery_address_required",
+    returnAddressRequired: "return_address_required",
+    shoeServiceNotFound: "shoe_service_not_found",
+    imageUrlsInvalid: "image_urls_invalid",
+    originalPriceAndShoeServiceDesRequired: "original_price_and_shoe_service_description_required",
+    accessCodeNotAllowed: "access_code_not_allowed",
+    notPendingPayment: "shoe_booking_not_pending_payment",
+  },
 };

@@ -1,8 +1,8 @@
-import { CustomerVoucher } from "@entities/index";
+import { CustomerVoucher } from "../../entities/index";
 import { BaseRepositoryAbstract } from "src/base";
 import { Repository } from "typeorm";
-import { CustomerVoucherAdminRepositoryInterface } from "@database/interface/customer_voucher.interface";
-import { PaginationDto } from "@common/decorators";
+import { CustomerVoucherAdminRepositoryInterface } from "../interface/customer_voucher.interface";
+import { PaginationDto } from "../../common/decorators";
 export declare class CustomerVoucherAdminRepository extends BaseRepositoryAbstract<CustomerVoucher> implements CustomerVoucherAdminRepositoryInterface {
     private readonly customerVoucherRepository;
     constructor(customerVoucherRepository: Repository<CustomerVoucher>);

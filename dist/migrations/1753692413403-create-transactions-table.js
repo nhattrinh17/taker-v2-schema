@@ -47,9 +47,8 @@ class CreateTransactionsTable1753692413403 {
                 },
                 {
                     name: "transactionSource",
-                    type: "enum",
-                    enum: Object.values(enums_1.TransactionSource),
-                    default: `'${enums_1.TransactionSource.WALLET}'`,
+                    type: "varchar(255)",
+                    isNullable: true,
                 },
                 {
                     name: "status",

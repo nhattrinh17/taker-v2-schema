@@ -1,6 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToOne } from "typeorm";
 import { BaseEntity } from "./base.entity";
-import { ShoeBookingStatusEnum } from "@common/enums";
+import { ExpectedDeliveryTimeEnum, ShoeBookingStatusEnum } from "@common/enums";
 import { ShoeService } from "./shoe_service.entity";
 import { Customer } from "./customer.entity";
 import { Partner } from "./partner.entity";
@@ -27,8 +27,8 @@ export class ShoeBooking extends BaseEntity {
   @Column({ type: "text", nullable: true })
   shoeServiceDes?: string;
 
-  @Column({ type: "datetime" })
-  bookingDate: Date;
+  @Column({ type: "datetime", nullable: true })
+  bookingDate?: Date;
 
   @Column({
     type: "enum",
@@ -36,6 +36,13 @@ export class ShoeBooking extends BaseEntity {
     default: ShoeBookingStatusEnum.PENDING,
   })
   status: ShoeBookingStatusEnum;
+
+  @Column({
+    type: "enum",
+    enum: ExpectedDeliveryTimeEnum,
+    nullable: true,
+  })
+  expectedDeliveryTime?: ExpectedDeliveryTimeEnum;
 
   @Column({ type: "varchar", length: 255 })
   pickupAddress: string;
@@ -56,6 +63,9 @@ export class ShoeBooking extends BaseEntity {
   returnLocation?: string;
 
   @Column({ type: "int", nullable: true })
+  originalPrice?: number;
+
+  @Column({ type: "int", nullable: true })
   totalPrice?: number;
 
   @Column({ type: "int", nullable: true })
@@ -74,23 +84,35 @@ export class ShoeBooking extends BaseEntity {
   orderId: string;
 
   // Relations
-  @ManyToOne(() => ShoeService, (shoeService) => shoeService.shoeBookings, { nullable: true })
+  @ManyToOne(() => ShoeService, (shoeService) => shoeService.shoeBookings, {
+    nullable: true,
+  })
   @JoinColumn({ name: "shoeServiceId" })
   shoeService?: ShoeService;
 
-  @ManyToOne(() => Customer, (customer) => customer.shoeBookings, { nullable: true })
+  @ManyToOne(() => Customer, (customer) => customer.shoeBookings, {
+    nullable: true,
+  })
   @JoinColumn({ name: "customerId" })
   customer?: Customer;
 
-  @ManyToOne(() => Partner, (partner) => partner.shoeBookings, { nullable: true })
+  @ManyToOne(() => Partner, (partner) => partner.shoeBookings, {
+    nullable: true,
+  })
   @JoinColumn({ name: "partnerId" })
   partner?: Partner;
 
-  @OneToOne(() => Transaction, (transaction) => transaction.shoeBooking, { nullable: true })
+  @OneToOne(() => Transaction, (transaction) => transaction.shoeBooking, {
+    nullable: true,
+  })
   @JoinColumn({ name: "transactionId" })
   transaction?: Transaction;
 
-  @OneToOne(() => CustomerVoucher, (customerVoucher) => customerVoucher.shoeBooking, { nullable: true })
+  @OneToOne(
+    () => CustomerVoucher,
+    (customerVoucher) => customerVoucher.shoeBooking,
+    { nullable: true }
+  )
   @JoinColumn({ name: "customerVoucherId" })
   customerVoucher?: CustomerVoucher;
 }

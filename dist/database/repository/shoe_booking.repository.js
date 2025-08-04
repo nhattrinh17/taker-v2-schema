@@ -23,6 +23,32 @@ let ShoeBookingRepository = class ShoeBookingRepository extends base_abstract_re
         super(shoeBookingRepository);
         this.shoeBookingRepository = shoeBookingRepository;
     }
+    async getAllShoeBookings(query, pagination) {
+        const queryBuilder = this.shoeBookingRepository
+            .createQueryBuilder("shoeBooking")
+            .leftJoinAndSelect("shoeBooking.customer", "customer")
+            .leftJoinAndSelect("shoeBooking.shoeService", "shoeService")
+            .where("shoeBooking.customerId = :customerId", {
+            customerId: query.customerId,
+        });
+        if (query.status) {
+            queryBuilder.andWhere("shoeBooking.status = :status", {
+                status: query.status,
+            });
+        }
+        queryBuilder
+            .take(pagination.limit)
+            .skip(pagination.offset)
+            .orderBy("shoeBooking." + pagination.sort || "createdAt", pagination.typeSort || "DESC");
+        const [items, total] = await queryBuilder.getManyAndCount();
+        return {
+            data: items,
+            pagination: {
+                ...pagination,
+                total,
+            },
+        };
+    }
 };
 exports.ShoeBookingRepository = ShoeBookingRepository;
 exports.ShoeBookingRepository = ShoeBookingRepository = __decorate([

@@ -1,4 +1,4 @@
-import { IReturnUrl } from '@common/constants/app.constant';
+import { IReturnUrl } from '../constants/app.constant';
 interface PropType {
     amount: number;
     ip: string;

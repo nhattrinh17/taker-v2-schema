@@ -46,13 +46,19 @@ class CreateShoeBookingTable1753951376873 {
                 {
                     name: "bookingDate",
                     type: "datetime(6)",
-                    isNullable: false,
+                    isNullable: true,
                 },
                 {
                     name: "status",
                     type: "enum",
                     enum: [...Object.values(enums_1.ShoeBookingStatusEnum)],
                     default: `'${enums_1.ShoeBookingStatusEnum.PENDING}'`,
+                },
+                {
+                    name: "expectedDeliveryTime",
+                    enum: [...Object.values(enums_1.ExpectedDeliveryTimeEnum)],
+                    default: `'${enums_1.ExpectedDeliveryTimeEnum.HOUR_0_24}'`,
+                    type: "enum",
                 },
                 {
                     name: "pickupAddress",
@@ -85,6 +91,11 @@ class CreateShoeBookingTable1753951376873 {
                     name: "returnLocation",
                     type: "varchar",
                     length: "255",
+                    isNullable: true,
+                },
+                {
+                    name: "originalPrice",
+                    type: "int",
                     isNullable: true,
                 },
                 {

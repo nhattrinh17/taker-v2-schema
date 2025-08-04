@@ -24,3 +24,8 @@ export declare enum VehiclePriceLevelEnum {
     ECONOMY = 2,
     PREMIUM = 3
 }
+export declare enum ExpectedDeliveryTimeEnum {
+    HOUR_0_24 = "HOUR_0_24",
+    HOUR_24_48 = "HOUR_24_48",
+    HOUR_48_72 = "HOUR_48_72"
+}

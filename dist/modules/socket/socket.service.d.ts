@@ -1,6 +1,6 @@
 import { HttpService } from '@nestjs/axios';
 import { SendMessageToRoom } from './dto/create-call-socket.dto';
-import RedisService from '@common/services/redis.service';
+import RedisService from '../../common/services/redis.service';
 export declare class SocketService {
     private readonly httpService;
     private readonly redisService;

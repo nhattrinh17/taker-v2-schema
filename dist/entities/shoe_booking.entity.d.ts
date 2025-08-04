@@ -1,5 +1,5 @@
 import { BaseEntity } from "./base.entity";
-import { ShoeBookingStatusEnum } from "@common/enums";
+import { ExpectedDeliveryTimeEnum, ShoeBookingStatusEnum } from "../common/enums";
 import { ShoeService } from "./shoe_service.entity";
 import { Customer } from "./customer.entity";
 import { Partner } from "./partner.entity";
@@ -12,14 +12,16 @@ export declare class ShoeBooking extends BaseEntity {
     transactionId?: string;
     customerVoucherId?: string;
     shoeServiceDes?: string;
-    bookingDate: Date;
+    bookingDate?: Date;
     status: ShoeBookingStatusEnum;
+    expectedDeliveryTime?: ExpectedDeliveryTimeEnum;
     pickupAddress: string;
     deliveryAddress: string;
     returnAddress: string;
     pickupLocation?: string;
     deliveryLocation?: string;
     returnLocation?: string;
+    originalPrice?: number;
     totalPrice?: number;
     finalPrice?: number;
     partnerRevenue: number;

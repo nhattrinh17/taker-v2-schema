@@ -1,4 +1,4 @@
-import { INotificationPayload } from "@common/constants/app.constant";
+import { INotificationPayload } from "../constants/app.constant";
 export interface INotificationPayloadV2 {
     token: string;
     data?: {

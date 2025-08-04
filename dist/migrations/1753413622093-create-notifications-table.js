@@ -24,6 +24,11 @@ class CreateNotificationsTable1753413622093 {
                     isNullable: true,
                 },
                 {
+                    name: "adminId",
+                    type: "varchar(36)",
+                    isNullable: true,
+                },
+                {
                     name: "systemNotificationId",
                     type: "varchar(36)",
                     isNullable: true,
@@ -83,6 +88,13 @@ class CreateNotificationsTable1753413622093 {
             onDelete: "CASCADE",
         }));
         await queryRunner.createForeignKey("notifications", new typeorm_1.TableForeignKey({
+            name: "FK_Admin_Notification",
+            columnNames: ["adminId"],
+            referencedColumnNames: ["id"],
+            referencedTableName: "admins",
+            onDelete: "CASCADE",
+        }));
+        await queryRunner.createForeignKey("notifications", new typeorm_1.TableForeignKey({
             columnNames: ["systemNotificationId"],
             referencedColumnNames: ["id"],
             referencedTableName: "system_notifications",
@@ -94,6 +106,7 @@ class CreateNotificationsTable1753413622093 {
         const foreignKey = table.foreignKeys.find((fk) => fk.columnNames.indexOf("customerId") !== -1);
         const foreignKey1 = table.foreignKeys.find((fk) => fk.columnNames.indexOf("systemNotificationId") !== -1);
         const foreignKey2 = table.foreignKeys.find((fk) => fk.columnNames.indexOf("partnerId") !== -1);
+        await queryRunner.dropForeignKey("notifications", 'FK_Admin_Notification');
         await queryRunner.dropForeignKey("notifications", foreignKey);
         await queryRunner.dropForeignKey("notifications", foreignKey1);
         await queryRunner.dropForeignKey("notifications", foreignKey2);

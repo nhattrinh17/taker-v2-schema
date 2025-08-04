@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.QUEUE_VEHICLE_BOOKING_NAME = exports.SYSTEM_NOTIFICATION_QUEUE_NAME = exports.QUEUE_PAYMENT_NAME = exports.QUEUE_NAMES = void 0;
+exports.SHOE_BOOKING_QUEUE_NAME = exports.SYSTEM_NOTIFICATION_QUEUE_NAME = exports.QUEUE_PAYMENT_NAME = exports.QUEUE_NAMES = void 0;
 exports.QUEUE_NAMES = {
     PAYMENT: 'PAYMENT',
     SYSTEM_NOTIFICATION: 'SYSTEM-NOTIFICATION',
-    VEHICLE_BOOKING: 'VEHICLE-BOOKING',
+    SHOE_BOOKING: 'SHOE_BOOKING',
 };
 exports.QUEUE_PAYMENT_NAME = {
     PAYMENT_WALLET_MB: 'payment_wallet_mb',
@@ -12,7 +12,6 @@ exports.QUEUE_PAYMENT_NAME = {
 exports.SYSTEM_NOTIFICATION_QUEUE_NAME = {
     SEND_NOTIFICATION: 'send-notification',
 };
-exports.QUEUE_VEHICLE_BOOKING_NAME = {
-    CREATE_VEHICLE_BOOKING: 'create-vehicle-booking',
-    WAITING_VEHICLE_BOOKING: 'waiting-vehicle-booking',
+exports.SHOE_BOOKING_QUEUE_NAME = {
+    CREATE_SHOE_BOOKING: 'create-shoe-booking',
 };

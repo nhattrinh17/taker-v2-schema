@@ -1,4 +1,4 @@
-import { NotificationTypeEnum } from '@common/enums';
+import { NotificationTypeEnum } from '../common/enums';
 import { BaseEntity } from './base.entity';
 import { Customer } from './customer.entity';
 import { SystemNotification } from './index';

@@ -22,4 +22,5 @@ var TransactionLogStatus;
 var TransactionSource;
 (function (TransactionSource) {
     TransactionSource["WALLET"] = "WALLET";
+    TransactionSource["SHOE_BOOKING"] = "SHOE_BOOKING";
 })(TransactionSource || (exports.TransactionSource = TransactionSource = {}));

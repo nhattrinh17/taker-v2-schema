@@ -1,4 +1,4 @@
-import { ShoeBookingStatusEnum } from "@common/enums";
+import { ExpectedDeliveryTimeEnum, ShoeBookingStatusEnum } from "@common/enums";
 import {
   MigrationInterface,
   QueryRunner,
@@ -50,13 +50,19 @@ export class CreateShoeBookingTable1753951376873 implements MigrationInterface {
           {
             name: "bookingDate",
             type: "datetime(6)",
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: "status",
             type: "enum",
             enum: [...Object.values(ShoeBookingStatusEnum)],
             default: `'${ShoeBookingStatusEnum.PENDING}'`,
+          },
+          {
+            name: "expectedDeliveryTime",
+            enum: [...Object.values(ExpectedDeliveryTimeEnum)],
+            default: `'${ExpectedDeliveryTimeEnum.HOUR_0_24}'`,
+            type: "enum",
           },
           {
             name: "pickupAddress",
@@ -89,6 +95,11 @@ export class CreateShoeBookingTable1753951376873 implements MigrationInterface {
             name: "returnLocation",
             type: "varchar",
             length: "255",
+            isNullable: true,
+          },
+          {
+            name: "originalPrice",
+            type: "int",
             isNullable: true,
           },
           {

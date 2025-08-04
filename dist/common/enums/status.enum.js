@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VehicleBookingStatusEnum = exports.CarrierCodeHistoryEnum = exports.DeliveryStatusEnum = exports.TripStatusEnum = exports.CarRegistryStatusEnum = exports.ShoeBookingStatusEnum = exports.StatusBlogEnum = exports.UserStatusEnum = void 0;
+exports.VehicleBookingStatusEnum = exports.CarrierCodeHistoryEnum = exports.DeliveryStatusEnum = exports.TripStatusEnum = exports.VehicleRegistryStatusEnum = exports.ShoeBookingStatusEnum = exports.StatusBlogEnum = exports.UserStatusEnum = void 0;
 var UserStatusEnum;
 (function (UserStatusEnum) {
     UserStatusEnum["PENDING"] = "PENDING";
@@ -31,12 +31,12 @@ var ShoeBookingStatusEnum;
     ShoeBookingStatusEnum["COMPLETED"] = "COMPLETED";
     ShoeBookingStatusEnum["CANCELLED"] = "CANCELLED";
 })(ShoeBookingStatusEnum || (exports.ShoeBookingStatusEnum = ShoeBookingStatusEnum = {}));
-var CarRegistryStatusEnum;
-(function (CarRegistryStatusEnum) {
-    CarRegistryStatusEnum["PENDING"] = "PENDING";
-    CarRegistryStatusEnum["ACTIVE"] = "ACTIVE";
-    CarRegistryStatusEnum["REJECTED"] = "REJECTED";
-})(CarRegistryStatusEnum || (exports.CarRegistryStatusEnum = CarRegistryStatusEnum = {}));
+var VehicleRegistryStatusEnum;
+(function (VehicleRegistryStatusEnum) {
+    VehicleRegistryStatusEnum["PENDING"] = "PENDING";
+    VehicleRegistryStatusEnum["ACTIVE"] = "ACTIVE";
+    VehicleRegistryStatusEnum["REJECTED"] = "REJECTED";
+})(VehicleRegistryStatusEnum || (exports.VehicleRegistryStatusEnum = VehicleRegistryStatusEnum = {}));
 var TripStatusEnum;
 (function (TripStatusEnum) {
     TripStatusEnum["PENDING"] = "PENDING";

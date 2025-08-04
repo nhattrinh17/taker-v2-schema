@@ -46,7 +46,7 @@ __decorate([
     __metadata("design:type", String)
 ], ShoeBooking.prototype, "shoeServiceDes", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: "datetime" }),
+    (0, typeorm_1.Column)({ type: "datetime", nullable: true }),
     __metadata("design:type", Date)
 ], ShoeBooking.prototype, "bookingDate", void 0);
 __decorate([
@@ -57,6 +57,14 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], ShoeBooking.prototype, "status", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        type: "enum",
+        enum: enums_1.ExpectedDeliveryTimeEnum,
+        nullable: true,
+    }),
+    __metadata("design:type", String)
+], ShoeBooking.prototype, "expectedDeliveryTime", void 0);
 __decorate([
     (0, typeorm_1.Column)({ type: "varchar", length: 255 }),
     __metadata("design:type", String)
@@ -84,6 +92,10 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)({ type: "int", nullable: true }),
     __metadata("design:type", Number)
+], ShoeBooking.prototype, "originalPrice", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: "int", nullable: true }),
+    __metadata("design:type", Number)
 ], ShoeBooking.prototype, "totalPrice", void 0);
 __decorate([
     (0, typeorm_1.Column)({ type: "int", nullable: true }),
@@ -106,22 +118,30 @@ __decorate([
     __metadata("design:type", String)
 ], ShoeBooking.prototype, "orderId", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => shoe_service_entity_1.ShoeService, (shoeService) => shoeService.shoeBookings, { nullable: true }),
+    (0, typeorm_1.ManyToOne)(() => shoe_service_entity_1.ShoeService, (shoeService) => shoeService.shoeBookings, {
+        nullable: true,
+    }),
     (0, typeorm_1.JoinColumn)({ name: "shoeServiceId" }),
     __metadata("design:type", shoe_service_entity_1.ShoeService)
 ], ShoeBooking.prototype, "shoeService", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => customer_entity_1.Customer, (customer) => customer.shoeBookings, { nullable: true }),
+    (0, typeorm_1.ManyToOne)(() => customer_entity_1.Customer, (customer) => customer.shoeBookings, {
+        nullable: true,
+    }),
     (0, typeorm_1.JoinColumn)({ name: "customerId" }),
     __metadata("design:type", customer_entity_1.Customer)
 ], ShoeBooking.prototype, "customer", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => partner_entity_1.Partner, (partner) => partner.shoeBookings, { nullable: true }),
+    (0, typeorm_1.ManyToOne)(() => partner_entity_1.Partner, (partner) => partner.shoeBookings, {
+        nullable: true,
+    }),
     (0, typeorm_1.JoinColumn)({ name: "partnerId" }),
     __metadata("design:type", partner_entity_1.Partner)
 ], ShoeBooking.prototype, "partner", void 0);
 __decorate([
-    (0, typeorm_1.OneToOne)(() => transaction_entity_1.Transaction, (transaction) => transaction.shoeBooking, { nullable: true }),
+    (0, typeorm_1.OneToOne)(() => transaction_entity_1.Transaction, (transaction) => transaction.shoeBooking, {
+        nullable: true,
+    }),
     (0, typeorm_1.JoinColumn)({ name: "transactionId" }),
     __metadata("design:type", transaction_entity_1.Transaction)
 ], ShoeBooking.prototype, "transaction", void 0);
