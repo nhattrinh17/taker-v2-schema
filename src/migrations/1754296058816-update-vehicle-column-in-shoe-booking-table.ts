@@ -4,28 +4,28 @@ export class UpdateVehicleColumnInShoeBookingTable1754296058816 implements Migra
   public async up(queryRunner: QueryRunner): Promise<void> {
     // Add columns
     await queryRunner.addColumn("shoe_bookings", new TableColumn({
-      name: "deliveryDriverId",
+      name: "deliveryVehicleId",
       type: "varchar(36)",
       isNullable: true,
     }));
 
     await queryRunner.addColumn("shoe_bookings", new TableColumn({
-      name: "returnDriverId",
+      name: "returnVehicleId",
       type: "varchar(36)",
       isNullable: true,
     }));
 
     // Add foreign keys
     await queryRunner.createForeignKey("shoe_bookings", new TableForeignKey({
-      columnNames: ["deliveryDriverId"],
-      referencedTableName: "drivers",
+      columnNames: ["deliveryVehicleId"],
+      referencedTableName: "vehicle_registries",
       referencedColumnNames: ["id"],
       onDelete: "SET NULL",
     }));
 
     await queryRunner.createForeignKey("shoe_bookings", new TableForeignKey({
-      columnNames: ["returnDriverId"],
-      referencedTableName: "drivers",
+      columnNames: ["returnVehicleId"],
+      referencedTableName: "vehicle_registries",
       referencedColumnNames: ["id"],
       onDelete: "SET NULL",
     }));
@@ -36,17 +36,17 @@ export class UpdateVehicleColumnInShoeBookingTable1754296058816 implements Migra
     const table = await queryRunner.getTable("shoe_bookings");
 
     const deliveryFk = table.foreignKeys.find(
-      (fk) => fk.columnNames.includes("deliveryDriverId")
+      (fk) => fk.columnNames.includes("deliveryVehicleId")
     );
     if (deliveryFk) await queryRunner.dropForeignKey("shoe_bookings", deliveryFk);
 
     const returnFk = table.foreignKeys.find(
-      (fk) => fk.columnNames.includes("returnDriverId")
+      (fk) => fk.columnNames.includes("returnVehicleId")
     );
     if (returnFk) await queryRunner.dropForeignKey("shoe_bookings", returnFk);
 
     // Then drop columns
-    await queryRunner.dropColumn("shoe_bookings", "deliveryDriverId");
-    await queryRunner.dropColumn("shoe_bookings", "returnDriverId");
+    await queryRunner.dropColumn("shoe_bookings", "deliveryVehicleId");
+    await queryRunner.dropColumn("shoe_bookings", "returnVehicleId");
   }
 }
