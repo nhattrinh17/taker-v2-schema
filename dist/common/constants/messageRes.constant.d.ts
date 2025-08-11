@@ -111,6 +111,7 @@ export declare const messageResponseError: {
     };
     user: {
         notFound: string;
+        permissionDenied: string;
     };
     address: {
         notFound: string;
@@ -179,5 +180,7 @@ export declare const messageResponseError: {
         groupNameTooLong: string;
         groupNameInvalid: string;
         participantsNotFound: string;
+        notMember: string;
+        alreadyMember: string;
     };
 };

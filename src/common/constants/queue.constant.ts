@@ -4,6 +4,7 @@ export const QUEUE_NAMES = {
   SHOE_BOOKING: 'SHOE_BOOKING',
   JOIN_ROOM: 'join-room',
   LEAVE_ROOM: 'leave-room',
+  MESSAGE: 'message',
 };
 
 export const QUEUE_PAYMENT_NAME = {
@@ -17,4 +18,8 @@ export const SYSTEM_NOTIFICATION_QUEUE_NAME = {
 export const SHOE_BOOKING_QUEUE_NAME = {
   CREATE_SHOE_BOOKING: 'create-shoe-booking',
   FIND_DRIVER: 'find-driver',
+}
+
+export const MESSAGE_QUEUE_NAME = {
+  CREATE_MESSAGE: 'create-message',
 }

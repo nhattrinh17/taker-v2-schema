@@ -10,3 +10,7 @@ export interface CustomPayload {
     data: Record<string, any>;
 }
 export type MessagePayload = TextPayload | MediaPayload | CustomPayload;
+export interface ResposeUserPermission {
+    permission: string;
+    action: string;
+}

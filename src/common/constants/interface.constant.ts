@@ -14,3 +14,8 @@ export interface CustomPayload {
 }
 
 export type MessagePayload = TextPayload | MediaPayload | CustomPayload;
+
+export interface ResposeUserPermission {
+  permission: string,
+  action: string,
+}

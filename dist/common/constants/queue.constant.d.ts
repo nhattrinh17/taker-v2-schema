@@ -4,6 +4,7 @@ export declare const QUEUE_NAMES: {
     SHOE_BOOKING: string;
     JOIN_ROOM: string;
     LEAVE_ROOM: string;
+    MESSAGE: string;
 };
 export declare const QUEUE_PAYMENT_NAME: {
     PAYMENT_MB: string;
@@ -14,4 +15,7 @@ export declare const SYSTEM_NOTIFICATION_QUEUE_NAME: {
 export declare const SHOE_BOOKING_QUEUE_NAME: {
     CREATE_SHOE_BOOKING: string;
     FIND_DRIVER: string;
+};
+export declare const MESSAGE_QUEUE_NAME: {
+    CREATE_MESSAGE: string;
 };

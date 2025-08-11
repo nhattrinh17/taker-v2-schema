@@ -114,6 +114,7 @@ exports.messageResponseError = {
     },
     user: {
         notFound: "user_not_found",
+        permissionDenied: "user_permission_denied",
     },
     address: {
         notFound: "address_not_found",
@@ -182,5 +183,7 @@ exports.messageResponseError = {
         groupNameTooLong: "group_name_too_long",
         groupNameInvalid: "group_name_invalid",
         participantsNotFound: "participants_not_found",
+        notMember: "not_member_of_conversation",
+        alreadyMember: "already_member_of_conversation",
     },
 };

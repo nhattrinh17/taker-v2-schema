@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MESSAGE_UPDATE_STATUS = exports.SHOE_BOOKING_UPDATE_STATUS = exports.SOCKET_EVENT = void 0;
+exports.EventEmitChatSocket = exports.MESSAGE_UPDATE_STATUS = exports.SHOE_BOOKING_UPDATE_STATUS = exports.SOCKET_EVENT = void 0;
 exports.SOCKET_EVENT = {
     SHOE_BOOKING_UPDATE: 'vehicle_booking_update',
     MESSAGE_UPDATE: 'message_update',
@@ -24,4 +24,10 @@ exports.SHOE_BOOKING_UPDATE_STATUS = {
 };
 exports.MESSAGE_UPDATE_STATUS = {
     CREATE_CONVERSATION: 'create-conversation',
+};
+exports.EventEmitChatSocket = {
+    JoinRoom: 'join-room',
+    LeaveRoom: 'leave-room',
+    MessageReceive: 'message-receive',
+    SendMessage: 'send-message',
 };

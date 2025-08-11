@@ -24,3 +24,10 @@ export const SHOE_BOOKING_UPDATE_STATUS = {
 export const MESSAGE_UPDATE_STATUS = {
   CREATE_CONVERSATION: 'create-conversation',
 }
+
+export const EventEmitChatSocket = {
+  JoinRoom: 'join-room',
+  LeaveRoom: 'leave-room',
+  MessageReceive: 'message-receive',
+  SendMessage: 'send-message',
+};
