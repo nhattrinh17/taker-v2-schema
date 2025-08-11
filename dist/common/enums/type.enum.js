@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PartnerTypeEnum = exports.OtpRequestType = exports.ServiceTypeEnum = exports.SearchHistoryTypeEnum = exports.CashbackTransactionTypeEnum = exports.PayerTypeEnum = exports.CarpoolServiceTypeEnum = exports.VehicleTypeEnum = exports.VoucherTypeEnum = exports.VoucherTypeDiscountEnum = void 0;
+exports.CreateConversationTypeEnum = exports.CustomPayloadTypeEnum = exports.MessageTypeEnum = exports.ActorTypeEnum = exports.PartnerTypeEnum = exports.OtpRequestType = exports.CashbackTransactionTypeEnum = exports.VehicleTypeEnum = exports.VoucherTypeEnum = exports.VoucherTypeDiscountEnum = void 0;
 var VoucherTypeDiscountEnum;
 (function (VoucherTypeDiscountEnum) {
     VoucherTypeDiscountEnum["FIXED"] = "FIXED";
@@ -15,31 +15,11 @@ var VehicleTypeEnum;
     VehicleTypeEnum["CAR"] = "CAR";
     VehicleTypeEnum["BIKE"] = "BIKE";
 })(VehicleTypeEnum || (exports.VehicleTypeEnum = VehicleTypeEnum = {}));
-var CarpoolServiceTypeEnum;
-(function (CarpoolServiceTypeEnum) {
-    CarpoolServiceTypeEnum["SINGLE_SEAT"] = "SINGLE_SEAT";
-    CarpoolServiceTypeEnum["WHOLE_CAR"] = "WHOLE_CAR";
-})(CarpoolServiceTypeEnum || (exports.CarpoolServiceTypeEnum = CarpoolServiceTypeEnum = {}));
-var PayerTypeEnum;
-(function (PayerTypeEnum) {
-    PayerTypeEnum["SENDER"] = "SENDER";
-    PayerTypeEnum["RECEIVER"] = "RECEIVER";
-})(PayerTypeEnum || (exports.PayerTypeEnum = PayerTypeEnum = {}));
 var CashbackTransactionTypeEnum;
 (function (CashbackTransactionTypeEnum) {
     CashbackTransactionTypeEnum["CREDIT"] = "CREDIT";
     CashbackTransactionTypeEnum["DEBIT"] = "DEBIT";
 })(CashbackTransactionTypeEnum || (exports.CashbackTransactionTypeEnum = CashbackTransactionTypeEnum = {}));
-var SearchHistoryTypeEnum;
-(function (SearchHistoryTypeEnum) {
-    SearchHistoryTypeEnum["CARPOOL"] = "CARPOOL";
-    SearchHistoryTypeEnum["DELIVERY"] = "DELIVERY";
-})(SearchHistoryTypeEnum || (exports.SearchHistoryTypeEnum = SearchHistoryTypeEnum = {}));
-var ServiceTypeEnum;
-(function (ServiceTypeEnum) {
-    ServiceTypeEnum["BOOKING"] = "BOOKING";
-    ServiceTypeEnum["DELIVERY"] = "DELIVERY";
-})(ServiceTypeEnum || (exports.ServiceTypeEnum = ServiceTypeEnum = {}));
 var OtpRequestType;
 (function (OtpRequestType) {
     OtpRequestType["EXISTED"] = "existed";
@@ -49,3 +29,28 @@ var PartnerTypeEnum;
 (function (PartnerTypeEnum) {
     PartnerTypeEnum["SHOE_CLEANING"] = "SHOE_CLEANING";
 })(PartnerTypeEnum || (exports.PartnerTypeEnum = PartnerTypeEnum = {}));
+var ActorTypeEnum;
+(function (ActorTypeEnum) {
+    ActorTypeEnum["CUSTOMER"] = "CUSTOMER";
+    ActorTypeEnum["PARTNER"] = "PARTNER";
+    ActorTypeEnum["DRIVER"] = "DRIVER";
+    ActorTypeEnum["SYSTEM"] = "SYSTEM";
+    ActorTypeEnum["ADMIN"] = "ADMIN";
+})(ActorTypeEnum || (exports.ActorTypeEnum = ActorTypeEnum = {}));
+var MessageTypeEnum;
+(function (MessageTypeEnum) {
+    MessageTypeEnum["TEXT"] = "TEXT";
+    MessageTypeEnum["IMAGE"] = "IMAGE";
+    MessageTypeEnum["VIDEO"] = "VIDEO";
+    MessageTypeEnum["AUDIO"] = "AUDIO";
+    MessageTypeEnum["CUSTOM"] = "CUSTOM";
+})(MessageTypeEnum || (exports.MessageTypeEnum = MessageTypeEnum = {}));
+var CustomPayloadTypeEnum;
+(function (CustomPayloadTypeEnum) {
+    CustomPayloadTypeEnum["SHOE_BOOKING"] = "SHOE_BOOKING";
+})(CustomPayloadTypeEnum || (exports.CustomPayloadTypeEnum = CustomPayloadTypeEnum = {}));
+var CreateConversationTypeEnum;
+(function (CreateConversationTypeEnum) {
+    CreateConversationTypeEnum["SHOE_BOOKING"] = "shoe-booking";
+    CreateConversationTypeEnum["ACCOUNT"] = "account";
+})(CreateConversationTypeEnum || (exports.CreateConversationTypeEnum = CreateConversationTypeEnum = {}));

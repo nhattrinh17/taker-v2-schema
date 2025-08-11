@@ -118,6 +118,7 @@ export declare const messageResponseError: {
         defaultAddressExists: string;
         pickupAddressExists: string;
         returnAddressExists: string;
+        branchAddressCannotBeDefault: string;
     };
     notification: {
         notFound: string;
@@ -139,5 +140,44 @@ export declare const messageResponseError: {
         originalPriceAndShoeServiceDesRequired: string;
         accessCodeNotAllowed: string;
         notPendingPayment: string;
+        fromDateAndToDateRequired: string;
+        locked: string;
+        processingImagesInvalid: string;
+        completedImagesInvalid: string;
+    };
+    cancelOrder: {
+        alreadyExists: string;
+        notFound: string;
+        reasonRequired: string;
+        actionInvalid: string;
+    };
+    vehicleRegistry: {
+        notFound: string;
+        vehicleAlreadyExists: string;
+        actionInvalid: string;
+        licensePlateRequired: string;
+        vehicleTypeRequired: string;
+    };
+    driver: {
+        driverAlreadyExists: string;
+        notFound: string;
+    };
+    rating: {
+        idIsRequired: string;
+        notFound: string;
+        actionInvalid: string;
+        shoeBookingIdRequired: string;
+        ratingValueInvalid: string;
+        commentTooLong: string;
+        alreadyRated: string;
+    };
+    conversation: {
+        notFound: string;
+        actionInvalid: string;
+        participantsRequired: string;
+        groupNameRequired: string;
+        groupNameTooLong: string;
+        groupNameInvalid: string;
+        participantsNotFound: string;
     };
 };

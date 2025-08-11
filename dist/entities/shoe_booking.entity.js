@@ -18,6 +18,10 @@ const customer_entity_1 = require("./customer.entity");
 const partner_entity_1 = require("./partner.entity");
 const transaction_entity_1 = require("./transaction.entity");
 const customer_voucher_entity_1 = require("./customer_voucher.entity");
+const vehicle_registry_entity_1 = require("./vehicle_registry.entity");
+const cancel_order_entity_1 = require("./cancel_order.entity");
+const shoe_booking_log_entity_1 = require("./shoe_booking_log.entity");
+const rating_entity_1 = require("./rating.entity");
 let ShoeBooking = class ShoeBooking extends base_entity_1.BaseEntity {
 };
 exports.ShoeBooking = ShoeBooking;
@@ -41,6 +45,14 @@ __decorate([
     (0, typeorm_1.Column)({ type: "varchar", length: 36, nullable: true }),
     __metadata("design:type", String)
 ], ShoeBooking.prototype, "customerVoucherId", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: "varchar", length: 36, nullable: true }),
+    __metadata("design:type", String)
+], ShoeBooking.prototype, "deliveryVehicleId", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: "varchar", length: 36, nullable: true }),
+    __metadata("design:type", String)
+], ShoeBooking.prototype, "returnVehicleId", void 0);
 __decorate([
     (0, typeorm_1.Column)({ type: "text", nullable: true }),
     __metadata("design:type", String)
@@ -114,6 +126,14 @@ __decorate([
     __metadata("design:type", String)
 ], ShoeBooking.prototype, "imageUrls", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ type: "text", nullable: true }),
+    __metadata("design:type", String)
+], ShoeBooking.prototype, "processingImages", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: "text", nullable: true }),
+    __metadata("design:type", String)
+], ShoeBooking.prototype, "completedImages", void 0);
+__decorate([
     (0, typeorm_1.Column)({ type: "varchar", length: 255, unique: true }),
     __metadata("design:type", String)
 ], ShoeBooking.prototype, "orderId", void 0);
@@ -150,6 +170,32 @@ __decorate([
     (0, typeorm_1.JoinColumn)({ name: "customerVoucherId" }),
     __metadata("design:type", customer_voucher_entity_1.CustomerVoucher)
 ], ShoeBooking.prototype, "customerVoucher", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => vehicle_registry_entity_1.VehicleRegistry, (vehicleRegistry) => vehicleRegistry.deliveryBookings, {
+        nullable: true,
+    }),
+    (0, typeorm_1.JoinColumn)({ name: "deliveryVehicleId" }),
+    __metadata("design:type", vehicle_registry_entity_1.VehicleRegistry)
+], ShoeBooking.prototype, "deliveryVehicle", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => vehicle_registry_entity_1.VehicleRegistry, (vehicleRegistry) => vehicleRegistry.returnBookings, {
+        nullable: true,
+    }),
+    (0, typeorm_1.JoinColumn)({ name: "returnVehicleId" }),
+    __metadata("design:type", vehicle_registry_entity_1.VehicleRegistry)
+], ShoeBooking.prototype, "returnVehicle", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => cancel_order_entity_1.CancelOrder, (cancelOrder) => cancelOrder.shoeBooking),
+    __metadata("design:type", Array)
+], ShoeBooking.prototype, "cancelOrders", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => shoe_booking_log_entity_1.ShoeBookingLog, (shoeBookingLog) => shoeBookingLog.shoeBooking),
+    __metadata("design:type", Array)
+], ShoeBooking.prototype, "shoeBookingLogs", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => rating_entity_1.Rating, (rating) => rating.shoeBooking),
+    __metadata("design:type", Array)
+], ShoeBooking.prototype, "ratings", void 0);
 exports.ShoeBooking = ShoeBooking = __decorate([
     (0, typeorm_1.Entity)({ name: "shoe_bookings" })
 ], ShoeBooking);

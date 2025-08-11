@@ -1,3 +1,9 @@
+import { RESOLUTION } from '@common/constants/app.constant';
+import * as h3 from 'h3-js';
+
+const edgeLengthKm = h3.getHexagonEdgeLengthAvg(RESOLUTION, 'km');
+export const estimateRings = (radius: number) => Math.ceil(radius / (edgeLengthKm * Math.sqrt(3)));
+
 export function generateSlug(str: string) {
   return str
     .normalize('NFD') // Chuẩn hóa Unicode

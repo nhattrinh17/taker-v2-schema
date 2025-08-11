@@ -109,6 +109,10 @@ export class CreatePartnersTable1752825861447 implements MigrationInterface {
             isNullable: true,
           },
           {
+            name: "activeSince",
+            type: "int",
+          },
+          {
             name: "appleId",
             type: "varchar",
             length: "255",

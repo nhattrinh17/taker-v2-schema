@@ -1,10 +1,18 @@
-import { FindAllResponse } from 'src/types/common.type';
-import { BaseRepositoryInterface } from './base.interface.repository';
-import { Repository, EntityTarget, DeepPartial, SelectQueryBuilder } from 'typeorm';
+import { FindAllResponse } from "src/types/common.type";
+import { BaseRepositoryInterface } from "./base.interface.repository";
+import {
+  Repository,
+  EntityTarget,
+  DeepPartial,
+  SelectQueryBuilder,
+  In,
+} from "typeorm";
 
-import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
+import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
 
-export abstract class BaseRepositoryAbstract<T> implements BaseRepositoryInterface<T> {
+export abstract class BaseRepositoryAbstract<T>
+  implements BaseRepositoryInterface<T>
+{
   protected constructor(protected readonly repository: Repository<T>) {}
 
   async create(dto: DeepPartial<T>): Promise<T> {
@@ -12,7 +20,11 @@ export abstract class BaseRepositoryAbstract<T> implements BaseRepositoryInterfa
     return await this.repository.save(createdData);
   }
 
-  async findOneById(id: string, projection?: (keyof T)[], options?: any): Promise<T | null> {
+  async findOneById(
+    id: string,
+    projection?: (keyof T)[],
+    options?: any
+  ): Promise<T | null> {
     const item = await this.repository.findOne({
       where: { id } as any,
       select: projection as any,
@@ -21,7 +33,11 @@ export abstract class BaseRepositoryAbstract<T> implements BaseRepositoryInterfa
     return item ? item : null;
   }
 
-  async findOneByCondition(condition?: object | any[], projection?: (keyof T)[], options?: any): Promise<T> {
+  async findOneByCondition(
+    condition?: object | any[],
+    projection?: (keyof T)[],
+    options?: any
+  ): Promise<T> {
     return await this.repository.findOne({
       where: condition,
       select: projection as any,
@@ -34,17 +50,19 @@ export abstract class BaseRepositoryAbstract<T> implements BaseRepositoryInterfa
     options?: {
       projection: (keyof T)[];
       sort: string;
-      typeSort: 'ASC' | 'DESC';
+      typeSort: "ASC" | "DESC";
       page: number;
       offset: number;
       limit: number;
-      relations?: string[]
-    },
+      relations?: string[];
+    }
   ): Promise<FindAllResponse<T>> {
     const [items, count] = await this.repository.findAndCount({
       where: condition,
       select: options?.projection as any,
-      order: { [options?.sort || 'createdAt']: options?.typeSort || 'DESC' } as any,
+      order: {
+        [options?.sort || "createdAt"]: options?.typeSort || "DESC",
+      } as any,
       skip: options?.offset,
       take: options?.limit,
       relations: options?.relations,
@@ -60,7 +78,10 @@ export abstract class BaseRepositoryAbstract<T> implements BaseRepositoryInterfa
     };
   }
 
-  async findOneAndUpdate(condition: object, dto: QueryDeepPartialEntity<T>): Promise<T | null> {
+  async findOneAndUpdate(
+    condition: object,
+    dto: QueryDeepPartialEntity<T>
+  ): Promise<T | null> {
     const item = await this.findOneByCondition(condition);
     if (!item) {
       return null;
@@ -70,7 +91,10 @@ export abstract class BaseRepositoryAbstract<T> implements BaseRepositoryInterfa
     return item;
   }
 
-  async findByIdAndUpdate(id: string, dto: QueryDeepPartialEntity<T>): Promise<T | null> {
+  async findByIdAndUpdate(
+    id: string,
+    dto: QueryDeepPartialEntity<T>
+  ): Promise<T | null> {
     const item = await this.findOneById(id);
     if (!item) {
       return null;
@@ -112,5 +136,17 @@ export abstract class BaseRepositoryAbstract<T> implements BaseRepositoryInterfa
 
   getRepo(): Repository<T> {
     return this.repository;
+  }
+
+  async getByIds(
+    ids: string[],
+    projection?: (keyof T)[],
+    options?: any
+  ): Promise<T[]> {
+    return await this.repository.find({
+      where: { id: In(ids) } as any,
+      select: projection as any,
+      ...options,
+    });
   }
 }

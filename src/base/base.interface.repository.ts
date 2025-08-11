@@ -39,4 +39,6 @@ export interface BaseRepositoryInterface<T> {
   count(condition?: object | any[]): Promise<number>;
 
   getRepo(): Repository<T>;
+
+  getByIds(ids: string[], projection?: (keyof T)[], options?: object): Promise<T[]>;
 }

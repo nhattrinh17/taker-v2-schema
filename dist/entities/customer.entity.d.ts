@@ -1,9 +1,11 @@
 import { BaseEntity } from "./base.entity";
-import { StepEnum, UserStatusEnum } from "../common/enums";
+import { StepEnum, UserStatusEnum } from "@common/enums";
 import { Address } from "./address.entity";
 import { Wallet } from "./wallet.entity";
 import { CustomerVoucher } from "./customer_voucher.entity";
 import { ShoeBooking } from "./shoe_booking.entity";
+import { CancelOrder } from "./cancel_order.entity";
+import { Rating } from "./rating.entity";
 export declare class Customer extends BaseEntity {
     phone: string;
     password: string;
@@ -32,4 +34,6 @@ export declare class Customer extends BaseEntity {
     wallet: Wallet;
     shoeBookings: ShoeBooking[];
     customerVouchers: CustomerVoucher[];
+    cancelOrders: CancelOrder[];
+    ratings: Rating[];
 }

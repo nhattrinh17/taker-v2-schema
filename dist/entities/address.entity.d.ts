@@ -13,6 +13,7 @@ export declare class Address extends BaseEntity {
     phone: string;
     isPickupAddress: boolean;
     isReturnAddress: boolean;
+    isBranchAddress: boolean;
     customer: Customer;
     partner: Partner;
 }

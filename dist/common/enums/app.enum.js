@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExpectedDeliveryTimeEnum = exports.VehiclePriceLevelEnum = exports.RankingType = exports.ActionEnum = exports.VoucherPaymentMethodEnum = exports.TypePressBlogEnum = void 0;
+exports.AddressLableEnum = exports.ExpectedDeliveryTimeEnum = exports.VehiclePriceLevelEnum = exports.RankingType = exports.ActionEnum = exports.VoucherPaymentMethodEnum = exports.TypePressBlogEnum = void 0;
 var TypePressBlogEnum;
 (function (TypePressBlogEnum) {
     TypePressBlogEnum["NAVIGATION"] = "NAVIGATION";
@@ -38,3 +38,10 @@ var ExpectedDeliveryTimeEnum;
     ExpectedDeliveryTimeEnum["HOUR_24_48"] = "HOUR_24_48";
     ExpectedDeliveryTimeEnum["HOUR_48_72"] = "HOUR_48_72";
 })(ExpectedDeliveryTimeEnum || (exports.ExpectedDeliveryTimeEnum = ExpectedDeliveryTimeEnum = {}));
+var AddressLableEnum;
+(function (AddressLableEnum) {
+    AddressLableEnum["HOME"] = "HOME";
+    AddressLableEnum["WORK"] = "WORK";
+    AddressLableEnum["SHOP"] = "SHOP";
+    AddressLableEnum["OTHER"] = "OTHER";
+})(AddressLableEnum || (exports.AddressLableEnum = AddressLableEnum = {}));

@@ -1,15 +1,19 @@
+import { get } from 'http';
 import { Redis } from 'ioredis';
 
 export default class RedisService {
   private readonly client: Redis;
+  private readonly subClient: Redis;
 
   constructor() {
     try {
-      this.client = new Redis({
+      const config = {
         host: process.env.QUEUE_HOST,
         port: parseInt(process.env.QUEUE_PORT, 10),
         password: String(process.env.QUEUE_PASS),
-      });
+      };
+      this.client = new Redis(config);
+      this.subClient = new Redis(config);
     } catch (error) {
       console.log('🚀 ~ RedisService ~ constructor ~ error:', error, process.env.QUEUE_HOST, process.env.QUEUE_PORT, process.env.QUEUE_PASS);
     }
@@ -109,7 +113,27 @@ export default class RedisService {
     return this.client.srem(key, valueData);
   }
 
+  async hget(key: string, field: string) {
+    return await this.client.hget(key, field);
+  }
+
+  async hgetAll(key: string) {
+    return await this.client.hgetall(key);
+  }
+
+  async hset(key: string, field: string, fieldValue: any) {
+    return await this.client.hset(key, field, fieldValue);
+  }
+
+  async hdel(key: string, field: string) {
+    await this.client.hdel(key, field);
+  }
+
   getClient(): Redis {
     return this.client;
+  }
+
+  getSubClient(): Redis {
+    return this.subClient;
   }
 }

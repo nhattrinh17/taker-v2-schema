@@ -74,6 +74,12 @@ class CreateAddressesTable1752826000001 {
                     default: false,
                 },
                 {
+                    name: "isBranchAddress",
+                    type: "boolean",
+                    default: false,
+                    comment: "Is this address a branch location",
+                },
+                {
                     name: "deletedAt",
                     type: "datetime(6)",
                     isNullable: true,

@@ -14,6 +14,7 @@ const typeorm_1 = require("typeorm");
 const base_entity_1 = require("./base.entity");
 const customer_entity_1 = require("./customer.entity");
 const partner_entity_1 = require("./partner.entity");
+const enums_1 = require("../common/enums");
 let Address = class Address extends base_entity_1.BaseEntity {
 };
 exports.Address = Address;
@@ -43,7 +44,7 @@ __decorate([
     __metadata("design:type", Boolean)
 ], Address.prototype, "isDefault", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 100, nullable: true, comment: 'Address label like Home, Work, Shop, etc.' }),
+    (0, typeorm_1.Column)({ enum: enums_1.AddressLableEnum }),
     __metadata("design:type", String)
 ], Address.prototype, "label", void 0);
 __decorate([
@@ -62,6 +63,10 @@ __decorate([
     (0, typeorm_1.Column)({ default: false }),
     __metadata("design:type", Boolean)
 ], Address.prototype, "isReturnAddress", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ default: false }),
+    __metadata("design:type", Boolean)
+], Address.prototype, "isBranchAddress", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => customer_entity_1.Customer, (customer) => customer.addresses, { onDelete: 'CASCADE' }),
     (0, typeorm_1.JoinColumn)({ name: 'customerId' }),

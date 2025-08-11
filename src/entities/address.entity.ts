@@ -2,6 +2,7 @@ import { Column, Entity, Index, JoinColumn, ManyToOne } from 'typeorm';
 import { BaseEntity } from './base.entity';
 import { Customer } from './customer.entity';
 import { Partner } from './partner.entity';
+import { AddressLableEnum } from '@common/enums';
 
 @Entity({ name: 'addresses' })
 @Index(['isDefault'])
@@ -25,7 +26,7 @@ export class Address extends BaseEntity {
   @Index()
   isDefault: boolean;
 
-  @Column({ length: 100, nullable: true, comment: 'Address label like Home, Work, Shop, etc.' })
+  @Column({ enum: AddressLableEnum })
   label: string;
 
   @Column({ nullable: true, comment: 'Name of the person to receive at this address' })
@@ -39,6 +40,9 @@ export class Address extends BaseEntity {
 
   @Column({ default: false })
   isReturnAddress: boolean;
+
+  @Column({ default: false })
+  isBranchAddress: boolean;
 
   // Relations
   @ManyToOne(() => Customer, (customer) => customer.addresses, { onDelete: 'CASCADE' })

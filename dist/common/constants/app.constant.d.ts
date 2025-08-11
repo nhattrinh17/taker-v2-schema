@@ -35,11 +35,13 @@ export interface INotificationPayload {
     sound?: string;
 }
 export declare const SOCKET_PREFIX = "SOCKET:";
+export declare const RoomNameAdmin = "socket-room-admins";
 export declare const SCREEN_PARTNER: {
     CALL: string;
-    CARPOOL_BOOKING: string;
-    DELIVERY: string;
-    VEHICLE_BOOKING: string;
+    SHOE_BOOKING: string;
+};
+export declare const SCREEN_ADMIN: {
+    MESSAGE: string;
 };
 export interface IDayOperatingHours {
     open: string;
@@ -62,3 +64,8 @@ export interface IOtp {
     count: number;
 }
 export declare const RESOLUTION = 9;
+export declare const SEARCH_PARTNER_TIMEOUT: {
+    "0.5km": number;
+    "1km": number;
+    "2km": number;
+};

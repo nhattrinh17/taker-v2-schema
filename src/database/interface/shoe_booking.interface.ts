@@ -6,10 +6,7 @@ import { ShoeBookingStatusEnum } from "@common/enums";
 export interface ShoeBookingRepositoryInterface
   extends BaseRepositoryInterface<ShoeBooking> {
   getAllShoeBookings(
-    query: {
-      customerId?: string;
-      status?: ShoeBookingStatusEnum;
-    },
+    query: any,
     pagination: PaginationDto
   );
 }

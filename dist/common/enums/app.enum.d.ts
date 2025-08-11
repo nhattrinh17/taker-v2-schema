@@ -29,3 +29,9 @@ export declare enum ExpectedDeliveryTimeEnum {
     HOUR_24_48 = "HOUR_24_48",
     HOUR_48_72 = "HOUR_48_72"
 }
+export declare enum AddressLableEnum {
+    HOME = "HOME",
+    WORK = "WORK",
+    SHOP = "SHOP",
+    OTHER = "OTHER"
+}

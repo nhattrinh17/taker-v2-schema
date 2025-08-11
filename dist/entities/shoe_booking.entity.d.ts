@@ -1,16 +1,22 @@
 import { BaseEntity } from "./base.entity";
-import { ExpectedDeliveryTimeEnum, ShoeBookingStatusEnum } from "../common/enums";
+import { ExpectedDeliveryTimeEnum, ShoeBookingStatusEnum } from "@common/enums";
 import { ShoeService } from "./shoe_service.entity";
 import { Customer } from "./customer.entity";
 import { Partner } from "./partner.entity";
 import { Transaction } from "./transaction.entity";
 import { CustomerVoucher } from "./customer_voucher.entity";
+import { VehicleRegistry } from "./vehicle_registry.entity";
+import { CancelOrder } from "./cancel_order.entity";
+import { ShoeBookingLog } from "./shoe_booking_log.entity";
+import { Rating } from "./rating.entity";
 export declare class ShoeBooking extends BaseEntity {
     shoeServiceId?: string;
     customerId?: string;
     partnerId?: string;
     transactionId?: string;
     customerVoucherId?: string;
+    deliveryVehicleId?: string;
+    returnVehicleId?: string;
     shoeServiceDes?: string;
     bookingDate?: Date;
     status: ShoeBookingStatusEnum;
@@ -27,10 +33,17 @@ export declare class ShoeBooking extends BaseEntity {
     partnerRevenue: number;
     note?: string;
     imageUrls?: string;
+    processingImages?: string;
+    completedImages?: string;
     orderId: string;
     shoeService?: ShoeService;
     customer?: Customer;
     partner?: Partner;
     transaction?: Transaction;
     customerVoucher?: CustomerVoucher;
+    deliveryVehicle?: VehicleRegistry;
+    returnVehicle?: VehicleRegistry;
+    cancelOrders: CancelOrder[];
+    shoeBookingLogs: ShoeBookingLog[];
+    ratings: Rating[];
 }

@@ -78,3 +78,8 @@ export enum VehicleBookingStatusEnum {
   COMPLETED = 'COMPLETED',
   CANCELLED = 'CANCELLED',
 }
+
+export enum ConversationStatusEnum {
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+}

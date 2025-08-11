@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VehicleBookingStatusEnum = exports.CarrierCodeHistoryEnum = exports.DeliveryStatusEnum = exports.TripStatusEnum = exports.VehicleRegistryStatusEnum = exports.ShoeBookingStatusEnum = exports.StatusBlogEnum = exports.UserStatusEnum = void 0;
+exports.ConversationStatusEnum = exports.VehicleBookingStatusEnum = exports.CarrierCodeHistoryEnum = exports.DeliveryStatusEnum = exports.TripStatusEnum = exports.VehicleRegistryStatusEnum = exports.ShoeBookingStatusEnum = exports.StatusBlogEnum = exports.UserStatusEnum = void 0;
 var UserStatusEnum;
 (function (UserStatusEnum) {
     UserStatusEnum["PENDING"] = "PENDING";
@@ -74,3 +74,8 @@ var VehicleBookingStatusEnum;
     VehicleBookingStatusEnum["COMPLETED"] = "COMPLETED";
     VehicleBookingStatusEnum["CANCELLED"] = "CANCELLED";
 })(VehicleBookingStatusEnum || (exports.VehicleBookingStatusEnum = VehicleBookingStatusEnum = {}));
+var ConversationStatusEnum;
+(function (ConversationStatusEnum) {
+    ConversationStatusEnum["ACTIVE"] = "ACTIVE";
+    ConversationStatusEnum["INACTIVE"] = "INACTIVE";
+})(ConversationStatusEnum || (exports.ConversationStatusEnum = ConversationStatusEnum = {}));

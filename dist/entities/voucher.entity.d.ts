@@ -1,5 +1,5 @@
 import { CustomerVoucher } from './customer_voucher.entity';
-import { VoucherPaymentMethodEnum, VoucherTypeDiscountEnum, VoucherTypeEnum } from '../common/enums';
+import { VoucherPaymentMethodEnum, VoucherTypeDiscountEnum, VoucherTypeEnum } from '@common/enums';
 import { BaseEntity } from './base.entity';
 export declare class Voucher extends BaseEntity {
     name: string;

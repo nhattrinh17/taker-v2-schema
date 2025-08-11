@@ -2,10 +2,12 @@ export const QUEUE_NAMES = {
   PAYMENT: 'PAYMENT',
   SYSTEM_NOTIFICATION: 'SYSTEM-NOTIFICATION',
   SHOE_BOOKING: 'SHOE_BOOKING',
+  JOIN_ROOM: 'join-room',
+  LEAVE_ROOM: 'leave-room',
 };
 
 export const QUEUE_PAYMENT_NAME = {
-  PAYMENT_WALLET_MB: 'payment_wallet_mb',
+  PAYMENT_MB: 'payment_mb',
 };
 
 export const SYSTEM_NOTIFICATION_QUEUE_NAME = {
@@ -14,4 +16,5 @@ export const SYSTEM_NOTIFICATION_QUEUE_NAME = {
 
 export const SHOE_BOOKING_QUEUE_NAME = {
   CREATE_SHOE_BOOKING: 'create-shoe-booking',
+  FIND_DRIVER: 'find-driver',
 }

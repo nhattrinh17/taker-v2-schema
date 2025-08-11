@@ -12,29 +12,9 @@ export enum VehicleTypeEnum {
   BIKE = "BIKE",
 }
 
-export enum CarpoolServiceTypeEnum {
-  SINGLE_SEAT = "SINGLE_SEAT",
-  WHOLE_CAR = "WHOLE_CAR",
-}
-
-export enum PayerTypeEnum {
-  SENDER = "SENDER",
-  RECEIVER = "RECEIVER",
-}
-
 export enum CashbackTransactionTypeEnum {
   CREDIT = "CREDIT", // Nhan thuong
   DEBIT = "DEBIT", // rut tien
-}
-
-export enum SearchHistoryTypeEnum {
-  CARPOOL = "CARPOOL",
-  DELIVERY = "DELIVERY",
-}
-
-export enum ServiceTypeEnum {
-  BOOKING = "BOOKING",
-  DELIVERY = "DELIVERY",
 }
 
 export enum OtpRequestType {
@@ -44,4 +24,29 @@ export enum OtpRequestType {
 
 export enum PartnerTypeEnum {
   SHOE_CLEANING = "SHOE_CLEANING",
+}
+
+export enum ActorTypeEnum {
+  CUSTOMER = "CUSTOMER",
+  PARTNER = "PARTNER",
+  DRIVER = "DRIVER",
+  SYSTEM = "SYSTEM",
+  ADMIN = "ADMIN",
+}
+
+export enum MessageTypeEnum {
+  TEXT = "TEXT",
+  IMAGE = "IMAGE",
+  VIDEO = "VIDEO",
+  AUDIO = "AUDIO",
+  CUSTOM = "CUSTOM",
+}
+
+export enum CustomPayloadTypeEnum {
+  SHOE_BOOKING = "SHOE_BOOKING",
+}
+
+export enum CreateConversationTypeEnum {
+  SHOE_BOOKING = "shoe-booking",
+  ACCOUNT = "account",
 }

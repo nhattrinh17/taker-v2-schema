@@ -17,6 +17,7 @@ const app_constant_1 = require("../common/constants/app.constant");
 const address_entity_1 = require("./address.entity");
 const wallet_entity_1 = require("./wallet.entity");
 const shoe_booking_entity_1 = require("./shoe_booking.entity");
+const cancel_order_entity_1 = require("./cancel_order.entity");
 let Partner = class Partner extends base_entity_1.BaseEntity {
 };
 exports.Partner = Partner;
@@ -85,6 +86,10 @@ __decorate([
     __metadata("design:type", String)
 ], Partner.prototype, "step", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ type: "int" }),
+    __metadata("design:type", Number)
+], Partner.prototype, "activeSince", void 0);
+__decorate([
     (0, typeorm_1.Column)({ length: 255, nullable: true }),
     __metadata("design:type", String)
 ], Partner.prototype, "appleId", void 0);
@@ -132,6 +137,10 @@ __decorate([
     (0, typeorm_1.OneToMany)(() => shoe_booking_entity_1.ShoeBooking, (shoeBooking) => shoeBooking.partner),
     __metadata("design:type", Array)
 ], Partner.prototype, "shoeBookings", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => cancel_order_entity_1.CancelOrder, (cancelOrder) => cancelOrder.partner),
+    __metadata("design:type", Array)
+], Partner.prototype, "cancelOrders", void 0);
 exports.Partner = Partner = __decorate([
     (0, typeorm_1.Entity)({ name: "partners" })
 ], Partner);

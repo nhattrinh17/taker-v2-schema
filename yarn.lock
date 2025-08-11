@@ -2641,6 +2641,11 @@ gtoken@^8.0.0:
     gaxios "^7.0.0"
     jws "^4.0.0"
 
+h3-js@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/h3-js/-/h3-js-4.2.1.tgz#dbd598c80a0b3aa1070a2c75d745855bf3c8ac4c"
+  integrity sha512-HYiUrq5qTRFqMuQu3jEHqxXLk1zsSJiby9Lja/k42wHjabZG7tN9rOuzT/PEFf+Wa7rsnHLMHRWIu0mgcJ0ewQ==
+
 has-flag@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-4.0.0.tgz#944771fd9c81c81265c4d6941860da06bb59479b"

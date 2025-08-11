@@ -4,11 +4,13 @@ const ioredis_1 = require("ioredis");
 class RedisService {
     constructor() {
         try {
-            this.client = new ioredis_1.Redis({
+            const config = {
                 host: process.env.QUEUE_HOST,
                 port: parseInt(process.env.QUEUE_PORT, 10),
                 password: String(process.env.QUEUE_PASS),
-            });
+            };
+            this.client = new ioredis_1.Redis(config);
+            this.subClient = new ioredis_1.Redis(config);
         }
         catch (error) {
             console.log('🚀 ~ RedisService ~ constructor ~ error:', error, process.env.QUEUE_HOST, process.env.QUEUE_PORT, process.env.QUEUE_PASS);
@@ -76,8 +78,23 @@ class RedisService {
     srem(key, valueData) {
         return this.client.srem(key, valueData);
     }
+    async hget(key, field) {
+        return await this.client.hget(key, field);
+    }
+    async hgetAll(key) {
+        return await this.client.hgetall(key);
+    }
+    async hset(key, field, fieldValue) {
+        return await this.client.hset(key, field, fieldValue);
+    }
+    async hdel(key, field) {
+        await this.client.hdel(key, field);
+    }
     getClient() {
         return this.client;
+    }
+    getSubClient() {
+        return this.subClient;
     }
 }
 exports.default = RedisService;

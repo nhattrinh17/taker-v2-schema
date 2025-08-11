@@ -9,25 +9,9 @@ export declare enum VehicleTypeEnum {
     CAR = "CAR",
     BIKE = "BIKE"
 }
-export declare enum CarpoolServiceTypeEnum {
-    SINGLE_SEAT = "SINGLE_SEAT",
-    WHOLE_CAR = "WHOLE_CAR"
-}
-export declare enum PayerTypeEnum {
-    SENDER = "SENDER",
-    RECEIVER = "RECEIVER"
-}
 export declare enum CashbackTransactionTypeEnum {
     CREDIT = "CREDIT",
     DEBIT = "DEBIT"
-}
-export declare enum SearchHistoryTypeEnum {
-    CARPOOL = "CARPOOL",
-    DELIVERY = "DELIVERY"
-}
-export declare enum ServiceTypeEnum {
-    BOOKING = "BOOKING",
-    DELIVERY = "DELIVERY"
 }
 export declare enum OtpRequestType {
     EXISTED = "existed",
@@ -35,4 +19,25 @@ export declare enum OtpRequestType {
 }
 export declare enum PartnerTypeEnum {
     SHOE_CLEANING = "SHOE_CLEANING"
+}
+export declare enum ActorTypeEnum {
+    CUSTOMER = "CUSTOMER",
+    PARTNER = "PARTNER",
+    DRIVER = "DRIVER",
+    SYSTEM = "SYSTEM",
+    ADMIN = "ADMIN"
+}
+export declare enum MessageTypeEnum {
+    TEXT = "TEXT",
+    IMAGE = "IMAGE",
+    VIDEO = "VIDEO",
+    AUDIO = "AUDIO",
+    CUSTOM = "CUSTOM"
+}
+export declare enum CustomPayloadTypeEnum {
+    SHOE_BOOKING = "SHOE_BOOKING"
+}
+export declare enum CreateConversationTypeEnum {
+    SHOE_BOOKING = "shoe-booking",
+    ACCOUNT = "account"
 }

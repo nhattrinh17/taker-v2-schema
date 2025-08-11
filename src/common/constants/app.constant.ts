@@ -42,15 +42,19 @@ export interface INotificationPayload {
 
 export const SOCKET_PREFIX = "SOCKET:";
 
+export const RoomNameAdmin = "socket-room-admins";
+
 export const SCREEN_PARTNER = {
   CALL: "CALL",
-  CARPOOL_BOOKING: "CARPOOL_BOOKING",
-  DELIVERY: "DELIVERY",
-  VEHICLE_BOOKING: "VEHICLE_BOOKING",
+  SHOE_BOOKING: "SHOE_BOOKING",
+};
+
+export const SCREEN_ADMIN = {
+  MESSAGE: "MESSAGE",
 };
 
 export interface IDayOperatingHours {
-  open: string;  // 'HH:mm'
+  open: string; // 'HH:mm'
   close: string; // 'HH:mm'
 }
 
@@ -82,3 +86,9 @@ export interface IOtp {
 }
 
 export const RESOLUTION = 9;
+
+export const SEARCH_PARTNER_TIMEOUT = {
+  "0.5km": 0, // 60 seconds
+  "1km": 60_000, // 120 seconds
+  "2km": 120_000, // 180 seconds
+};

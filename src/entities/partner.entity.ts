@@ -6,6 +6,8 @@ import { Address } from "./address.entity";
 import { Wallet } from "./wallet.entity";
 import { ShoeService } from "./shoe_service.entity";
 import { ShoeBooking } from "./shoe_booking.entity";
+import { CancelOrder } from "./cancel_order.entity";
+import { Rating } from "./rating.entity";
 
 @Entity({ name: "partners" })
 export class Partner extends BaseEntity {
@@ -59,6 +61,9 @@ export class Partner extends BaseEntity {
   })
   step: StepEnum;
 
+  @Column({type: "int"})
+  activeSince: number;
+
   @Column({ length: 255, nullable: true })
   appleId: string;
 
@@ -95,4 +100,7 @@ export class Partner extends BaseEntity {
 
   @OneToMany(() => ShoeBooking, (shoeBooking) => shoeBooking.partner)
   shoeBookings: ShoeBooking[];
+
+  @OneToMany(() => CancelOrder, (cancelOrder) => cancelOrder.partner)
+  cancelOrders: CancelOrder[];
 }

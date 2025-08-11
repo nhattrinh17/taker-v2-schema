@@ -1,10 +1,6 @@
-import { PaginationDto } from "../../common/decorators";
+import { PaginationDto } from "@common/decorators";
 import { BaseRepositoryInterface } from "../../base/base.interface.repository";
-import { ShoeBooking } from "../../entities/shoe_booking.entity";
-import { ShoeBookingStatusEnum } from "../../common/enums";
+import { ShoeBooking } from "@entities/shoe_booking.entity";
 export interface ShoeBookingRepositoryInterface extends BaseRepositoryInterface<ShoeBooking> {
-    getAllShoeBookings(query: {
-        customerId?: string;
-        status?: ShoeBookingStatusEnum;
-    }, pagination: PaginationDto): any;
+    getAllShoeBookings(query: any, pagination: PaginationDto): any;
 }

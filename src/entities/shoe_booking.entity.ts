@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, ManyToOne, OneToOne } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne } from "typeorm";
 import { BaseEntity } from "./base.entity";
 import { ExpectedDeliveryTimeEnum, ShoeBookingStatusEnum } from "@common/enums";
 import { ShoeService } from "./shoe_service.entity";
@@ -6,6 +6,10 @@ import { Customer } from "./customer.entity";
 import { Partner } from "./partner.entity";
 import { Transaction } from "./transaction.entity";
 import { CustomerVoucher } from "./customer_voucher.entity";
+import { VehicleRegistry } from "./vehicle_registry.entity";
+import { CancelOrder } from "./cancel_order.entity";
+import { ShoeBookingLog } from "./shoe_booking_log.entity";
+import { Rating } from "./rating.entity";
 
 @Entity({ name: "shoe_bookings" })
 export class ShoeBooking extends BaseEntity {
@@ -23,6 +27,12 @@ export class ShoeBooking extends BaseEntity {
 
   @Column({ type: "varchar", length: 36, nullable: true })
   customerVoucherId?: string;
+
+  @Column({ type: "varchar", length: 36, nullable: true })
+  deliveryVehicleId?: string;
+
+  @Column({ type: "varchar", length: 36, nullable: true })
+  returnVehicleId?: string;
 
   @Column({ type: "text", nullable: true })
   shoeServiceDes?: string;
@@ -80,6 +90,12 @@ export class ShoeBooking extends BaseEntity {
   @Column({ type: "text", nullable: true })
   imageUrls?: string;
 
+  @Column({ type: "text", nullable: true })
+  processingImages?: string;
+
+  @Column({ type: "text", nullable: true })
+  completedImages?: string;
+
   @Column({ type: "varchar", length: 255, unique: true })
   orderId: string;
 
@@ -115,4 +131,25 @@ export class ShoeBooking extends BaseEntity {
   )
   @JoinColumn({ name: "customerVoucherId" })
   customerVoucher?: CustomerVoucher;
+
+  @ManyToOne(() => VehicleRegistry, (vehicleRegistry) => vehicleRegistry.deliveryBookings, {
+    nullable: true,
+  })
+  @JoinColumn({ name: "deliveryVehicleId" })
+  deliveryVehicle?: VehicleRegistry;
+
+  @ManyToOne(() => VehicleRegistry, (vehicleRegistry) => vehicleRegistry.returnBookings, {
+    nullable: true,
+  })
+  @JoinColumn({ name: "returnVehicleId" })
+  returnVehicle?: VehicleRegistry;
+
+  @OneToMany(() => CancelOrder, (cancelOrder) => cancelOrder.shoeBooking)
+  cancelOrders: CancelOrder[];
+
+  @OneToMany(() => ShoeBookingLog, (shoeBookingLog) => shoeBookingLog.shoeBooking)
+  shoeBookingLogs: ShoeBookingLog[];
+
+  @OneToMany(() => Rating, (rating) => rating.shoeBooking)
+  ratings: Rating[];
 }

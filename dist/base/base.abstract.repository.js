@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseRepositoryAbstract = void 0;
+const typeorm_1 = require("typeorm");
 class BaseRepositoryAbstract {
     constructor(repository) {
         this.repository = repository;
@@ -28,7 +29,9 @@ class BaseRepositoryAbstract {
         const [items, count] = await this.repository.findAndCount({
             where: condition,
             select: options?.projection,
-            order: { [options?.sort || 'createdAt']: options?.typeSort || 'DESC' },
+            order: {
+                [options?.sort || "createdAt"]: options?.typeSort || "DESC",
+            },
             skip: options?.offset,
             take: options?.limit,
             relations: options?.relations,
@@ -87,6 +90,13 @@ class BaseRepositoryAbstract {
     }
     getRepo() {
         return this.repository;
+    }
+    async getByIds(ids, projection, options) {
+        return await this.repository.find({
+            where: { id: (0, typeorm_1.In)(ids) },
+            select: projection,
+            ...options,
+        });
     }
 }
 exports.BaseRepositoryAbstract = BaseRepositoryAbstract;

@@ -124,6 +124,18 @@ class CreateShoeBookingTable1753951376873 {
                     isNullable: true,
                 },
                 {
+                    name: "processingImages",
+                    type: "text",
+                    isNullable: true,
+                    comment: "JSON string of image URLs during the cleaning/repairing process",
+                },
+                {
+                    name: "completedImages",
+                    type: "text",
+                    isNullable: true,
+                    comment: "JSON string of image URLs after completion",
+                },
+                {
                     name: "orderId",
                     type: "varchar",
                     length: "255",

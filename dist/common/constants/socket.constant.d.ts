@@ -1,26 +1,11 @@
 export declare const SOCKET_EVENT: {
-    TRIP_UPDATE: string;
-    DELIVERY_UPDATE: string;
-    VEHICLE_BOOKING_UPDATE: string;
+    SHOE_BOOKING_UPDATE: string;
+    MESSAGE_UPDATE: string;
 };
-export declare const TRIP_UPDATE_STATUS: {
-    FIND_DRIVER_TIMEOUT: string;
-    DRIVER_ACCEPTED: string;
-    PENDING_TRIP: string;
-    CANCEL_TRIP: string;
-    PAYMENT_SUCCESS: string;
-    WAITING_DRIVER_ACCEPT: string;
-};
-export declare const DELIVERY_UPDATE_STATUS: {
-    FIND_DRIVER_TIMEOUT: string;
-    DRIVER_ACCEPTED: string;
-    PENDING_DELIVERY: string;
-    CANCEL_DELIVERY: string;
-    PAYMENT_SUCCESS: string;
-    WAITING_DRIVER_ACCEPT: string;
-};
-export declare const VEHICLE_BOOKING_UPDATE_STATUS: {
-    FIND_DRIVER_TIMEOUT: string;
+export declare const SHOE_BOOKING_UPDATE_STATUS: {
+    FIND_SHOP: string;
+    SHOP_ACCEPTED: string;
+    FIND_SHOP_TIMEOUT: string;
     DRIVER_ACCEPTED: string;
     FIND_DRIVER: string;
     CANCELLED: string;
@@ -33,4 +18,7 @@ export declare const VEHICLE_BOOKING_UPDATE_STATUS: {
     PENDING_PAYMENT_COMPLETION: string;
     COMPLETED: string;
     DRIVER_ARRIVING: string;
+};
+export declare const MESSAGE_UPDATE_STATUS: {
+    CREATE_CONVERSATION: string;
 };

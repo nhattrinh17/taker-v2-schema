@@ -1,3 +1,4 @@
+export declare const estimateRings: (radius: number) => number;
 export declare function generateSlug(str: string): string;
 export declare function generateOTP(): number;
 export declare function generatePassword(): number;

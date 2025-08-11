@@ -110,6 +110,10 @@ class CreatePartnersTable1752825861447 {
                     isNullable: true,
                 },
                 {
+                    name: "activeSince",
+                    type: "int",
+                },
+                {
                     name: "appleId",
                     type: "varchar",
                     length: "255",

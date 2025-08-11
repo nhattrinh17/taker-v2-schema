@@ -27,13 +27,36 @@ let ShoeBookingRepository = class ShoeBookingRepository extends base_abstract_re
         const queryBuilder = this.shoeBookingRepository
             .createQueryBuilder("shoeBooking")
             .leftJoinAndSelect("shoeBooking.customer", "customer")
-            .leftJoinAndSelect("shoeBooking.shoeService", "shoeService")
-            .where("shoeBooking.customerId = :customerId", {
-            customerId: query.customerId,
-        });
+            .leftJoinAndSelect("shoeBooking.shoeService", "shoeService");
+        if (query.customerId) {
+            queryBuilder.where("shoeBooking.customerId = :customerId", {
+                customerId: query.customerId,
+            });
+        }
+        else if (query.partnerId) {
+            queryBuilder.where("shoeBooking.partnerId = :partnerId", {
+                partnerId: query.partnerId,
+            });
+        }
+        if (query.orderId) {
+            queryBuilder.andWhere("shoeBooking.orderId = :orderId", {
+                orderId: query.orderId,
+            });
+        }
         if (query.status) {
             queryBuilder.andWhere("shoeBooking.status = :status", {
                 status: query.status,
+            });
+        }
+        if (query.fromDate && query.toDate) {
+            queryBuilder.andWhere("shoeBooking.createdAt BETWEEN :fromDate AND :toDate", {
+                fromDate: query.fromDate,
+                toDate: query.toDate,
+            });
+        }
+        if (query.shoeServiceName) {
+            queryBuilder.andWhere("shoeService.name LIKE :shoeServiceName", {
+                shoeServiceName: `%${query.shoeServiceName}%`,
             });
         }
         queryBuilder

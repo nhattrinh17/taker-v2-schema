@@ -1,7 +1,7 @@
-import { FindAllResponse } from 'src/types/common.type';
-import { BaseRepositoryInterface } from './base.interface.repository';
-import { Repository, DeepPartial } from 'typeorm';
-import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
+import { FindAllResponse } from "src/types/common.type";
+import { BaseRepositoryInterface } from "./base.interface.repository";
+import { Repository, DeepPartial } from "typeorm";
+import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
 export declare abstract class BaseRepositoryAbstract<T> implements BaseRepositoryInterface<T> {
     protected readonly repository: Repository<T>;
     protected constructor(repository: Repository<T>);
@@ -11,7 +11,7 @@ export declare abstract class BaseRepositoryAbstract<T> implements BaseRepositor
     findAll(condition: object | any[], options?: {
         projection: (keyof T)[];
         sort: string;
-        typeSort: 'ASC' | 'DESC';
+        typeSort: "ASC" | "DESC";
         page: number;
         offset: number;
         limit: number;
@@ -24,4 +24,5 @@ export declare abstract class BaseRepositoryAbstract<T> implements BaseRepositor
     permanentlyDeleteByCondition(condition: object): Promise<boolean>;
     count(condition?: object | any[]): Promise<number>;
     getRepo(): Repository<T>;
+    getByIds(ids: string[], projection?: (keyof T)[], options?: any): Promise<T[]>;
 }
