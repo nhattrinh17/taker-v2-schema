@@ -14,26 +14,41 @@ let HttpExceptionFilter = class HttpExceptionFilter {
         const response = ctx.getResponse();
         const request = ctx.getRequest();
         let status = common_1.HttpStatus.INTERNAL_SERVER_ERROR;
-        let message = 'Internal Server Error';
+        let message = "Internal Server Error";
         if (exception instanceof common_1.HttpException) {
             status = exception.getStatus();
             const exceptionResponse = exception.getResponse();
-            if (typeof exceptionResponse === 'string') {
+            if (typeof exceptionResponse === "string") {
                 message = exceptionResponse;
             }
-            else if (typeof exceptionResponse === 'object' && exceptionResponse !== null) {
+            else if (typeof exceptionResponse === "object" &&
+                exceptionResponse !== null) {
                 message = exceptionResponse.message || message;
             }
         }
+        else {
+            const anyException = exception;
+            if (anyException.status && typeof anyException.status === "number") {
+                status = anyException.status;
+            }
+            if (anyException.message) {
+                message = anyException.message;
+            }
+        }
         const errorResponse = {
-            type: 'error',
+            type: "error",
             code: status,
             timestamp: new Date().toISOString(),
             path: request.url,
             method: request.method,
             message,
         };
-        response.code(status).send(errorResponse);
+        try {
+            response.status(status).send(errorResponse);
+        }
+        catch (error) {
+            response.code(status).send(errorResponse);
+        }
     }
 };
 exports.HttpExceptionFilter = HttpExceptionFilter;
