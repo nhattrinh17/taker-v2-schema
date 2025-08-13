@@ -35,7 +35,7 @@ export class PartnerRepository
       .take(limit);
     if (search) {
       queryBuilder.where(
-        "partner.name ILIKE :search OR partner.email ILIKE :search OR partner.phone ILIKE :search",
+        "partner.name LIKE :search OR partner.email LIKE :search OR partner.phone LIKE :search",
         {
           search: `%${search}%`,
         }
