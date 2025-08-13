@@ -27,7 +27,7 @@ let ShoeServiceRepository = class ShoeServiceRepository extends base_abstract_re
         const queryBuilder = this.shoeServiceRepository
             .createQueryBuilder("shoeService");
         if (query.search) {
-            queryBuilder.andWhere("shoeService.name ILIKE :search OR shoeService.description ILIKE :search OR shoeService.price ILIKE :search", { search: `%${query.search}%` });
+            queryBuilder.andWhere("shoeService.name LIKE :search OR shoeService.description LIKE :search OR shoeService.price LIKE :search", { search: `%${query.search}%` });
         }
         queryBuilder
             .skip(pagination.offset)

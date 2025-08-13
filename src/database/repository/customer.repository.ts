@@ -33,14 +33,6 @@ export class CustomerRepository
       .createQueryBuilder("customer")
       .skip(offset)
       .take(limit);
-    if (search) {
-      queryBuilder.where(
-        "customer.fullName ILIKE :search OR customer.email ILIKE :search OR customer.phone ILIKE :search",
-        {
-          search: `%${search}%`,
-        }
-      );
-    }
 
     if (status) {
       queryBuilder.andWhere("customer.status = :status", { status });
@@ -52,6 +44,15 @@ export class CustomerRepository
 
     if (sort) {
       queryBuilder.orderBy(`customer.${sort || 'createdAt'}`, typeSort || "DESC");
+    }
+
+    if (search) {
+      queryBuilder.andWhere(
+        "customer.fullName LIKE :search OR customer.email LIKE :search OR customer.phone LIKE :search",
+        {
+          search: `%${search}%`,
+        }
+      );
     }
 
     const [data, total] = await queryBuilder.getManyAndCount();
