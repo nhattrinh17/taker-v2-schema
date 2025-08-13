@@ -5,4 +5,5 @@ import { TransactionRepositoryInterface } from '../interface/transaction.interfa
 export declare class TransactionRepository extends BaseRepositoryAbstract<Transaction> implements TransactionRepositoryInterface {
     private readonly transactionRepository;
     constructor(transactionRepository: Repository<Transaction>);
+    updateMultipleWidthCondition(condition: object, data: object): Promise<any>;
 }

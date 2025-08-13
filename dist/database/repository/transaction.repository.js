@@ -23,6 +23,9 @@ let TransactionRepository = class TransactionRepository extends base_abstract_re
         super(transactionRepository);
         this.transactionRepository = transactionRepository;
     }
+    async updateMultipleWidthCondition(condition, data) {
+        return this.transactionRepository.createQueryBuilder(transaction_entity_1.Transaction.name).update(transaction_entity_1.Transaction.name).set(data).where(condition).execute();
+    }
 };
 exports.TransactionRepository = TransactionRepository;
 exports.TransactionRepository = TransactionRepository = __decorate([

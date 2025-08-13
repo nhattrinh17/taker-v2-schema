@@ -14,4 +14,7 @@ export class TransactionRepository extends BaseRepositoryAbstract<Transaction> i
     super(transactionRepository);
   }
   // Add custom methods for Transaction if needed
+  async updateMultipleWidthCondition(condition: object, data: object): Promise<any> {
+    return this.transactionRepository.createQueryBuilder(Transaction.name).update(Transaction.name).set(data).where(condition).execute();
+  }
 }

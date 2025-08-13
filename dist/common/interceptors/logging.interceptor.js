@@ -12,11 +12,10 @@ const operators_1 = require("rxjs/operators");
 let LoggingInterceptor = class LoggingInterceptor {
     intercept(context, next) {
         const req = context.switchToHttp().getRequest();
-        const { method, url } = req;
+        const { method, url, ip } = req;
         const now = Date.now();
-        return next
-            .handle()
-            .pipe((0, operators_1.tap)(() => common_1.Logger.log(`${method} ${url} ${Date.now() - now}ms`, context.getClass().name)));
+        common_1.Logger.log(`Incoming request from ${ip} - ${method} ${url}`, context.getClass().name);
+        return next.handle().pipe((0, operators_1.tap)(() => common_1.Logger.log(`${method} ${url} handled in ${Date.now() - now}ms`, context.getClass().name)));
     }
 };
 exports.LoggingInterceptor = LoggingInterceptor;
