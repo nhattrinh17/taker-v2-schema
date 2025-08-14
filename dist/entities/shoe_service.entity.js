@@ -25,6 +25,10 @@ __decorate([
     __metadata("design:type", Number)
 ], ShoeService.prototype, "price", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], ShoeService.prototype, "simpleDes", void 0);
+__decorate([
     (0, typeorm_1.Column)({ type: "text", nullable: true }),
     __metadata("design:type", String)
 ], ShoeService.prototype, "description", void 0);

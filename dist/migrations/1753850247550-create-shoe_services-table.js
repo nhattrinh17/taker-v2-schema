@@ -22,6 +22,11 @@ class CreateShoeServicesTable1753850247550 {
                     isNullable: true,
                 },
                 {
+                    name: "simpleDes",
+                    type: "varchar(255)",
+                    isNullable: true,
+                },
+                {
                     name: "description",
                     type: "text",
                     isNullable: true,

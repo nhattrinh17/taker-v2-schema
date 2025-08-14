@@ -11,6 +11,9 @@ export class ShoeService extends BaseEntity {
   @Column({ type: "int", nullable: true })
   price?: number;
 
+  @Column({ nullable: true })
+  simpleDes: string;
+
   @Column({ type: "text", nullable: true })
   description: string;
 

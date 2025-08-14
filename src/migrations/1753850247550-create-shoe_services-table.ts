@@ -28,6 +28,11 @@ export class CreateShoeServicesTable1753850247550
             isNullable: true, // nullable nếu không có giá
           },
           {
+            name: "simpleDes",
+            type: "varchar(255)",
+            isNullable: true,
+          },
+          {
             name: "description",
             type: "text",
             isNullable: true,
