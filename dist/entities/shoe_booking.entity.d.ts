@@ -1,5 +1,5 @@
 import { BaseEntity } from "./base.entity";
-import { ExpectedDeliveryTimeEnum, ShoeBookingStatusEnum } from "@common/enums";
+import { ExpectedDeliveryTimeEnum, ShoeBookingStatusEnum } from "../common/enums";
 import { ShoeService } from "./shoe_service.entity";
 import { Customer } from "./customer.entity";
 import { Partner } from "./partner.entity";

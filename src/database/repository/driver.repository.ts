@@ -41,8 +41,8 @@ export class DriverRepository
       .skip(pagination.offset)
       .take(pagination.limit)
       .orderBy(
-        "driver." + pagination.sort || "createdAt",
-        pagination.typeSort || "DESC"
+        "driver." + (pagination.sort ?? "createdAt"),
+        pagination.typeSort ?? "DESC"
       );
 
     const [data, total] = await queryBuilder.getManyAndCount();

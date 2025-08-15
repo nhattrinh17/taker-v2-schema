@@ -1,4 +1,4 @@
-import { Voucher } from '@entities/index';
+import { Voucher } from '../../entities/index';
 import { BaseRepositoryAbstract } from 'src/base';
 import { VoucherAdminRepositoryInterface } from '../interface/voucher.interface';
 import { Repository } from 'typeorm';

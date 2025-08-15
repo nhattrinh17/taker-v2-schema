@@ -1,5 +1,5 @@
-import { PaginationDto } from "@common/decorators";
-import { CustomerVoucher } from "@entities/index";
+import { PaginationDto } from "../../common/decorators";
+import { CustomerVoucher } from "../../entities/index";
 import { BaseRepositoryInterface } from "../../base/base.interface.repository";
 export interface CustomerVoucherAdminRepositoryInterface extends BaseRepositoryInterface<CustomerVoucher> {
     insertManyVoucherForCustomer(dto: {

@@ -38,7 +38,7 @@ let DriverRepository = class DriverRepository extends base_abstract_repository_1
         queryBuilder
             .skip(pagination.offset)
             .take(pagination.limit)
-            .orderBy("driver." + pagination.sort || "createdAt", pagination.typeSort || "DESC");
+            .orderBy("driver." + (pagination.sort ?? "createdAt"), pagination.typeSort ?? "DESC");
         const [data, total] = await queryBuilder.getManyAndCount();
         return {
             data,

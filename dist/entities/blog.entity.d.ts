@@ -1,4 +1,4 @@
-import { StatusBlogEnum, TypePressBlogEnum } from '@common/enums';
+import { StatusBlogEnum, TypePressBlogEnum } from '../common/enums';
 import { BlogCategory } from './blog_category.entity';
 import { BaseEntity } from './base.entity';
 export declare class Blog extends BaseEntity {

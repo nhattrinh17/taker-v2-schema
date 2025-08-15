@@ -1,4 +1,4 @@
-import { QuerySortDto } from '@common/filters';
+import { QuerySortDto } from '../filters';
 export declare class PaginationDto extends QuerySortDto {
     page: number;
     limit: number;
