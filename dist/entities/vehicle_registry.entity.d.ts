@@ -1,5 +1,5 @@
 import { BaseEntity } from "./base.entity";
-import { VehicleRegistryStatusEnum, VehicleTypeEnum } from "../common/enums";
+import { VehicleRegistryStatusEnum, VehicleTypeEnum } from "@common/enums";
 import { Driver } from "./driver.entity";
 import { ShoeBooking } from "./shoe_booking.entity";
 export declare class VehicleRegistry extends BaseEntity {

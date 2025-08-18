@@ -27,7 +27,8 @@ let ShoeBookingRepository = class ShoeBookingRepository extends base_abstract_re
         const queryBuilder = this.shoeBookingRepository
             .createQueryBuilder("shoeBooking")
             .leftJoinAndSelect("shoeBooking.customer", "customer")
-            .leftJoinAndSelect("shoeBooking.shoeService", "shoeService");
+            .leftJoinAndSelect("shoeBooking.shoeService", "shoeService")
+            .leftJoinAndSelect("shoeBooking.partner", "partner");
         if (query.customerId) {
             queryBuilder.where("shoeBooking.customerId = :customerId", {
                 customerId: query.customerId,
@@ -62,7 +63,7 @@ let ShoeBookingRepository = class ShoeBookingRepository extends base_abstract_re
         queryBuilder
             .take(pagination.limit)
             .skip(pagination.offset)
-            .orderBy("shoeBooking." + pagination.sort || "createdAt", pagination.typeSort || "DESC");
+            .orderBy("shoeBooking." + (pagination.sort || "createdAt"), pagination.typeSort || "DESC");
         const [items, total] = await queryBuilder.getManyAndCount();
         return {
             data: items,

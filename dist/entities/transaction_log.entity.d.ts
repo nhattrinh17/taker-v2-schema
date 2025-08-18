@@ -1,4 +1,4 @@
-import { TransactionLogStatus } from '../common/enums';
+import { TransactionLogStatus } from '@common/enums';
 import { Transaction } from './transaction.entity';
 import { BaseEntity } from './base.entity';
 export declare class TransactionLog extends BaseEntity {

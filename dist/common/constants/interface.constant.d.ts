@@ -1,4 +1,4 @@
-import { CustomPayloadTypeEnum } from "../enums";
+import { CustomPayloadTypeEnum } from "@common/enums";
 export interface TextPayload {
     content: string;
 }

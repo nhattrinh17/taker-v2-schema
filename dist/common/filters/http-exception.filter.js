@@ -15,6 +15,7 @@ let HttpExceptionFilter = class HttpExceptionFilter {
         const request = ctx.getRequest();
         let status = common_1.HttpStatus.INTERNAL_SERVER_ERROR;
         let message = "Internal Server Error";
+        console.log(exception);
         if (exception instanceof common_1.HttpException) {
             status = exception.getStatus();
             const exceptionResponse = exception.getResponse();

@@ -23,12 +23,13 @@ export class ShoeBookingRepository
     const queryBuilder = this.shoeBookingRepository
       .createQueryBuilder("shoeBooking")
       .leftJoinAndSelect("shoeBooking.customer", "customer")
-      .leftJoinAndSelect("shoeBooking.shoeService", "shoeService");
+      .leftJoinAndSelect("shoeBooking.shoeService", "shoeService")
+      .leftJoinAndSelect("shoeBooking.partner", "partner");
 
     if (query.customerId) {
       queryBuilder.where("shoeBooking.customerId = :customerId", {
         customerId: query.customerId,
-      });
+      })
     } else if (query.partnerId) {
       queryBuilder.where("shoeBooking.partnerId = :partnerId", {
         partnerId: query.partnerId,
@@ -67,7 +68,7 @@ export class ShoeBookingRepository
       .take(pagination.limit)
       .skip(pagination.offset)
       .orderBy(
-        "shoeBooking." + pagination.sort || "createdAt",
+        "shoeBooking." + (pagination.sort || "createdAt"),
         pagination.typeSort || "DESC"
       );
 

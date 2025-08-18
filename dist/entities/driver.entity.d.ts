@@ -1,5 +1,5 @@
 import { BaseEntity } from "./base.entity";
-import { StepEnum, UserStatusEnum } from "../common/enums";
+import { StepEnum, UserStatusEnum } from "@common/enums";
 import { VehicleRegistry } from "./vehicle_registry.entity";
 import { CancelOrder } from "./cancel_order.entity";
 export declare class Driver extends BaseEntity {

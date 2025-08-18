@@ -1,5 +1,5 @@
 import { BaseEntity } from "./base.entity";
-import { PartnerTypeEnum, StepEnum, UserStatusEnum } from "../common/enums";
+import { PartnerTypeEnum, StepEnum, UserStatusEnum } from "@common/enums";
 import { Address } from "./address.entity";
 import { Wallet } from "./wallet.entity";
 import { ShoeBooking } from "./shoe_booking.entity";

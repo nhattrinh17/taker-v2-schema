@@ -2,7 +2,7 @@ import { Repository } from "typeorm";
 import { BaseRepositoryAbstract } from "../../base/base.abstract.repository";
 import { Driver } from "../../entities/driver.entity";
 import { DriverRepositoryInterface } from "../interface/driver.interface";
-import { PaginationDto } from "../../common/decorators";
+import { PaginationDto } from "@common/decorators";
 export declare class DriverRepository extends BaseRepositoryAbstract<Driver> implements DriverRepositoryInterface {
     private readonly driverRepository;
     constructor(driverRepository: Repository<Driver>);
