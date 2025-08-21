@@ -15,7 +15,7 @@ let HttpExceptionFilter = class HttpExceptionFilter {
         const request = ctx.getRequest();
         let status = common_1.HttpStatus.INTERNAL_SERVER_ERROR;
         let message = "Internal Server Error";
-        console.log(exception);
+        let errors = null;
         if (exception instanceof common_1.HttpException) {
             status = exception.getStatus();
             const exceptionResponse = exception.getResponse();
@@ -24,7 +24,12 @@ let HttpExceptionFilter = class HttpExceptionFilter {
             }
             else if (typeof exceptionResponse === "object" &&
                 exceptionResponse !== null) {
-                message = exceptionResponse.message || message;
+                const res = exceptionResponse;
+                message = res.message || message;
+                if (Array.isArray(res.message)) {
+                    errors = res.message;
+                    message = "Validation failed";
+                }
             }
         }
         else {
@@ -34,6 +39,9 @@ let HttpExceptionFilter = class HttpExceptionFilter {
             }
             if (anyException.message) {
                 message = anyException.message;
+            }
+            if (anyException.response) {
+                errors = anyException.response;
             }
         }
         const errorResponse = {
@@ -47,7 +55,7 @@ let HttpExceptionFilter = class HttpExceptionFilter {
         try {
             response.status(status).send(errorResponse);
         }
-        catch (error) {
+        catch {
             response.code(status).send(errorResponse);
         }
     }

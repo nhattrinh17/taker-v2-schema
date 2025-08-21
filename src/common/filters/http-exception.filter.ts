@@ -11,13 +11,14 @@ import { FastifyReply } from "fastify";
 export class HttpExceptionFilter implements ExceptionFilter {
   catch(exception: unknown, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
-    const response = ctx.getResponse<FastifyReply>(); // Lấy kiểu FastifyReply nếu dùng Fastify
+    const response = ctx.getResponse<FastifyReply>();
     const request = ctx.getRequest();
 
     let status = HttpStatus.INTERNAL_SERVER_ERROR;
-    let message = "Internal Server Error";
-    console.log(exception);
-    
+    let message: any = "Internal Server Error";
+    let errors: any = null;
+
+    // Trường hợp HttpException (BadRequest, Unauthorized, NotFound, ...)
     if (exception instanceof HttpException) {
       status = exception.getStatus();
       const exceptionResponse = exception.getResponse();
@@ -28,16 +29,25 @@ export class HttpExceptionFilter implements ExceptionFilter {
         typeof exceptionResponse === "object" &&
         exceptionResponse !== null
       ) {
-        message = (exceptionResponse as any).message || message;
+        const res: any = exceptionResponse;
+        message = res.message || message;
+        if (Array.isArray(res.message)) {
+          // ValidationPipe errors
+          errors = res.message;
+          message = "Validation failed";
+        }
       }
     } else {
-      // Fallback: try to extract status and message directly
+      // Các loại error khác (VD: query DB, JS error, custom error)
       const anyException = exception as any;
       if (anyException.status && typeof anyException.status === "number") {
         status = anyException.status;
       }
       if (anyException.message) {
         message = anyException.message;
+      }
+      if (anyException.response) {
+        errors = anyException.response;
       }
     }
 
@@ -51,10 +61,8 @@ export class HttpExceptionFilter implements ExceptionFilter {
     };
 
     try {
-      // Sử dụng status() thay vì code() cho Fastify
       response.status(status).send(errorResponse);
-    } catch (error) {
-      // Fallback với code() nếu status() không work
+    } catch {
       response.code(status).send(errorResponse);
     }
   }
