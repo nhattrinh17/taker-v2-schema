@@ -28,20 +28,22 @@ let HttpExceptionFilter = class HttpExceptionFilter {
                 message = res.message || message;
                 if (Array.isArray(res.message)) {
                     errors = res.message;
-                    message = "Validation failed";
+                    message = errors.join(", ");
                 }
             }
         }
         else {
             const anyException = exception;
+            console.log(anyException);
             if (anyException.status && typeof anyException.status === "number") {
                 status = anyException.status;
             }
-            if (anyException.message) {
-                message = anyException.message;
-            }
-            if (anyException.response) {
-                errors = anyException.response;
+            if (anyException.response.message) {
+                message = anyException.response.message;
+                if (Array.isArray(message)) {
+                    errors = message;
+                    message = errors.join(", ");
+                }
             }
         }
         const errorResponse = {

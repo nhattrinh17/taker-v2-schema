@@ -34,20 +34,24 @@ export class HttpExceptionFilter implements ExceptionFilter {
         if (Array.isArray(res.message)) {
           // ValidationPipe errors
           errors = res.message;
-          message = "Validation failed";
+          message = errors.join(", ");
         }
       }
     } else {
       // Các loại error khác (VD: query DB, JS error, custom error)
       const anyException = exception as any;
+      console.log(anyException);
+      
       if (anyException.status && typeof anyException.status === "number") {
         status = anyException.status;
       }
-      if (anyException.message) {
-        message = anyException.message;
-      }
-      if (anyException.response) {
-        errors = anyException.response;
+      if (anyException.response.message) {
+        message = anyException.response.message;
+        if (Array.isArray(message)) {
+          // ValidationPipe errors
+          errors = message;
+          message = errors.join(", ");
+        }
       }
     }
 
