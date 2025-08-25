@@ -34,10 +34,10 @@ let ConversationRepository = class ConversationRepository extends base_abstract_
             status: enums_1.ConversationStatusEnum.ACTIVE,
         });
         if (condition.customerId) {
-            queryBuilder.andWhere("participants.userId = :customerId AND participants.type = : actorType", { customerId: condition.customerId, actorType: enums_1.ActorTypeEnum.CUSTOMER });
+            queryBuilder.andWhere("participants.userId = :customerId AND participants.type = :actorType", { customerId: condition.customerId, actorType: enums_1.ActorTypeEnum.CUSTOMER });
         }
         else if (condition.adminId) {
-            queryBuilder.andWhere("participants.userId = :adminId AND participants.type = : actorType", { adminId: condition.adminId, actorType: enums_1.ActorTypeEnum.ADMIN });
+            queryBuilder.andWhere("participants.userId = :adminId AND participants.type = :actorType", { adminId: condition.adminId, actorType: enums_1.ActorTypeEnum.ADMIN });
         }
         queryBuilder
             .take(pagination.limit || 10)

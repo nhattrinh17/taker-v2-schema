@@ -38,6 +38,15 @@ __decorate([
     __metadata("design:type", String)
 ], Notification.prototype, "customerId", void 0);
 __decorate([
+    (0, typeorm_1.ManyToOne)(() => index_1.Admin, { nullable: true, onDelete: 'CASCADE' }),
+    (0, typeorm_1.JoinColumn)({ name: 'adminId' }),
+    __metadata("design:type", index_1.Admin)
+], Notification.prototype, "admin", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true, type: 'varchar', length: 36 }),
+    __metadata("design:type", String)
+], Notification.prototype, "adminId", void 0);
+__decorate([
     (0, typeorm_1.ManyToOne)(() => index_1.SystemNotification, { nullable: true, onDelete: 'SET NULL' }),
     (0, typeorm_1.JoinColumn)({ name: 'systemNotificationId' }),
     __metadata("design:type", index_1.SystemNotification)

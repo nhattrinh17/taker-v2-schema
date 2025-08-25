@@ -2,7 +2,7 @@ import { NotificationTypeEnum } from '@common/enums';
 import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { BaseEntity } from './base.entity';
 import { Customer } from './customer.entity';
-import { SystemNotification } from './index';
+import { Admin, SystemNotification } from './index';
 import { Partner } from './partner.entity';
 
 @Entity({ name: 'notifications' })
@@ -20,6 +20,13 @@ export class Notification extends BaseEntity {
 
   @Column({ nullable: true, type: 'varchar', length: 36 })
   customerId: string;
+
+  @ManyToOne(() => Admin, { nullable: true, onDelete: 'CASCADE' })
+  @JoinColumn({ name: 'adminId' })
+  admin: Admin;
+
+  @Column({ nullable: true, type: 'varchar', length: 36 })
+  adminId: string;
 
   @ManyToOne(() => SystemNotification, { nullable: true, onDelete: 'SET NULL' })
   @JoinColumn({ name: 'systemNotificationId' })

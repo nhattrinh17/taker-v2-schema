@@ -31,12 +31,12 @@ export class ConversationRepository
 
     if (condition.customerId) {
       queryBuilder.andWhere(
-        "participants.userId = :customerId AND participants.type = : actorType",
+        "participants.userId = :customerId AND participants.type = :actorType",
         { customerId: condition.customerId, actorType: ActorTypeEnum.CUSTOMER }
       );
     } else if (condition.adminId) {
       queryBuilder.andWhere(
-        "participants.userId = :adminId AND participants.type = : actorType",
+        "participants.userId = :adminId AND participants.type = :actorType",
         { adminId: condition.adminId, actorType: ActorTypeEnum.ADMIN }
       );
     }
