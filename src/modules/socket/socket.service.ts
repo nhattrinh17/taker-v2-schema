@@ -33,7 +33,7 @@ export class SocketService {
           if (res.data) return res.data;
         })
         .catch((err) => {
-          console.error('[API SHOEMAKER TO SOCKET],', err);
+          console.error('[API SHOEMAKER TO SOCKET],', JSON.stringify(err?.response?.data || err));
           setTimeout(() => this.sendMessageToRoom(dto, retries - 1), 1000);
         });
     } catch (error) {

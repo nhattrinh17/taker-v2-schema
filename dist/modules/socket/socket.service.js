@@ -43,7 +43,7 @@ let SocketService = SocketService_1 = class SocketService {
                     return res.data;
             })
                 .catch((err) => {
-                console.error('[API SHOEMAKER TO SOCKET],', err);
+                console.error('[API SHOEMAKER TO SOCKET],', JSON.stringify(err?.response?.data || err));
                 setTimeout(() => this.sendMessageToRoom(dto, retries - 1), 1000);
             });
         }
