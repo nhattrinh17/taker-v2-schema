@@ -85,7 +85,7 @@ export const refund = (orderId: string, amount: number, ip?: string) => {
   const vnp_TransactionDate = dayjs.tz().format('YYYYMMDDHHmmss');
   const vnp_Amount = amount * 100;
   const vnp_TransactionType = '02';
-  const vnp_CreateBy = 'XIMI';
+  const vnp_CreateBy = 'UWAY';
 
   const vnp_RequestId = dayjs.tz().valueOf().toString();
   const vnp_Version = '2.1.0';

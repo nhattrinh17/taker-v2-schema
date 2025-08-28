@@ -64,7 +64,7 @@ const refund = (orderId, amount, ip) => {
     const vnp_TransactionDate = dayjs_1.default.tz().format('YYYYMMDDHHmmss');
     const vnp_Amount = amount * 100;
     const vnp_TransactionType = '02';
-    const vnp_CreateBy = 'XIMI';
+    const vnp_CreateBy = 'UWAY';
     const vnp_RequestId = dayjs_1.default.tz().valueOf().toString();
     const vnp_Version = '2.1.0';
     const vnp_Command = 'refund';

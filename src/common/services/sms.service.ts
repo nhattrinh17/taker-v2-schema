@@ -54,16 +54,16 @@ export class SmsService {
       const token = await this.getToken();
       let message = ``;
       if (type == 'password') {
-        message = `XIMI VN: Mat khau moi cua ban la: ${otp}. Luu y: Khong cung cap mat khau cho nguoi khac`;
+        message = `UWAY VN: Mat khau moi cua ban la: ${otp}. Luu y: Khong cung cap mat khau cho nguoi khac`;
       } else {
-        message = `XIMI VN: Ma xac thuc OTP cua ban la ${otp}.Thoi gian hieu luc 3 phut. Luu y: Khong cung cap OTP cho nguoi khac`;
+        message = `UWAY VN: Ma xac thuc OTP cua ban la ${otp}.Thoi gian hieu luc 3 phut. Luu y: Khong cung cap OTP cho nguoi khac`;
       }
       const responseSendSms = await axios.post(
         process.env.URL_SEND_SMS,
         {
           access_token: token,
           session_id: new Date().getTime(),
-          BrandName: 'XIMI VN',
+          BrandName: 'UWAY VN',
           Phone: toNumber,
           Message: Buffer.from(message).toString('base64'),
           RequestId: new Date().getTime(),

@@ -3,43 +3,43 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NOTIFICATIONS_SCREEN = exports.PARTNER = exports.CUSTOMERS = void 0;
 exports.CUSTOMERS = {
     DAILY: [
-        '⏰ Đặt lịch ngay với XIMI để làm mới lại đôi giày yêu thương của bạn!',
-        '📆 Hãy sắp xếp lịch hẹn đánh giày cùng XIMI ngay hôm nay!',
-        '🔔 Lịch hẹn đánh giày với XIMI sẽ khiến đôi giày của bạn trở nên mới mẻ!',
-        '🚀 Đến lịch hẹn đánh giày, làm mới lại đôi giày của bạn với XIMI!',
-        '⏳ Thời gian để đặt lịch hẹn đánh giày với XIMI là bây giờ!',
-        '🎉 Hãy trải nghiệm dịch vụ đánh giày tại chỗ với XIMI - đặt lịch ngay!',
-        '🌟 Đặt lịch hẹn đánh giày cùng XIMI để thêm sự sáng bóng vào đôi giày của bạn!',
-        '📌 Lịch hẹn đánh giày với XIMI giúp bạn tiết kiệm thời gian và công sức!',
+        '⏰ Đặt lịch ngay với UWAY để làm mới lại đôi giày yêu thương của bạn!',
+        '📆 Hãy sắp xếp lịch hẹn đánh giày cùng UWAY ngay hôm nay!',
+        '🔔 Lịch hẹn đánh giày với UWAY sẽ khiến đôi giày của bạn trở nên mới mẻ!',
+        '🚀 Đến lịch hẹn đánh giày, làm mới lại đôi giày của bạn với UWAY!',
+        '⏳ Thời gian để đặt lịch hẹn đánh giày với UWAY là bây giờ!',
+        '🎉 Hãy trải nghiệm dịch vụ đánh giày tại chỗ với UWAY - đặt lịch ngay!',
+        '🌟 Đặt lịch hẹn đánh giày cùng UWAY để thêm sự sáng bóng vào đôi giày của bạn!',
+        '📌 Lịch hẹn đánh giày với UWAY giúp bạn tiết kiệm thời gian và công sức!',
         '⏰ Đến lịch hẹn đánh giày, đôi giày của bạn sẽ trở nên mới mẻ hơn bao giờ hết!',
-        '🔔 Hãy đặt lịch hẹn đánh giày với XIMI ngay để chăm sóc giày của bạn một cách chuyên nghiệp!',
-        '📅 Bạn đã đặt lịch hẹn đánh giày tuần này chưa? Nếu chưa, đến với XIMI ngay!',
-        '🌟 Thêm một chút sự sáng bóng vào đôi giày yêu thương của bạn với lịch hẹn đánh giày từ XIMI!',
-        '⌛ Hãy dành một chút thời gian để đặt lịch hẹn đánh giày với XIMI - bạn sẽ không hối tiếc đâu!',
-        '💼 Đôi giày mới mẻ sẽ giúp bạn tự tin hơn trong công việc! Đặt lịch với XIMI ngay!',
-        '🛠️ Làm mới lại đôi giày của bạn với dịch vụ đánh giày chất lượng từ XIMI!',
-        '🚀 Đặt lịch hẹn đánh giày cùng XIMI ngay để trải nghiệm sự thuận tiện và chất lượng!',
-        '📢 Đừng bỏ lỡ cơ hội để làm mới lại đôi giày của bạn với XIMI - đặt lịch ngay!',
-        '🌟 Sự sáng bóng mới cho đôi giày yêu thương của bạn đang chờ đợi ở XIMI!',
-        '🔄 Làm mới lại đôi giày yêu thương với dịch vụ đánh giày tận nơi từ XIMI!',
-        '📆 Đặt lịch hẹn đánh giày với XIMI ngay hôm nay để có trải nghiệm tuyệt vời nhất!',
-        '🎯 Mục tiêu của bạn là có đôi giày sáng bóng? XIMI sẽ giúp bạn thực hiện điều đó!',
-        '⏱️ Đừng lãng phí thời gian! Đặt lịch hẹn đánh giày với XIMI ngay bây giờ!',
-        '🎉 Một trải nghiệm mới với đôi giày sáng bóng đang chờ đợi bạn tại XIMI!',
-        '📞 Liên hệ với XIMI để đặt lịch hẹn đánh giày ngay hôm nay!',
-        '💡 Làm mới lại đôi giày yêu thương với chỉ một cuộc gọi tới XIMI!',
-        '🎈 Đến với XIMI, bạn sẽ không bao giờ phải lo lắng về việc chăm sóc giày nữa!',
-        '🌟 XIMI - nơi đem lại sự sáng bóng cho đôi giày của bạn!',
-        '🚚 Dịch vụ đánh giày tại chỗ từ XIMI sẽ đem đến sự thuận tiện nhất cho bạn!',
-        '🎁 Món quà tuyệt vời dành cho đôi giày của bạn - đặt lịch với XIMI ngay!',
-        '🔔 Đừng quên đặt lịch hẹn đánh giày cùng XIMI để giữ cho đôi giày của bạn luôn mới mẻ!',
+        '🔔 Hãy đặt lịch hẹn đánh giày với UWAY ngay để chăm sóc giày của bạn một cách chuyên nghiệp!',
+        '📅 Bạn đã đặt lịch hẹn đánh giày tuần này chưa? Nếu chưa, đến với UWAY ngay!',
+        '🌟 Thêm một chút sự sáng bóng vào đôi giày yêu thương của bạn với lịch hẹn đánh giày từ UWAY!',
+        '⌛ Hãy dành một chút thời gian để đặt lịch hẹn đánh giày với UWAY - bạn sẽ không hối tiếc đâu!',
+        '💼 Đôi giày mới mẻ sẽ giúp bạn tự tin hơn trong công việc! Đặt lịch với UWAY ngay!',
+        '🛠️ Làm mới lại đôi giày của bạn với dịch vụ đánh giày chất lượng từ UWAY!',
+        '🚀 Đặt lịch hẹn đánh giày cùng UWAY ngay để trải nghiệm sự thuận tiện và chất lượng!',
+        '📢 Đừng bỏ lỡ cơ hội để làm mới lại đôi giày của bạn với UWAY - đặt lịch ngay!',
+        '🌟 Sự sáng bóng mới cho đôi giày yêu thương của bạn đang chờ đợi ở UWAY!',
+        '🔄 Làm mới lại đôi giày yêu thương với dịch vụ đánh giày tận nơi từ UWAY!',
+        '📆 Đặt lịch hẹn đánh giày với UWAY ngay hôm nay để có trải nghiệm tuyệt vời nhất!',
+        '🎯 Mục tiêu của bạn là có đôi giày sáng bóng? UWAY sẽ giúp bạn thực hiện điều đó!',
+        '⏱️ Đừng lãng phí thời gian! Đặt lịch hẹn đánh giày với UWAY ngay bây giờ!',
+        '🎉 Một trải nghiệm mới với đôi giày sáng bóng đang chờ đợi bạn tại UWAY!',
+        '📞 Liên hệ với UWAY để đặt lịch hẹn đánh giày ngay hôm nay!',
+        '💡 Làm mới lại đôi giày yêu thương với chỉ một cuộc gọi tới UWAY!',
+        '🎈 Đến với UWAY, bạn sẽ không bao giờ phải lo lắng về việc chăm sóc giày nữa!',
+        '🌟 UWAY - nơi đem lại sự sáng bóng cho đôi giày của bạn!',
+        '🚚 Dịch vụ đánh giày tại chỗ từ UWAY sẽ đem đến sự thuận tiện nhất cho bạn!',
+        '🎁 Món quà tuyệt vời dành cho đôi giày của bạn - đặt lịch với UWAY ngay!',
+        '🔔 Đừng quên đặt lịch hẹn đánh giày cùng UWAY để giữ cho đôi giày của bạn luôn mới mẻ!',
     ],
     REGISTER_SUCCESS: [
-        'Cảm ơn bạn đã sử dụng dịch vụ đánh giày của XIMI!',
-        'XIMI cảm ơn bạn vì đã tin tưởng chúng tôi.',
-        'Cảm ơn bạn đã đồng hành cùng XIMI.',
-        'Cảm ơn bạn đã chọn XIMI để chăm sóc giày của mình.',
-        'Cảm ơn bạn đã sử dụng dịch vụ đánh giày tại chỗ của XIMI!',
+        'Cảm ơn bạn đã sử dụng dịch vụ đánh giày của UWAY!',
+        'UWAY cảm ơn bạn vì đã tin tưởng chúng tôi.',
+        'Cảm ơn bạn đã đồng hành cùng UWAY.',
+        'Cảm ơn bạn đã chọn UWAY để chăm sóc giày của mình.',
+        'Cảm ơn bạn đã sử dụng dịch vụ đánh giày tại chỗ của UWAY!',
     ],
     DISCOUNT: [
         '💸 Dịch vụ độc quyền! Giảm giá 20% cho mọi đơn hàng!',
@@ -54,26 +54,26 @@ exports.CUSTOMERS = {
         '🎁 Ưu đãi hè nhanh chóng kết thúc! Giảm giá 20% cho tất cả các đơn hàng!',
     ],
     CARES: [
-        'Có gì XIMI có thể giúp bạn hôm nay không?',
-        'Hãy để XIMI biết nếu bạn cần hỗ trợ gì!',
-        'XIMI sẵn lòng lắng nghe mọi ý kiến từ bạn!',
+        'Có gì UWAY có thể giúp bạn hôm nay không?',
+        'Hãy để UWAY biết nếu bạn cần hỗ trợ gì!',
+        'UWAY sẵn lòng lắng nghe mọi ý kiến từ bạn!',
         'Bạn cần thêm thông tin về dịch vụ của chúng tôi không?',
         'Đừng ngần ngại liên hệ với chúng tôi nếu bạn có bất kỳ câu hỏi nào!',
-        'XIMI luôn ở đây để hỗ trợ bạn trong mọi tình huống!',
+        'UWAY luôn ở đây để hỗ trợ bạn trong mọi tình huống!',
         'Hãy để chúng tôi biết nếu có gì bạn cần giúp đỡ!',
-        'XIMI mong muốn được phục vụ bạn một cách tốt nhất!',
+        'UWAY mong muốn được phục vụ bạn một cách tốt nhất!',
         'Đánh giá của bạn rất quan trọng đối với chúng tôi!',
-        'XIMI luôn lắng nghe mọi phản hồi từ khách hàng!',
+        'UWAY luôn lắng nghe mọi phản hồi từ khách hàng!',
     ],
     TRIP_SUCCESS: [
-        '🙏 Cảm ơn bạn đã tin tưởng và sử dụng dịch vụ của XIMI!',
+        '🙏 Cảm ơn bạn đã tin tưởng và sử dụng dịch vụ của UWAY!',
         '💼 Chúng tôi rất trân trọng việc được phục vụ bạn.',
-        '🌟 Cảm ơn bạn đã chọn XIMI để chăm sóc đôi giày của mình.',
-        '👞 Hãy để XIMI tiếp tục đồng hành cùng bạn trên hành trình chăm sóc giày.',
+        '🌟 Cảm ơn bạn đã chọn UWAY để chăm sóc đôi giày của mình.',
+        '👞 Hãy để UWAY tiếp tục đồng hành cùng bạn trên hành trình chăm sóc giày.',
         '🎉 Chúng tôi xin chân thành cảm ơn sự ủng hộ và đồng hành của bạn.',
-        '💡 Cảm ơn bạn đã lựa chọn XIMI để giữ cho đôi giày của bạn luôn mới mẻ.',
+        '💡 Cảm ơn bạn đã lựa chọn UWAY để giữ cho đôi giày của bạn luôn mới mẻ.',
         '🎁 Hãy để chúng tôi tiếp tục mang đến cho bạn những trải nghiệm tuyệt vời nhất.',
-        '💬 Cảm ơn bạn đã góp phần làm cho XIMI trở thành một ứng dụng tuyệt vời hơn.',
+        '💬 Cảm ơn bạn đã góp phần làm cho UWAY trở thành một ứng dụng tuyệt vời hơn.',
         '🚀 Chúng tôi hân hạnh được phục vụ bạn mỗi ngày.',
     ],
     generateWalletMessage(amount, operator, orderId) {
@@ -81,11 +81,11 @@ exports.CUSTOMERS = {
             style: 'currency',
             currency: 'VND',
         }).format(amount);
-        const mes01 = `Nạp tiền thành công ${operator}${formattedAmount} vào Ví XIMI`;
-        const mes02 = `Ví XIMI ${operator}${formattedAmount}. Lí do hoàn tiền đơn hàng #${orderId} không thành công`;
-        const mes03 = `Ví XIMI ${operator}${formattedAmount}. Lí do thanh toán đơn hàng #${orderId}`;
-        const mes04 = `Bạn đã gửi yêu cầu rút ${formattedAmount} từ ví XIMI về tài khoản ngân hàng`;
-        const mes05 = `Ví XIMI ${operator}${formattedAmount}, Lí do yêu cầu rút tiền từ ví`;
+        const mes01 = `Nạp tiền thành công ${operator}${formattedAmount} vào Ví UWAY`;
+        const mes02 = `Ví UWAY ${operator}${formattedAmount}. Lí do hoàn tiền đơn hàng #${orderId} không thành công`;
+        const mes03 = `Ví UWAY ${operator}${formattedAmount}. Lí do thanh toán đơn hàng #${orderId}`;
+        const mes04 = `Bạn đã gửi yêu cầu rút ${formattedAmount} từ ví UWAY về tài khoản ngân hàng`;
+        const mes05 = `Ví UWAY ${operator}${formattedAmount}, Lí do yêu cầu rút tiền từ ví`;
         return { mes01, mes02, mes03, mes04, mes05 };
     },
 };
@@ -116,11 +116,11 @@ exports.PARTNER = {
             style: 'currency',
             currency: 'VND',
         }).format(amount);
-        const mes01 = `Nạp tiền thành công ${operator}${formattedAmount} vào Ví XIMI`;
-        const mes02 = `Ví XIMI ${operator}${formattedAmount}. Lí do thu nhập đơn hàng #${orderId}`;
-        const mes03 = `Ví XIMI ${operator}${formattedAmount}. Lí do khấu trừ đơn hàng #${orderId} thu tiền mặt của khách`;
-        const mes04 = `Bạn đã gửi yêu cầu rút ${formattedAmount} từ ví XIMI về tài khoản ngân hàng`;
-        const mes05 = `Ví XIMI ${operator}${formattedAmount}, Lí do yêu cầu rút tiền từ ví`;
+        const mes01 = `Nạp tiền thành công ${operator}${formattedAmount} vào Ví UWAY`;
+        const mes02 = `Ví UWAY ${operator}${formattedAmount}. Lí do thu nhập đơn hàng #${orderId}`;
+        const mes03 = `Ví UWAY ${operator}${formattedAmount}. Lí do khấu trừ đơn hàng #${orderId} thu tiền mặt của khách`;
+        const mes04 = `Bạn đã gửi yêu cầu rút ${formattedAmount} từ ví UWAY về tài khoản ngân hàng`;
+        const mes05 = `Ví UWAY ${operator}${formattedAmount}, Lí do yêu cầu rút tiền từ ví`;
         return { mes01, mes02, mes03, mes04, mes05 };
     },
 };

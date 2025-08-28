@@ -112,15 +112,15 @@ let FirebaseService = FirebaseService_1 = class FirebaseService {
             data,
             android: {
                 notification: {
-                    sound: sound || "XIMI.wav",
+                    sound: sound || "UWAY.wav",
                     defaultSound: false,
-                    channelId: "xiin-call-id",
+                    channelId: "uway-call-id",
                 },
             },
             apns: {
                 payload: {
                     aps: {
-                        sound: sound || "XIMI.wav",
+                        sound: sound || "UWAY.wav",
                         defaultSound: false,
                     },
                 },
@@ -150,14 +150,14 @@ let FirebaseService = FirebaseService_1 = class FirebaseService {
             data,
             android: {
                 notification: {
-                    sound: sound || "XIMI.wav",
+                    sound: sound || "UWAY.wav",
                     defaultSound: false,
                 },
             },
             apns: {
                 payload: {
                     aps: {
-                        sound: sound || "XIMI.wav",
+                        sound: sound || "UWAY.wav",
                         defaultSound: false,
                     },
                 },
