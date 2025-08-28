@@ -41,11 +41,17 @@ export class ConversationRepository
       );
     }
 
+    if (condition.search) {
+      queryBuilder.andWhere("conversation.title LIKE :search", {
+        search: `%${condition.search}%`,
+      });
+    }
+
     queryBuilder
       .take(pagination.limit || 10)
       .skip(pagination.offset || 0)
       .orderBy(
-        "conversation." + (pagination.sort || "createdAt"),
+        "conversation." + (pagination.sort || "updatedAt"),
         pagination.typeSort || "DESC"
       );
 

@@ -39,10 +39,15 @@ let ConversationRepository = class ConversationRepository extends base_abstract_
         else if (condition.adminId) {
             queryBuilder.andWhere("participants.userId = :adminId AND participants.type = :actorType", { adminId: condition.adminId, actorType: enums_1.ActorTypeEnum.ADMIN });
         }
+        if (condition.search) {
+            queryBuilder.andWhere("conversation.title LIKE :search", {
+                search: `%${condition.search}%`,
+            });
+        }
         queryBuilder
             .take(pagination.limit || 10)
             .skip(pagination.offset || 0)
-            .orderBy("conversation." + (pagination.sort || "createdAt"), pagination.typeSort || "DESC");
+            .orderBy("conversation." + (pagination.sort || "updatedAt"), pagination.typeSort || "DESC");
         const [conversations, total] = await queryBuilder.getManyAndCount();
         return {
             data: conversations,
