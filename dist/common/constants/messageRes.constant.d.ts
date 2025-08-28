@@ -183,4 +183,7 @@ export declare const messageResponseError: {
         notMember: string;
         alreadyMember: string;
     };
+    s3: {
+        fileNameIsRequired: string;
+    };
 };

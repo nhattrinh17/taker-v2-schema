@@ -192,4 +192,7 @@ export const messageResponseError = {
     notMember: "not_member_of_conversation",
     alreadyMember: "already_member_of_conversation",
   },
+  s3: {
+    fileNameIsRequired: "file_name_is_required",
+  }
 };
