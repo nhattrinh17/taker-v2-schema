@@ -33,16 +33,16 @@ let ConversationRepository = class ConversationRepository extends base_abstract_
             .where("conversation.status = :status", {
             status: enums_1.ConversationStatusEnum.ACTIVE,
         });
+        if (condition.search) {
+            queryBuilder.andWhere("conversation.title LIKE :search", {
+                search: `%${condition.search}%`,
+            });
+        }
         if (condition.customerId) {
             queryBuilder.andWhere("participants.userId = :customerId AND participants.type = :actorType", { customerId: condition.customerId, actorType: enums_1.ActorTypeEnum.CUSTOMER });
         }
         else if (condition.adminId) {
             queryBuilder.andWhere("participants.userId = :adminId AND participants.type = :actorType", { adminId: condition.adminId, actorType: enums_1.ActorTypeEnum.ADMIN });
-        }
-        if (condition.search) {
-            queryBuilder.andWhere("conversation.title LIKE :search", {
-                search: `%${condition.search}%`,
-            });
         }
         queryBuilder
             .take(pagination.limit || 10)

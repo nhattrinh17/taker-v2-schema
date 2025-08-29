@@ -29,6 +29,12 @@ export class ConversationRepository
         status: ConversationStatusEnum.ACTIVE,
       });
 
+    if (condition.search) {
+      queryBuilder.andWhere("conversation.title LIKE :search", {
+        search: `%${condition.search}%`,
+      });
+    }
+
     if (condition.customerId) {
       queryBuilder.andWhere(
         "participants.userId = :customerId AND participants.type = :actorType",
@@ -39,12 +45,6 @@ export class ConversationRepository
         "participants.userId = :adminId AND participants.type = :actorType",
         { adminId: condition.adminId, actorType: ActorTypeEnum.ADMIN }
       );
-    }
-
-    if (condition.search) {
-      queryBuilder.andWhere("conversation.title LIKE :search", {
-        search: `%${condition.search}%`,
-      });
     }
 
     queryBuilder
