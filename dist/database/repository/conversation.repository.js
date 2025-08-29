@@ -33,6 +33,7 @@ let ConversationRepository = class ConversationRepository extends base_abstract_
             .where("conversation.status = :status", {
             status: enums_1.ConversationStatusEnum.ACTIVE,
         });
+        console.log(condition);
         if (condition.search) {
             queryBuilder.andWhere("conversation.title LIKE :search", {
                 search: `%${condition.search}%`,

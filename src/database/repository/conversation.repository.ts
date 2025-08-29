@@ -29,6 +29,8 @@ export class ConversationRepository
         status: ConversationStatusEnum.ACTIVE,
       });
 
+      console.log(condition);
+      
     if (condition.search) {
       queryBuilder.andWhere("conversation.title LIKE :search", {
         search: `%${condition.search}%`,
