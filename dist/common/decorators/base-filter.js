@@ -296,9 +296,6 @@ function ApiOperationCustom(resource, method, applyReponse = true, getOne = fals
             decorators.push((0, swagger_1.ApiOperation)({
                 summary: `Cập nhật ${resource} theo ID`,
                 description: `API cập nhật ${resource} theo ID`,
-            }), (0, swagger_1.ApiParam)({
-                name: 'id',
-                description: `ID của ${resource}`,
             }));
             if (applyReponse)
                 decorators.push(CommonPatchResponse());

@@ -406,10 +406,6 @@ export function ApiOperationCustom(resource: string, method: string, applyRepons
           summary: `Cập nhật ${resource} theo ID`,
           description: `API cập nhật ${resource} theo ID`,
         }),
-        ApiParam({
-          name: 'id',
-          description: `ID của ${resource}`,
-        }),
       );
       if (applyReponse) decorators.push(CommonPatchResponse());
       break;
