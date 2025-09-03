@@ -5,4 +5,5 @@ import { PaginationDto } from "@common/decorators";
 
 export interface BlogCategoryRepositoryInterface
   extends BaseRepositoryInterface<BlogCategory> {
+    getAllAndJoinToBlog(): Promise<any>;
   }

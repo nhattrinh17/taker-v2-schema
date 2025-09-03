@@ -5,4 +5,5 @@ import { BlogCategoryRepositoryInterface } from "../interface/blog_category.inte
 export declare class BlogCategoryRepository extends BaseRepositoryAbstract<BlogCategory> implements BlogCategoryRepositoryInterface {
     private readonly blogCategoryRepository;
     constructor(blogCategoryRepository: Repository<BlogCategory>);
+    getAllAndJoinToBlog(): Promise<BlogCategory[]>;
 }

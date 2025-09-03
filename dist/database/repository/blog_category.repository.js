@@ -18,10 +18,40 @@ const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const base_abstract_repository_1 = require("../../base/base.abstract.repository");
 const blog_category_entity_1 = require("../../entities/blog_category.entity");
+const blog_entity_1 = require("../../entities/blog.entity");
 let BlogCategoryRepository = class BlogCategoryRepository extends base_abstract_repository_1.BaseRepositoryAbstract {
     constructor(blogCategoryRepository) {
         super(blogCategoryRepository);
         this.blogCategoryRepository = blogCategoryRepository;
+    }
+    async getAllAndJoinToBlog() {
+        return this.blogCategoryRepository
+            .createQueryBuilder('category')
+            .leftJoinAndMapMany('category.blogs', blog_entity_1.Blog, 'blog', 'blog.blogCategoryId = category.id')
+            .select([
+            'category.id',
+            'category.name',
+            'category.slug',
+            'category.description',
+            'category.order',
+            'category.status',
+            'blog.id',
+            'blog.name',
+            'blog.slug',
+            'blog.title',
+            'blog.image',
+            'blog.status',
+            'blog.typePress',
+            'blog.screenCustomer',
+            'blog.linkNavigate',
+            'blog.order',
+            'blog.isPromotion',
+            'blog.banner',
+            'blog.runBanner',
+        ])
+            .orderBy('category.order', 'ASC')
+            .addOrderBy('blog.order', 'ASC')
+            .getMany();
     }
 };
 exports.BlogCategoryRepository = BlogCategoryRepository;
