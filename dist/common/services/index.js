@@ -22,3 +22,4 @@ __exportStar(require("./firebase.service"), exports);
 __exportStar(require("./excel.service"), exports);
 __exportStar(require("./zalo.service"), exports);
 __exportStar(require("./fb.service"), exports);
+__exportStar(require("./search.service"), exports);

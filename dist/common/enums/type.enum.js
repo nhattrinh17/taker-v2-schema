@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateConversationTypeEnum = exports.CustomPayloadTypeEnum = exports.MessageTypeEnum = exports.ActorTypeEnum = exports.PartnerTypeEnum = exports.OtpRequestType = exports.CashbackTransactionTypeEnum = exports.VehicleTypeEnum = exports.VoucherTypeEnum = exports.VoucherTypeDiscountEnum = void 0;
+exports.SearchHistoryTypeEnum = exports.CreateConversationTypeEnum = exports.CustomPayloadTypeEnum = exports.MessageTypeEnum = exports.ActorTypeEnum = exports.PartnerTypeEnum = exports.OtpRequestType = exports.CashbackTransactionTypeEnum = exports.VehicleTypeEnum = exports.VoucherTypeEnum = exports.VoucherTypeDiscountEnum = void 0;
 var VoucherTypeDiscountEnum;
 (function (VoucherTypeDiscountEnum) {
     VoucherTypeDiscountEnum["FIXED"] = "FIXED";
@@ -54,3 +54,7 @@ var CreateConversationTypeEnum;
     CreateConversationTypeEnum["SHOE_BOOKING"] = "shoe-booking";
     CreateConversationTypeEnum["ACCOUNT"] = "account";
 })(CreateConversationTypeEnum || (exports.CreateConversationTypeEnum = CreateConversationTypeEnum = {}));
+var SearchHistoryTypeEnum;
+(function (SearchHistoryTypeEnum) {
+    SearchHistoryTypeEnum["SHOE_BOOKING"] = "SHOE_BOOKING";
+})(SearchHistoryTypeEnum || (exports.SearchHistoryTypeEnum = SearchHistoryTypeEnum = {}));

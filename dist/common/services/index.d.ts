@@ -6,3 +6,4 @@ export * from './firebase.service';
 export * from './excel.service';
 export * from './zalo.service';
 export * from './fb.service';
+export * from './search.service';

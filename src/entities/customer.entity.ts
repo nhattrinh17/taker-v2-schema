@@ -8,6 +8,7 @@ import { CustomerVoucher } from "./customer_voucher.entity";
 import { ShoeBooking } from "./shoe_booking.entity";
 import { CancelOrder } from "./cancel_order.entity";
 import { Rating } from "./rating.entity";
+import { SearchHistory } from "./search_history.entity";
 
 @Entity({ name: "customers" })
 export class Customer extends BaseEntity {
@@ -106,4 +107,7 @@ export class Customer extends BaseEntity {
 
   @OneToMany(() => Rating, (rating) => rating.customer)
   ratings: Rating[];
+
+  @OneToMany(() => SearchHistory, (searchHistory) => searchHistory.customer)
+  searchHistories: SearchHistory[];
 }

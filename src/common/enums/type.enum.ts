@@ -50,3 +50,7 @@ export enum CreateConversationTypeEnum {
   SHOE_BOOKING = "shoe-booking",
   ACCOUNT = "account",
 }
+
+export enum SearchHistoryTypeEnum {
+  SHOE_BOOKING = "SHOE_BOOKING",
+}

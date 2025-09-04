@@ -19,6 +19,7 @@ const customer_voucher_entity_1 = require("./customer_voucher.entity");
 const shoe_booking_entity_1 = require("./shoe_booking.entity");
 const cancel_order_entity_1 = require("./cancel_order.entity");
 const rating_entity_1 = require("./rating.entity");
+const search_history_entity_1 = require("./search_history.entity");
 let Customer = class Customer extends base_entity_1.BaseEntity {
 };
 exports.Customer = Customer;
@@ -146,6 +147,10 @@ __decorate([
     (0, typeorm_1.OneToMany)(() => rating_entity_1.Rating, (rating) => rating.customer),
     __metadata("design:type", Array)
 ], Customer.prototype, "ratings", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => search_history_entity_1.SearchHistory, (searchHistory) => searchHistory.customer),
+    __metadata("design:type", Array)
+], Customer.prototype, "searchHistories", void 0);
 exports.Customer = Customer = __decorate([
     (0, typeorm_1.Entity)({ name: "customers" })
 ], Customer);

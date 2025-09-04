@@ -6,6 +6,7 @@ import { CustomerVoucher } from "./customer_voucher.entity";
 import { ShoeBooking } from "./shoe_booking.entity";
 import { CancelOrder } from "./cancel_order.entity";
 import { Rating } from "./rating.entity";
+import { SearchHistory } from "./search_history.entity";
 export declare class Customer extends BaseEntity {
     phone: string;
     password: string;
@@ -36,4 +37,5 @@ export declare class Customer extends BaseEntity {
     customerVouchers: CustomerVoucher[];
     cancelOrders: CancelOrder[];
     ratings: Rating[];
+    searchHistories: SearchHistory[];
 }

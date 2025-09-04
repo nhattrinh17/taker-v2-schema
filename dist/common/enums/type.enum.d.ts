@@ -41,3 +41,6 @@ export declare enum CreateConversationTypeEnum {
     SHOE_BOOKING = "shoe-booking",
     ACCOUNT = "account"
 }
+export declare enum SearchHistoryTypeEnum {
+    SHOE_BOOKING = "SHOE_BOOKING"
+}
