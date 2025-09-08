@@ -1,5 +1,5 @@
 export const SOCKET_EVENT = {
-  SHOE_BOOKING_UPDATE: 'vehicle_booking_update',
+  SHOE_BOOKING_UPDATE: 'shoe_booking_update',
   MESSAGE_UPDATE: 'message_update',
 };
 
