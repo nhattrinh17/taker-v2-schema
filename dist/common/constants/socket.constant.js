@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EventEmitChatSocket = exports.MESSAGE_UPDATE_STATUS = exports.SHOE_BOOKING_UPDATE_STATUS = exports.SOCKET_EVENT = void 0;
 exports.SOCKET_EVENT = {
-    SHOE_BOOKING_UPDATE: 'vehicle_booking_update',
+    SHOE_BOOKING_UPDATE: 'shoe_booking_update',
     MESSAGE_UPDATE: 'message_update',
 };
 exports.SHOE_BOOKING_UPDATE_STATUS = {

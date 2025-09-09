@@ -24,13 +24,10 @@ export class ConversationRepository
       .createQueryBuilder("conversation")
       .leftJoinAndSelect("conversation.participants", "participants")
       .leftJoinAndSelect("conversation.lastMessage", "lastMessage")
-      .select(["conversation", "lastMessage"])
-      .where("conversation.status = :status", {
-        status: ConversationStatusEnum.ACTIVE,
-      });
+      .select(["conversation", "lastMessage"]);
 
-      console.log(condition);
-      
+    console.log(condition);
+
     if (condition.search) {
       queryBuilder.andWhere("conversation.title LIKE :search", {
         search: `%${condition.search}%`,
@@ -38,10 +35,17 @@ export class ConversationRepository
     }
 
     if (condition.customerId) {
-      queryBuilder.andWhere(
-        "participants.userId = :customerId AND participants.type = :actorType",
-        { customerId: condition.customerId, actorType: ActorTypeEnum.CUSTOMER }
-      );
+      queryBuilder
+        .andWhere(
+          "participants.userId = :customerId AND participants.type = :actorType",
+          {
+            customerId: condition.customerId,
+            actorType: ActorTypeEnum.CUSTOMER,
+          }
+        )
+        .andWhere("conversation.status = :status", {
+          status: ConversationStatusEnum.ACTIVE,
+        });
     } else if (condition.adminId) {
       queryBuilder.andWhere(
         "participants.userId = :adminId AND participants.type = :actorType",
