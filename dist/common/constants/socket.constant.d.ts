@@ -24,6 +24,7 @@ export declare const MESSAGE_UPDATE_STATUS: {
 };
 export declare const EventEmitChatSocket: {
     JoinRoom: string;
+    AutoJoinRoom: string;
     LeaveRoom: string;
     MessageReceive: string;
     SendMessage: string;

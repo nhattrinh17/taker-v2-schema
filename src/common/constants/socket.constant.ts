@@ -27,6 +27,7 @@ export const MESSAGE_UPDATE_STATUS = {
 
 export const EventEmitChatSocket = {
   JoinRoom: 'join-room',
+  AutoJoinRoom: 'auto-join-room',
   LeaveRoom: 'leave-room',
   MessageReceive: 'message-receive',
   SendMessage: 'send-message',

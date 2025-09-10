@@ -5,4 +5,5 @@ import { PaginationDto } from "@common/decorators";
 export interface ConversationRepositoryInterface
   extends BaseRepositoryInterface<Conversation> {
   findAllConversation(condition: any, pagination: PaginationDto);
+  getValidConversationIds(userId: string, type: string);
 }

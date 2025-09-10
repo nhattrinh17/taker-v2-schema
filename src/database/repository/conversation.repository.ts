@@ -6,6 +6,7 @@ import { Conversation } from "../../entities/conversation.entity";
 import { ConversationRepositoryInterface } from "../interface/conversation.interface";
 import { PaginationDto } from "@common/decorators";
 import { ActorTypeEnum, ConversationStatusEnum } from "@common/enums";
+import { AppType } from "@common/constants/app.constant";
 
 @Injectable()
 export class ConversationRepository
@@ -70,5 +71,31 @@ export class ConversationRepository
         ...pagination,
       },
     };
+  }
+
+  async getValidConversationIds(userId: string, type: string) {
+    let actorType: ActorTypeEnum;
+    if (type === AppType.admins) {
+      actorType = ActorTypeEnum.ADMIN;
+    } else if (type === AppType.customers) {
+      actorType = ActorTypeEnum.CUSTOMER;
+    } else {
+      throw new Error("Invalid user type");
+    }
+
+    const queryBuilder = this.conversationRepository
+      .createQueryBuilder("conversation")
+      .leftJoinAndSelect("conversation.participants", "participants")
+      .select(["conversation.id"])
+      .where("conversation.status = :status", {
+        status: ConversationStatusEnum.ACTIVE,
+      })
+      .andWhere(
+        "participants.userId = :userId AND participants.type = :actorType",
+        { userId, actorType }
+      );
+
+    const conversations = await queryBuilder.getMany();
+    return conversations.map((conv) => conv.id);
   }
 }

@@ -17,4 +17,5 @@ export declare class ConversationRepository extends BaseRepositoryAbstract<Conve
             total: number;
         };
     }>;
+    getValidConversationIds(userId: string, type: string): Promise<string[]>;
 }

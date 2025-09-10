@@ -19,6 +19,7 @@ const typeorm_2 = require("typeorm");
 const base_abstract_repository_1 = require("../../base/base.abstract.repository");
 const conversation_entity_1 = require("../../entities/conversation.entity");
 const enums_1 = require("../../common/enums");
+const app_constant_1 = require("../../common/constants/app.constant");
 let ConversationRepository = class ConversationRepository extends base_abstract_repository_1.BaseRepositoryAbstract {
     constructor(conversationRepository) {
         super(conversationRepository);
@@ -61,6 +62,28 @@ let ConversationRepository = class ConversationRepository extends base_abstract_
                 ...pagination,
             },
         };
+    }
+    async getValidConversationIds(userId, type) {
+        let actorType;
+        if (type === app_constant_1.AppType.admins) {
+            actorType = enums_1.ActorTypeEnum.ADMIN;
+        }
+        else if (type === app_constant_1.AppType.customers) {
+            actorType = enums_1.ActorTypeEnum.CUSTOMER;
+        }
+        else {
+            throw new Error("Invalid user type");
+        }
+        const queryBuilder = this.conversationRepository
+            .createQueryBuilder("conversation")
+            .leftJoinAndSelect("conversation.participants", "participants")
+            .select(["conversation.id"])
+            .where("conversation.status = :status", {
+            status: enums_1.ConversationStatusEnum.ACTIVE,
+        })
+            .andWhere("participants.userId = :userId AND participants.type = :actorType", { userId, actorType });
+        const conversations = await queryBuilder.getMany();
+        return conversations.map((conv) => conv.id);
     }
 };
 exports.ConversationRepository = ConversationRepository;
