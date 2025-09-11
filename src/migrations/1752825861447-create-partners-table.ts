@@ -27,7 +27,7 @@ export class CreatePartnersTable1752825861447 implements MigrationInterface {
             name: "email",
             type: "varchar",
             isUnique: true,
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: "phone",

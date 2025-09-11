@@ -28,7 +28,7 @@ class CreatePartnersTable1752825861447 {
                     name: "email",
                     type: "varchar",
                     isUnique: true,
-                    isNullable: false,
+                    isNullable: true,
                 },
                 {
                     name: "phone",
