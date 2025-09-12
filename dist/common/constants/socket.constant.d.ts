@@ -18,6 +18,7 @@ export declare const SHOE_BOOKING_UPDATE_STATUS: {
     PENDING_PAYMENT_COMPLETION: string;
     COMPLETED: string;
     DRIVER_ARRIVING: string;
+    OTHER_SHOP_ACCEPTED: string;
 };
 export declare const MESSAGE_UPDATE_STATUS: {
     CREATE_CONVERSATION: string;

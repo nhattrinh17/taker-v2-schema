@@ -21,6 +21,7 @@ exports.SHOE_BOOKING_UPDATE_STATUS = {
     PENDING_PAYMENT_COMPLETION: 'pending-payment-completion',
     COMPLETED: 'completed',
     DRIVER_ARRIVING: 'driver-arriving',
+    OTHER_SHOP_ACCEPTED: 'other-shop-accepted',
 };
 exports.MESSAGE_UPDATE_STATUS = {
     CREATE_CONVERSATION: 'create-conversation',
