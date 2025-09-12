@@ -87,7 +87,7 @@ export class CustomerVoucherAdminRepository
     }
 
     if (sort) {
-      query.orderBy(`partner.${sort || "createdAt"}`, typeSort || "DESC");
+      query.orderBy(`${CustomerVoucher.name}.${sort || "createdAt"}`, typeSort || "DESC");
     }
 
     const [result, total] = await query
