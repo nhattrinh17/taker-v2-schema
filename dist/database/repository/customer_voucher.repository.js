@@ -67,7 +67,7 @@ let CustomerVoucherAdminRepository = class CustomerVoucherAdminRepository extend
             query.andWhere(`voucher.type = :type`, { type });
         }
         if (sort) {
-            query.orderBy(`partner.${sort || "createdAt"}`, typeSort || "DESC");
+            query.orderBy(`${index_1.CustomerVoucher.name}.${sort || "createdAt"}`, typeSort || "DESC");
         }
         const [result, total] = await query
             .select([index_1.CustomerVoucher.name, "voucher"])
