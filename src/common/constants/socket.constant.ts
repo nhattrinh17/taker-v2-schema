@@ -20,6 +20,7 @@ export const SHOE_BOOKING_UPDATE_STATUS = {
   COMPLETED: 'completed',
   DRIVER_ARRIVING: 'driver-arriving',
   OTHER_SHOP_ACCEPTED: 'other-shop-accepted',
+  CUSTOMER_CANCELLED: 'customer-cancelled',
 };
 
 export const MESSAGE_UPDATE_STATUS = {
