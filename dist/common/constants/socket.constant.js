@@ -23,6 +23,9 @@ exports.SHOE_BOOKING_UPDATE_STATUS = {
     DRIVER_ARRIVING: 'driver-arriving',
     OTHER_SHOP_ACCEPTED: 'other-shop-accepted',
     CUSTOMER_CANCELLED: 'customer-cancelled',
+    RETURNING: 'returning',
+    ARRIVING_AT_SHOP: 'arriving-at-shop',
+    PICKUP_INCOMING: 'pickup-incoming',
 };
 exports.MESSAGE_UPDATE_STATUS = {
     CREATE_CONVERSATION: 'create-conversation',

@@ -20,6 +20,9 @@ export declare const SHOE_BOOKING_UPDATE_STATUS: {
     DRIVER_ARRIVING: string;
     OTHER_SHOP_ACCEPTED: string;
     CUSTOMER_CANCELLED: string;
+    RETURNING: string;
+    ARRIVING_AT_SHOP: string;
+    PICKUP_INCOMING: string;
 };
 export declare const MESSAGE_UPDATE_STATUS: {
     CREATE_CONVERSATION: string;
