@@ -26,11 +26,15 @@ let RatingRepository = class RatingRepository extends base_abstract_repository_1
     async getRatingAverage(partnerId) {
         const query = await this.ratingRepository
             .createQueryBuilder("rating")
-            .leftJoinAndSelect("rating.shoeBooking", "shoeBooking")
+            .leftJoin("rating.shoeBooking", "shoeBooking")
             .select("AVG(rating.rating)", "averageRating")
+            .addSelect("COUNT(rating.id)", "totalCount")
             .where("shoeBooking.partnerId = :partnerId", { partnerId })
             .getRawOne();
-        return query?.averageRating;
+        return {
+            averageRating: parseFloat(query?.averageRating) || 0,
+            totalCount: parseInt(query?.totalCount, 10) || 0,
+        };
     }
     async findAllCustom(condition, pagination) {
         const queryBuilder = this.ratingRepository
