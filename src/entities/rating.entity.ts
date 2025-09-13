@@ -7,10 +7,16 @@ import { ShoeBooking } from "./shoe_booking.entity";
 @Entity({ name: "ratings" })
 export class Rating extends BaseEntity {
   @Column({ type: "varchar", length: 36, nullable: true })
-  customerId?: string;
+  customerId: string;
 
   @Column({ type: "varchar", length: 36, nullable: true })
-  shoeBookingId?: string;
+  shoeBookingId: string;
+
+  @ManyToOne(() => ShoeBooking, (shoeBooking) => shoeBooking.ratings, {
+    onDelete: "SET NULL",
+  })
+  @JoinColumn({ name: "shoeBookingId" })
+  shoeBooking: ShoeBooking;
 
   @Column({ type: "int", nullable: false })
   rating: number;
@@ -23,11 +29,5 @@ export class Rating extends BaseEntity {
     onDelete: "SET NULL",
   })
   @JoinColumn({ name: "customerId" })
-  customer?: Customer;
-
-  @ManyToOne(() => ShoeBooking, (shoeBooking) => shoeBooking.ratings, {
-    onDelete: "SET NULL",
-  })
-  @JoinColumn({ name: "shoeBookingId" })
-  shoeBooking?: ShoeBooking;
+  customer: Customer;
 }
