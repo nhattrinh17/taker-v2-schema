@@ -26,6 +26,13 @@ __decorate([
     __metadata("design:type", String)
 ], Rating.prototype, "shoeBookingId", void 0);
 __decorate([
+    (0, typeorm_1.ManyToOne)(() => shoe_booking_entity_1.ShoeBooking, (shoeBooking) => shoeBooking.ratings, {
+        onDelete: "SET NULL",
+    }),
+    (0, typeorm_1.JoinColumn)({ name: "shoeBookingId" }),
+    __metadata("design:type", shoe_booking_entity_1.ShoeBooking)
+], Rating.prototype, "shoeBooking", void 0);
+__decorate([
     (0, typeorm_1.Column)({ type: "int", nullable: false }),
     __metadata("design:type", Number)
 ], Rating.prototype, "rating", void 0);
@@ -40,13 +47,6 @@ __decorate([
     (0, typeorm_1.JoinColumn)({ name: "customerId" }),
     __metadata("design:type", customer_entity_1.Customer)
 ], Rating.prototype, "customer", void 0);
-__decorate([
-    (0, typeorm_1.ManyToOne)(() => shoe_booking_entity_1.ShoeBooking, (shoeBooking) => shoeBooking.ratings, {
-        onDelete: "SET NULL",
-    }),
-    (0, typeorm_1.JoinColumn)({ name: "shoeBookingId" }),
-    __metadata("design:type", shoe_booking_entity_1.ShoeBooking)
-], Rating.prototype, "shoeBooking", void 0);
 exports.Rating = Rating = __decorate([
     (0, typeorm_1.Entity)({ name: "ratings" })
 ], Rating);
