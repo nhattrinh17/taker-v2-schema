@@ -129,6 +129,7 @@ export declare const messageResponseError: {
         notFound: string;
         duplicateName: string;
         advancedServiceExists: string;
+        priceRequiredForNonAdvancedService: string;
     };
     shoeBooking: {
         notFound: string;

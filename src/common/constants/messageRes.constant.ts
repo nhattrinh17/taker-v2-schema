@@ -138,6 +138,7 @@ export const messageResponseError = {
     notFound: "shoe_service_not_found",
     duplicateName: "shoe_service_duplicate_name",
     advancedServiceExists: "advanced_service_already_exists",
+    priceRequiredForNonAdvancedService: "price_required_for_non_advanced_service",
   },
   shoeBooking: {
     notFound: "shoe_booking_not_found",

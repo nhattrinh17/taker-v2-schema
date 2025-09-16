@@ -32,6 +32,12 @@ export class ShoeServiceRepository
       );
     }
 
+    if (query.isAdvanced !== undefined) {
+      queryBuilder.andWhere("shoeService.isAdvanced = :isAdvanced", {
+        isAdvanced: query.isAdvanced,
+      });
+    }
+
     queryBuilder
       .skip(pagination.offset)
       .take(pagination.limit)

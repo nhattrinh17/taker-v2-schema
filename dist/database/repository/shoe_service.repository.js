@@ -29,6 +29,11 @@ let ShoeServiceRepository = class ShoeServiceRepository extends base_abstract_re
         if (query.search) {
             queryBuilder.andWhere("shoeService.name LIKE :search OR shoeService.description LIKE :search OR shoeService.price LIKE :search", { search: `%${query.search}%` });
         }
+        if (query.isAdvanced !== undefined) {
+            queryBuilder.andWhere("shoeService.isAdvanced = :isAdvanced", {
+                isAdvanced: query.isAdvanced,
+            });
+        }
         queryBuilder
             .skip(pagination.offset)
             .take(pagination.limit)
