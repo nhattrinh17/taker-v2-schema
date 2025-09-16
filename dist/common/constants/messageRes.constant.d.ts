@@ -128,6 +128,7 @@ export declare const messageResponseError: {
         customerIdNotAllowed: string;
         notFound: string;
         duplicateName: string;
+        advancedServiceExists: string;
     };
     shoeBooking: {
         notFound: string;
