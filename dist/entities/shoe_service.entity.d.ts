@@ -5,5 +5,6 @@ export declare class ShoeService extends BaseEntity {
     price?: number;
     simpleDes: string;
     description: string;
+    isAdvanced: boolean;
     shoeBookings: ShoeBooking[];
 }

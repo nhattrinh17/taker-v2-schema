@@ -17,6 +17,9 @@ export class ShoeService extends BaseEntity {
   @Column({ type: "text", nullable: true })
   description: string;
 
+  @Column({ default: false })
+  isAdvanced: boolean;
+
   @OneToMany(() => ShoeBooking, (shoeBooking) => shoeBooking.shoeService)
   shoeBookings: ShoeBooking[];
 }

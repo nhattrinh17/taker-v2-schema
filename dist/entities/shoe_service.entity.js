@@ -33,6 +33,10 @@ __decorate([
     __metadata("design:type", String)
 ], ShoeService.prototype, "description", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ default: false }),
+    __metadata("design:type", Boolean)
+], ShoeService.prototype, "isAdvanced", void 0);
+__decorate([
     (0, typeorm_1.OneToMany)(() => shoe_booking_entity_1.ShoeBooking, (shoeBooking) => shoeBooking.shoeService),
     __metadata("design:type", Array)
 ], ShoeService.prototype, "shoeBookings", void 0);
