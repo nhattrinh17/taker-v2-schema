@@ -24,7 +24,43 @@ let TransactionRepository = class TransactionRepository extends base_abstract_re
         this.transactionRepository = transactionRepository;
     }
     async updateMultipleWidthCondition(condition, data) {
-        return this.transactionRepository.createQueryBuilder(transaction_entity_1.Transaction.name).update(transaction_entity_1.Transaction.name).set(data).where(condition).execute();
+        return this.transactionRepository
+            .createQueryBuilder(transaction_entity_1.Transaction.name)
+            .update(transaction_entity_1.Transaction.name)
+            .set(data)
+            .where(condition)
+            .execute();
+    }
+    async findAllCustom(condition, pagination) {
+        const queryBuilder = this.transactionRepository.createQueryBuilder("transaction");
+        if (condition.walletId) {
+            queryBuilder.andWhere("transaction.walletId = :walletId", {
+                walletId: condition.walletId,
+            });
+        }
+        if (condition.status) {
+            queryBuilder.andWhere("transaction.status = :status", {
+                status: condition.status,
+            });
+        }
+        if (condition.startDate && condition.endDate) {
+            queryBuilder.andWhere("transaction.createdAt BETWEEN :startDate AND :endDate", {
+                startDate: new Date(condition.startDate),
+                endDate: new Date(condition.endDate),
+            });
+        }
+        queryBuilder
+            .take(pagination.limit || 10)
+            .skip(pagination.offset || 0)
+            .orderBy("transaction.createdAt", "DESC");
+        const [data, total] = await queryBuilder.getManyAndCount();
+        return {
+            data,
+            pagination: {
+                total: total,
+                ...pagination
+            },
+        };
     }
 };
 exports.TransactionRepository = TransactionRepository;

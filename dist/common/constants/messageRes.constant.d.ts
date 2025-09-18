@@ -25,6 +25,9 @@ export declare const messageResponseError: {
         partnerNotFound: string;
         actionInvalid: string;
         notEnoughBalance: string;
+        startDateInvalid: string;
+        endDateInvalid: string;
+        dateInvalid: string;
     };
     blog: {
         notFound: string;

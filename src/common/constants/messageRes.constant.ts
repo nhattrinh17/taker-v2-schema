@@ -25,6 +25,9 @@ export const messageResponseError = {
     partnerNotFound: "partner_not_found",
     actionInvalid: "wallet_action_invalid",
     notEnoughBalance: "not_enough_balance",
+    startDateInvalid: "start_date_invalid",
+    endDateInvalid: "end_date_invalid",
+    dateInvalid: "date_invalid",
   },
   blog: {
     notFound: "blog_not_found",
