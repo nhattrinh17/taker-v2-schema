@@ -39,6 +39,7 @@ export declare const RoomNameAdmin = "socket-room-admins";
 export declare const SCREEN_PARTNER: {
     CALL: string;
     SHOE_BOOKING: string;
+    MESSAGE: string;
 };
 export declare const SCREEN_ADMIN: {
     MESSAGE: string;

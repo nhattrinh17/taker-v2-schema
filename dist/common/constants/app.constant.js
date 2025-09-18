@@ -13,6 +13,7 @@ exports.RoomNameAdmin = "socket-room-admins";
 exports.SCREEN_PARTNER = {
     CALL: "CALL",
     SHOE_BOOKING: "SHOE_BOOKING",
+    MESSAGE: "MESSAGE",
 };
 exports.SCREEN_ADMIN = {
     MESSAGE: "MESSAGE",
