@@ -26,6 +26,7 @@ export declare const SHOE_BOOKING_UPDATE_STATUS: {
 };
 export declare const MESSAGE_UPDATE_STATUS: {
     CREATE_CONVERSATION: string;
+    INACTIVE: string;
 };
 export declare const EventEmitChatSocket: {
     JoinRoom: string;

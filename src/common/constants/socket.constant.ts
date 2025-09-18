@@ -28,6 +28,7 @@ export const SHOE_BOOKING_UPDATE_STATUS = {
 
 export const MESSAGE_UPDATE_STATUS = {
   CREATE_CONVERSATION: 'create-conversation',
+  INACTIVE: 'inactive',
 }
 
 export const EventEmitChatSocket = {

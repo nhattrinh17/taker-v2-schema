@@ -29,6 +29,7 @@ exports.SHOE_BOOKING_UPDATE_STATUS = {
 };
 exports.MESSAGE_UPDATE_STATUS = {
     CREATE_CONVERSATION: 'create-conversation',
+    INACTIVE: 'inactive',
 };
 exports.EventEmitChatSocket = {
     JoinRoom: 'join-room',
