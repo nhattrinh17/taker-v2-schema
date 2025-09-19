@@ -64,6 +64,13 @@ export class ShoeBookingRepository
       });
     }
 
+    if (query.search) {
+      queryBuilder.andWhere(
+        "(customer.phone LIKE :search OR shoeBooking.orderId LIKE :search)",
+        { search: `%${query.search}%` }
+      );
+    }
+
     queryBuilder
       .take(pagination.limit)
       .skip(pagination.offset)
