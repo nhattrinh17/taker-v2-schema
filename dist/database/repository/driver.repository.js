@@ -26,7 +26,7 @@ let DriverRepository = class DriverRepository extends base_abstract_repository_1
     async findAllCustom(query, pagination) {
         const queryBuilder = this.driverRepository.createQueryBuilder("driver");
         if (query.search) {
-            queryBuilder.where("driver.fullName LIKE :search OR driver.phone LIKE :search", {
+            queryBuilder.where("(driver.fullName LIKE :search OR driver.phone LIKE :search)", {
                 search: `%${query.search}%`,
             });
         }

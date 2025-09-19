@@ -24,7 +24,7 @@ export class DriverRepository
 
     if (query.search) {
       queryBuilder.where(
-        "driver.fullName LIKE :search OR driver.phone LIKE :search",
+        "(driver.fullName LIKE :search OR driver.phone LIKE :search)",
         {
           search: `%${query.search}%`,
         }

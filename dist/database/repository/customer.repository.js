@@ -37,12 +37,10 @@ let CustomerRepository = class CustomerRepository extends base_abstract_reposito
             queryBuilder.andWhere("customer.step = :step", { step });
         }
         if (sort) {
-            queryBuilder.orderBy(`customer.${sort || 'createdAt'}`, typeSort || "DESC");
+            queryBuilder.orderBy(`customer.${sort || "createdAt"}`, typeSort || "DESC");
         }
         if (search) {
-            queryBuilder.andWhere("customer.fullName LIKE :search OR customer.email LIKE :search OR customer.phone LIKE :search", {
-                search: `%${search}%`,
-            });
+            queryBuilder.andWhere("(customer.fullName LIKE :search OR customer.email LIKE :search OR customer.phone LIKE :search)", { search: `%${search}%` });
         }
         const [data, total] = await queryBuilder.getManyAndCount();
         return {
@@ -55,7 +53,7 @@ let CustomerRepository = class CustomerRepository extends base_abstract_reposito
     }
     getIdAllCustomer(filter) {
         return this.customerRepository.find({
-            select: ['id'],
+            select: ["id"],
             where: filter,
         });
     }

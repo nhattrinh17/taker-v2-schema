@@ -43,17 +43,19 @@ export class CustomerRepository
     }
 
     if (sort) {
-      queryBuilder.orderBy(`customer.${sort || 'createdAt'}`, typeSort || "DESC");
+      queryBuilder.orderBy(
+        `customer.${sort || "createdAt"}`,
+        typeSort || "DESC"
+      );
     }
 
     if (search) {
       queryBuilder.andWhere(
-        "customer.fullName LIKE :search OR customer.email LIKE :search OR customer.phone LIKE :search",
-        {
-          search: `%${search}%`,
-        }
+        "(customer.fullName LIKE :search OR customer.email LIKE :search OR customer.phone LIKE :search)",
+        { search: `%${search}%` }
       );
     }
+
 
     const [data, total] = await queryBuilder.getManyAndCount();
     return {
@@ -67,7 +69,7 @@ export class CustomerRepository
 
   getIdAllCustomer(filter?: object): Promise<Customer[]> {
     return this.customerRepository.find({
-      select: ['id'],
+      select: ["id"],
       where: filter,
     });
   }
