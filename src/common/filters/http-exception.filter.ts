@@ -45,7 +45,9 @@ export class HttpExceptionFilter implements ExceptionFilter {
       if (anyException.status && typeof anyException.status === "number") {
         status = anyException.status;
       }
-      if (anyException.response.message) {
+      if (typeof anyException.response === "string") {
+        message = anyException.response;
+      }else {
         message = anyException.response.message;
         if (Array.isArray(message)) {
           // ValidationPipe errors
