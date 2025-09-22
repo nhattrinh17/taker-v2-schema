@@ -15,6 +15,7 @@ export declare const messageResponseError: {
         passwordInvalid: string;
         referralCodeNotFound: string;
         actionInvalid: string;
+        userNotFoundOrNotActive: string;
     };
     wallet: {
         customerNotFound: string;
