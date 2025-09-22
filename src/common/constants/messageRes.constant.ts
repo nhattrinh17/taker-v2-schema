@@ -69,6 +69,7 @@ export const messageResponseError = {
     passwordRequired: "password_required",
     passwordSame: "password_same",
     invalidPassword: "invalid_password",
+    onlyUpdatePendingStatus: "only_update_pending_status",
   },
   partner: {
     notFound: "partner_not_found",
@@ -81,6 +82,7 @@ export const messageResponseError = {
     invalidLocation: "invalid_location",
     invalidOperatingHours: "invalid_operating_hours",
     typeChangeNotAllowed: "partner_type_change_not_allowed",
+    onlyUpdatePendingStatus: "only_update_pending_status",
   },
   upload: {
     fileInvalid: "file_invalid",
@@ -176,6 +178,8 @@ export const messageResponseError = {
   driver: {
     driverAlreadyExists: "driver_already_exists",
     notFound: "driver_not_found",
+    onlyUpdatePendingStatus: "only_update_pending_status",
+    phoneNumberOrEmailAlreadyExists: "phone_number_or_email_already_exists",
   },
   rating: {
     idIsRequired: "rating_id_required",

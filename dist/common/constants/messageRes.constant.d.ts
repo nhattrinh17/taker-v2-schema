@@ -69,6 +69,7 @@ export declare const messageResponseError: {
         passwordRequired: string;
         passwordSame: string;
         invalidPassword: string;
+        onlyUpdatePendingStatus: string;
     };
     partner: {
         notFound: string;
@@ -81,6 +82,7 @@ export declare const messageResponseError: {
         invalidLocation: string;
         invalidOperatingHours: string;
         typeChangeNotAllowed: string;
+        onlyUpdatePendingStatus: string;
     };
     upload: {
         fileInvalid: string;
@@ -167,6 +169,8 @@ export declare const messageResponseError: {
     driver: {
         driverAlreadyExists: string;
         notFound: string;
+        onlyUpdatePendingStatus: string;
+        phoneNumberOrEmailAlreadyExists: string;
     };
     rating: {
         idIsRequired: string;
