@@ -66,7 +66,7 @@ export class ShoeBookingRepository
 
     if (query.search) {
       queryBuilder.andWhere(
-        "(customer.phone LIKE :search OR shoeBooking.orderId LIKE :search OR customer.fullName LIKE :search)",
+        "(customer.phone LIKE :search OR shoeBooking.orderId LIKE :search OR customer.fullName LIKE :search OR shoeService.name LIKE :search)",
         { search: `%${query.search}%` }
       );
     }
