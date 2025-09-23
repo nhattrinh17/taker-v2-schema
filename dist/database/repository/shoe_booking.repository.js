@@ -61,7 +61,7 @@ let ShoeBookingRepository = class ShoeBookingRepository extends base_abstract_re
             });
         }
         if (query.search) {
-            queryBuilder.andWhere("(customer.phone LIKE :search OR shoeBooking.orderId LIKE :search)", { search: `%${query.search}%` });
+            queryBuilder.andWhere("(customer.phone LIKE :search OR shoeBooking.orderId LIKE :search OR customer.fullName LIKE :search)", { search: `%${query.search}%` });
         }
         queryBuilder
             .take(pagination.limit)
