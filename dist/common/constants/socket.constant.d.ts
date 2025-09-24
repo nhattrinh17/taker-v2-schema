@@ -1,6 +1,7 @@
 export declare const SOCKET_EVENT: {
     SHOE_BOOKING_UPDATE: string;
     MESSAGE_UPDATE: string;
+    WALLET_UPDATE: string;
 };
 export declare const SHOE_BOOKING_UPDATE_STATUS: {
     FIND_SHOP: string;
@@ -27,6 +28,10 @@ export declare const SHOE_BOOKING_UPDATE_STATUS: {
 export declare const MESSAGE_UPDATE_STATUS: {
     CREATE_CONVERSATION: string;
     INACTIVE: string;
+};
+export declare const WALLET_UPDATE_STATUS: {
+    DEPOSIT_SUCCESS: string;
+    WITHDRAW_SUCCESS: string;
 };
 export declare const EventEmitChatSocket: {
     JoinRoom: string;

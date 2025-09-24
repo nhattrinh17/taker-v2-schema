@@ -1,6 +1,7 @@
 export const SOCKET_EVENT = {
   SHOE_BOOKING_UPDATE: 'shoe_booking_update',
   MESSAGE_UPDATE: 'message_update',
+  WALLET_UPDATE: 'wallet_update',
 };
 
 export const SHOE_BOOKING_UPDATE_STATUS = {
@@ -29,6 +30,11 @@ export const SHOE_BOOKING_UPDATE_STATUS = {
 export const MESSAGE_UPDATE_STATUS = {
   CREATE_CONVERSATION: 'create-conversation',
   INACTIVE: 'inactive',
+}
+
+export const WALLET_UPDATE_STATUS = {
+  DEPOSIT_SUCCESS: 'deposit-success',
+  WITHDRAW_SUCCESS: 'withdraw-success',
 }
 
 export const EventEmitChatSocket = {

@@ -14,6 +14,7 @@ exports.SCREEN_PARTNER = {
     CALL: "CALL",
     SHOE_BOOKING: "SHOE_BOOKING",
     MESSAGE: "MESSAGE",
+    WALLET: "WALLET",
 };
 exports.SCREEN_ADMIN = {
     MESSAGE: "MESSAGE",

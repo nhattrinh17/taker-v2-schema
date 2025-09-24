@@ -153,6 +153,7 @@ export declare const messageResponseError: {
         locked: string;
         processingImagesInvalid: string;
         completedImagesInvalid: string;
+        notYourBooking: string;
     };
     cancelOrder: {
         alreadyExists: string;

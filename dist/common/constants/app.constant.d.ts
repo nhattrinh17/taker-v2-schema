@@ -40,6 +40,7 @@ export declare const SCREEN_PARTNER: {
     CALL: string;
     SHOE_BOOKING: string;
     MESSAGE: string;
+    WALLET: string;
 };
 export declare const SCREEN_ADMIN: {
     MESSAGE: string;

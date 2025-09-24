@@ -1,7 +1,7 @@
 import { QuerySortDto } from '@common/filters';
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 import { ApiProperty } from '@nestjs/swagger';
-import { Transform } from 'class-transformer';
+import { Transform, Type } from 'class-transformer';
 import { IsInt, IsOptional } from 'class-validator';
 
 export class PaginationDto extends QuerySortDto {
@@ -11,7 +11,7 @@ export class PaginationDto extends QuerySortDto {
   })
   @IsOptional()
   @IsInt()
-  @Transform(({ value }) => Number(value))
+  @Type(() => Number)
   page: number;
 
   @ApiProperty({
@@ -20,7 +20,7 @@ export class PaginationDto extends QuerySortDto {
   })
   @IsOptional()
   @IsInt()
-  @Transform(({ value }) => Number(value))
+  @Type(() => Number)
   limit: number;
 
   @ApiProperty({
@@ -28,7 +28,7 @@ export class PaginationDto extends QuerySortDto {
     required: false,
   })
   @IsInt()
-  @Transform(({ value }) => Number(value))
+  @Type(() => Number)
   @IsOptional()
   offset: number;
 }

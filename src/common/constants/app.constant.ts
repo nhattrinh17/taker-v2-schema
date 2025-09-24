@@ -48,6 +48,7 @@ export const SCREEN_PARTNER = {
   CALL: "CALL",
   SHOE_BOOKING: "SHOE_BOOKING",
   MESSAGE: "MESSAGE",
+  WALLET: "WALLET",
 };
 
 export const SCREEN_ADMIN = {

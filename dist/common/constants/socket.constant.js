@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EventEmitChatSocket = exports.MESSAGE_UPDATE_STATUS = exports.SHOE_BOOKING_UPDATE_STATUS = exports.SOCKET_EVENT = void 0;
+exports.EventEmitChatSocket = exports.WALLET_UPDATE_STATUS = exports.MESSAGE_UPDATE_STATUS = exports.SHOE_BOOKING_UPDATE_STATUS = exports.SOCKET_EVENT = void 0;
 exports.SOCKET_EVENT = {
     SHOE_BOOKING_UPDATE: 'shoe_booking_update',
     MESSAGE_UPDATE: 'message_update',
+    WALLET_UPDATE: 'wallet_update',
 };
 exports.SHOE_BOOKING_UPDATE_STATUS = {
     FIND_SHOP: 'find-shop',
@@ -30,6 +31,10 @@ exports.SHOE_BOOKING_UPDATE_STATUS = {
 exports.MESSAGE_UPDATE_STATUS = {
     CREATE_CONVERSATION: 'create-conversation',
     INACTIVE: 'inactive',
+};
+exports.WALLET_UPDATE_STATUS = {
+    DEPOSIT_SUCCESS: 'deposit-success',
+    WITHDRAW_SUCCESS: 'withdraw-success',
 };
 exports.EventEmitChatSocket = {
     JoinRoom: 'join-room',

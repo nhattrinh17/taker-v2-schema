@@ -156,6 +156,7 @@ exports.messageResponseError = {
         locked: "shoe_booking_locked",
         processingImagesInvalid: "processing_images_invalid",
         completedImagesInvalid: "completed_images_invalid",
+        notYourBooking: "not_your_shoe_booking",
     },
     cancelOrder: {
         alreadyExists: "cancel_order_already_exists",
