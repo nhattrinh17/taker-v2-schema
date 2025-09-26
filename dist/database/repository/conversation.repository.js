@@ -48,7 +48,9 @@ let ConversationRepository = class ConversationRepository extends base_abstract_
             });
         }
         else if (condition.adminId) {
-            queryBuilder.andWhere("participants.userId = :adminId AND participants.type = :actorType", { adminId: condition.adminId, actorType: enums_1.ActorTypeEnum.ADMIN });
+            if (condition.type == "onlyMe") {
+                queryBuilder.andWhere("participants.userId = :adminId AND participants.type = :actorType", { adminId: condition.adminId, actorType: enums_1.ActorTypeEnum.ADMIN });
+            }
         }
         queryBuilder
             .take(pagination.limit || 10)

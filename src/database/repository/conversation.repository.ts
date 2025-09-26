@@ -48,10 +48,12 @@ export class ConversationRepository
           status: ConversationStatusEnum.ACTIVE,
         });
     } else if (condition.adminId) {
-      queryBuilder.andWhere(
-        "participants.userId = :adminId AND participants.type = :actorType",
-        { adminId: condition.adminId, actorType: ActorTypeEnum.ADMIN }
-      );
+      if (condition.type == "onlyMe") {
+        queryBuilder.andWhere(
+          "participants.userId = :adminId AND participants.type = :actorType",
+          { adminId: condition.adminId, actorType: ActorTypeEnum.ADMIN }
+        );
+      }
     }
 
     queryBuilder
