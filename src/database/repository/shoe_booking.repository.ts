@@ -24,7 +24,8 @@ export class ShoeBookingRepository
       .createQueryBuilder("shoeBooking")
       .leftJoinAndSelect("shoeBooking.customer", "customer")
       .leftJoinAndSelect("shoeBooking.shoeService", "shoeService")
-      .leftJoinAndSelect("shoeBooking.partner", "partner");
+      .leftJoinAndSelect("shoeBooking.partner", "partner")
+      .leftJoinAndSelect("shoeBooking.transaction", "transaction");
 
     if (query.customerId) {
       queryBuilder.where("shoeBooking.customerId = :customerId", {

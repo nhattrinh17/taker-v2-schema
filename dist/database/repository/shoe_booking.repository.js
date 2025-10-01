@@ -28,7 +28,8 @@ let ShoeBookingRepository = class ShoeBookingRepository extends base_abstract_re
             .createQueryBuilder("shoeBooking")
             .leftJoinAndSelect("shoeBooking.customer", "customer")
             .leftJoinAndSelect("shoeBooking.shoeService", "shoeService")
-            .leftJoinAndSelect("shoeBooking.partner", "partner");
+            .leftJoinAndSelect("shoeBooking.partner", "partner")
+            .leftJoinAndSelect("shoeBooking.transaction", "transaction");
         if (query.customerId) {
             queryBuilder.where("shoeBooking.customerId = :customerId", {
                 customerId: query.customerId,
